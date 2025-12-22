@@ -136,7 +136,7 @@ const Suites = () => {
     const activeSuiteData = suites.find(suite => suite.id === activeSuite);
 
     return (
-        <div className="h-screen-[70vh] py-12" ref={sectionRef}>
+        <div className="h-screen-[70vh] " ref={sectionRef}>
             <div className="max-w-full mx-auto">
                 <div className="flex flex-col lg:flex-row min-h-[600px]">
                     {/* Left Panel - Comes from left */}

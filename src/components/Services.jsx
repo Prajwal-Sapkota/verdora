@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
     FaCar,
     FaSpa,
@@ -6,12 +6,16 @@ import {
     FaFire,
     FaChild,
     FaHeart,
-    FaArrowRight,
     FaChevronLeft,
     FaChevronRight
 } from 'react-icons/fa';
 
 const Services = () => {
+    const sectionRef = useRef(null);
+    const [loaded, setLoaded] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
     const services = [
         {
             id: 1,
@@ -19,6 +23,7 @@ const Services = () => {
             description: "Premium vehicle rentals for your convenience and comfort during your stay. Whether you need a luxury sedan or an SUV for family trips, we have the perfect vehicle for you.",
             shortDescription: "Premium rentals for comfort and convenience.",
             image: "/images/carrent.jpg",
+            icon: <FaCar />
         },
         {
             id: 2,
@@ -26,6 +31,7 @@ const Services = () => {
             description: "We specialize in crafting bespoke travel events tailored to your unique preferences and interests. Experience ultimate relaxation with our premium spa treatments.",
             shortDescription: "Relax and rejuvenate with our spa.",
             image: "/images/cozyspa.jpg",
+            icon: <FaSpa />
         },
         {
             id: 3,
@@ -33,6 +39,7 @@ const Services = () => {
             description: "Experience culinary excellence with our diverse range of international cuisines. From local delicacies to gourmet international dishes, we cater to every palate.",
             shortDescription: "Delicious international cuisines for every palate.",
             image: "/images/food.jpg",
+            icon: <FaUtensils />
         },
         {
             id: 4,
@@ -40,6 +47,7 @@ const Services = () => {
             description: "Our state-of-the-art dry sauna offers a serene retreat from the hustle and bustle of the outside world. Rejuvenate your body and mind in our premium wellness facility.",
             shortDescription: "Rejuvenate in our premium dry sauna.",
             image: "/images/drysauna.jpg",
+            icon: <FaFire />
         },
         {
             id: 5,
@@ -47,6 +55,7 @@ const Services = () => {
             description: "Engaging activities and supervised care for children of all ages. Our trained professionals ensure your kids have a fun, educational, and safe experience.",
             shortDescription: "Fun and safe activities for kids.",
             image: "/images/kids.jpg",
+            icon: <FaChild />
         },
         {
             id: 6,
@@ -54,13 +63,25 @@ const Services = () => {
             description: "Plan unforgettable trips and exclusive events tailored to your preferences. From romantic getaways to family adventures, we ensure every experience is unique and memorable.",
             shortDescription: "Unforgettable trips and exclusive events.",
             image: "/images/travel.jpg",
+            icon: <FaHeart />
         }
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setLoaded(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.3 }
+        );
 
-    // Detect mobile screen
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
         checkMobile();
@@ -68,79 +89,112 @@ const Services = () => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => {
-            if (isMobile) {
+    // Auto slide every 5 seconds
+    useEffect(() => {
+        if (!loaded) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => {
                 const newIndex = prevIndex + 1;
                 return newIndex >= services.length ? 0 : newIndex;
-            } else {
-                const newIndex = prevIndex + 3;
-                return newIndex >= services.length ? 0 : newIndex;
-            }
+            });
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [loaded, services.length]);
+
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => {
+            const newIndex = prevIndex + 1;
+            return newIndex >= services.length ? 0 : newIndex;
         });
     };
 
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => {
-            if (isMobile) {
-                const newIndex = prevIndex - 1;
-                return newIndex < 0 ? services.length - 1 : newIndex;
-            } else {
-                const newIndex = prevIndex - 3;
-                return newIndex < 0 ? Math.max(0, services.length - 3) : newIndex;
-            }
+            const newIndex = prevIndex - 1;
+            return newIndex < 0 ? services.length - 1 : newIndex;
         });
     };
 
-    const getCurrentServices = () => {
-        return isMobile ? [services[currentIndex]] : services.slice(currentIndex, currentIndex + 3);
-    };
-
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-4 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto text-center py-16">
-                <span className="text-xl font-normal text-[#ab8c55] tracking-tight">
-                    Our Services
-                </span>
-                <h1 className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed py-4">
-                    Whether seeking a romantic getaway, a family vacation, or simply a peaceful escape from
-                    the hustle and bustle of everyday life, the resort caters to every need and desire.
-                </h1>
-            </div>
+        <div ref={sectionRef} className="bg-white">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16 md:py-20">
 
-            <div className="max-w-7xl mx-auto">
-                {/* Mobile Slider */}
-                <div className="md:hidden py-8">
-                    <div className="flex justify-center">
-                        <ServiceCard service={services[currentIndex]} isMobile={isMobile} />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    {/* LEFT CONTENT */}
+                    <div className="space-y-8">
+                        <div>
+                            <span className="text-[#ab8c55] font-semibold tracking-wider uppercase text-sm">
+                                Our Services
+                            </span>
+
+                            <h1 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                                Premium Amenities for Your Comfort
+                            </h1>
+                        </div>
+
+                        <div className="space-y-5">
+                            <p className="text-gray-700 text-base md:text-lg">
+                                Whether seeking a romantic getaway, a family vacation, or simply a peaceful
+                                escape from everyday life, the resort caters to every need.
+                            </p>
+
+                            <p className="text-gray-700 text-base md:text-lg">
+                                Our comprehensive services are designed to enhance your stay and create
+                                unforgettable memories.
+                            </p>
+                        </div>
+
+                        {/* ICON LIST */}
+                        <div className="grid grid-cols-2 gap-8 py-2">
+                            {services.slice(0, 4).map(service => (
+                                <div key={service.id} className="flex items-center gap-3">
+                                    <span className="text-[#ab8c55] text-lg">{service.icon}</span>
+                                    <span className="text-gray-700">{service.title}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                {/* Desktop Grid */}
-                <div className="hidden md:grid grid-cols-3 gap-4 py-2">
-                    {getCurrentServices().map((service) => (
-                        <ServiceCard key={service.id} service={service} isMobile={isMobile} />
-                    ))}
-                </div>
+                    {/* Right Column */}
+                    <div className="relative flex justify-end py-8 lg:py-0">
+                        <div className="flex flex-col items-center">
 
-                {/* Navigation Buttons */}
-                <div className="flex justify-center items-center space-x-6 py-8">
-                    <button
-                        onClick={prevSlide}
-                        className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-black hover:bg-[#ab8c55] border border-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95"
-                    >
-                        <FaChevronLeft className="text-lg" />
-                    </button>
+                            {/* Image + buttons wrapper */}
+                            <div className="w-full max-w-sm md:max-w-md">
 
-                    <button
-                        onClick={nextSlide}
-                        className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-black hover:bg-[#ab8c55] border border-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95"
-                    >
-                        <FaChevronRight className="text-lg" />
-                    </button>
+                                {/* Service Card */}
+                                <ServiceCard
+                                    service={services[currentIndex]}
+                                    isMobile={isMobile}
+                                />
+
+                                {/* Navigation buttons – now centered to IMAGE */}
+                                <div className="flex justify-center gap-6 mt-8">
+                                    <button
+                                        onClick={prevSlide}
+                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border shadow hover:bg-[#ab8c55] hover:text-white transition"
+                                    >
+                                        <FaChevronLeft />
+                                    </button>
+
+                                    <button
+                                        onClick={nextSlide}
+                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white border shadow hover:bg-[#ab8c55] hover:text-white transition"
+                                    >
+                                        <FaChevronRight />
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     );
 };
 
@@ -151,7 +205,9 @@ const ServiceCard = ({ service, isMobile }) => {
 
     return (
         <div
-            className={`relative cursor-pointer overflow-hidden ${isMobile ? 'w-full max-w-sm' : ''} h-[400px] md:h-[450px] shadow-xl hover:shadow-2xl transition-shadow duration-500 rounded-t-full rounded-b-2xl`}
+            className={`relative overflow-hidden cursor-pointer 
+  h-[380px] md:h-[460px] w-full max-w-md
+  shadow-xl rounded-t-full rounded-b-2xl`}
             onMouseEnter={() => !isMobile && setIsHovered(true)}
             onMouseLeave={() => !isMobile && setIsHovered(false)}
         >
@@ -193,7 +249,7 @@ const ServiceCard = ({ service, isMobile }) => {
                             />
 
                             <div className={`absolute inset-0 p-8 flex flex-col justify-center py-24 transition-opacity duration-300 ${isHovered ? 'opacity-100 delay-200' : 'opacity-0'}`}>
-                                <div className="flex items-center justify-center py-6">
+                                <div className="flex items-center justify-center mb-6">
                                     <h3 className="text-4xl font-bold text-white">{service.title}</h3>
                                 </div>
                                 <p className="text-white leading-relaxed py-2 text-center">{service.description}</p>
