@@ -98,7 +98,7 @@ const Services = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-4 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-xl mx-auto text-center py-16">
+            <div className="max-w-7xl mx-auto text-center py-16">
                 <span className="text-xl font-normal text-[#ab8c55] tracking-tight">
                     Our Services
                 </span>
@@ -108,7 +108,7 @@ const Services = () => {
                 </h1>
             </div>
 
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 {/* Mobile Slider */}
                 <div className="md:hidden py-8">
                     <div className="flex justify-center">

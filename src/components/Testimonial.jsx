@@ -58,7 +58,7 @@ const Testimonial = () => {
 
   return (
     <div className="py-16 px-4 bg-[#f5f2ed]">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center ">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 py-4">

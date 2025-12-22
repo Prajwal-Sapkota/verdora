@@ -25,7 +25,7 @@ const Stats = () => {
 
   return (
     <div className="relative z-30 -mt-32 md:-mt-36 lg:-mt-44 px-4 py-12 ">
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl w-full">
+      <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl w-full">
 
         <div className="grid grid-cols-2 md:grid-cols-3 p-4">
           {stats.map((stat, index) => (

@@ -39,7 +39,7 @@ const BookingForm = () => {
         </div>
 
         {/* Content Container - Perfectly centered */}
-        <div className={`w-full max-w-6xl z-10 transition-all duration-1000 my-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`w-full max-w-7xl z-10 transition-all duration-1000 my-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 
                 {/* Main Box with Backdrop Blur */}
                 <div className="backdrop-blur-xl bg-white/10 rounded-2xl shadow-2xl overflow-hidden border border-white/20">
