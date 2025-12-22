@@ -80,11 +80,11 @@ const Features = () => {
               />
 
               {/* Icon */}
-              <div className="relative text-3xl mb-3 text-white z-10">{feature.icon}</div>
+              <div className="relative text-3xl py-3 text-white z-10">{feature.icon}</div>
 
               {/* Text */}
               <div className="relative z-10 text-center">
-                <span className="text-lg font-semibold text-white mb-1">{feature.title}</span>
+                <span className="text-lg font-semibold text-white py-1">{feature.title}</span>
                 <h3 className="text-3xl font-bold text-gray-100">{feature.value}</h3>
                 <p className="hidden sm:block text-sm text-gray-300 mt-1">{feature.desc}</p>
               </div>

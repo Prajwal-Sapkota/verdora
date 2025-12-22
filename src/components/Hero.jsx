@@ -44,7 +44,7 @@ const Hero = () => {
                         <div className="max-w-4xl">
                             
                             {/* Heading with proper spacing */}
-                            <div ref={headingRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out mb-6 md:mb-8">
+                            <div ref={headingRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out py-2 md:py-4">
                                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                                     Unwind and Rejuvenate <br /> 
                                     in Nature&apos;s Embrace

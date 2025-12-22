@@ -23,13 +23,13 @@ const Footer = () => {
       <div className="max-w-8xl mx-auto">
         
         {/* Subscribe Section */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        <div className="text-center py-6 ">
+          <h2 className="text-3xl md:text-4xl font-bold  text-gray-900 ">
             Get the amazing offers into your inbox!
           </h2>
           
           {/* Subscribe Form */}
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-6">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto py-4">
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
@@ -61,14 +61,14 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px bg-gray-300 mb-8"></div>
+        <div className="w-full h-px bg-gray-300 "></div>
 
         {/* 3-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-center py-4">
           
           {/* Column 1 - Copyright */}
           <div className="flex flex-col items-center md:items-start md:text-left">
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 ">
               © Copyright 2025 
             </p>
           </div>

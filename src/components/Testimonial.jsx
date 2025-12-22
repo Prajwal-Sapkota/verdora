@@ -60,8 +60,8 @@ const Testimonial = () => {
     <div className="py-16 px-4 bg-[#f5f2ed]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center ">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 py-4">
             What Our Guests Say About Us
           </h1>
         </div>
@@ -83,7 +83,7 @@ const Testimonial = () => {
               {/* Testimonial Content */}
               <div className="flex-1">
                 {/* Quote Icon */}
-                <div className="text-gray-300 mb-4">
+                <div className="text-gray-300 py-2">
                   <FaQuoteLeft className="text-2xl" />
                 </div>
                 
@@ -93,7 +93,7 @@ const Testimonial = () => {
                   <div className="w-1 h-auto bg-[#ab8c55] rounded-full"></div>
                   
                   {/* Testimonial Text */}
-                  <p className="text-gray-600 text-lg md:text-xl italic mb-6 leading-relaxed flex-1">
+                  <p className="text-gray-600 text-lg md:text-xl italic py-6 leading-relaxed flex-1">
                     {testimonials[currentSlide].text}
                   </p>
                 </div>

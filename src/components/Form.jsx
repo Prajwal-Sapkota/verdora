@@ -47,7 +47,7 @@ const BookingForm = () => {
                         
                         {/* Left Part - Text */}
                         <div className="lg:col-span-5 p-8 md:p-10 text-white">
-                            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                            <h1 className="text-3xl md:text-4xl font-bold py-4">
                                 Get the best deals
                             </h1>
                             <p className="text-lg leading-relaxed text-gray-200">
@@ -57,13 +57,13 @@ const BookingForm = () => {
 
                         {/* Middle Part - Location */}
                         <div className="lg:col-span-3 p-8 md:p-10 text-white border-t lg:border-t-0 lg:border-x border-white/20">
-                            <h1 className="text-xl font-semibold mb-3">Location:</h1>
+                            <h1 className="text-xl font-semibold py-3">Location:</h1>
                             <p className="text-gray-200">73 Spring Ave, Latham, NY, USA</p>
                         </div>
 
                         {/* Right Part - Reservation */}
                         <div className="lg:col-span-4 p-8 md:p-10 text-white border-t lg:border-t-0 border-white/20">
-                            <h1 className="text-xl font-semibold mb-3">Reservation:</h1>
+                            <h1 className="text-xl font-semibold py-3">Reservation:</h1>
                             <div className="space-y-2 text-gray-200">
                                 <span>(+220) 1122 0088</span><br/>
                                 <span>support@example.com</span>
@@ -77,7 +77,7 @@ const BookingForm = () => {
                             
                             {/* Adult Dropdown */}
                             <div>
-                                <div className="mb-3 font-medium">Adults</div>
+                                <div className="py-3 font-medium">Adults</div>
                                 <select
                                     value={adults}
                                     onChange={(e) => setAdults(e.target.value)}
@@ -93,7 +93,7 @@ const BookingForm = () => {
 
                             {/* Children Dropdown */}
                             <div>
-                                <div className="mb-3 font-medium">Children</div>
+                                <div className="py-3 font-medium">Children</div>
                                 <select
                                     value={children}
                                     onChange={(e) => setChildren(e.target.value)}
@@ -109,7 +109,7 @@ const BookingForm = () => {
 
                             {/* Room Dropdown */}
                             <div>
-                                <div className="mb-3 font-medium">Rooms</div>
+                                <div className="py-3 font-medium">Rooms</div>
                                 <select
                                     value={rooms}
                                     onChange={(e) => setRooms(e.target.value)}
@@ -125,7 +125,7 @@ const BookingForm = () => {
 
                             {/* Book Now Button */}
                             <div className="relative">
-                                <div className="mb-3 font-medium invisible">Book</div>
+                                <div className="py-2 font-medium invisible">Book</div>
                                 <button className="relative overflow-hidden w-full h-[52px] rounded-full font-semibold text-base md:text-lg shadow-xl bg-[#262626] text-[#ab8c55] hover:bg-[#ab8c55] hover:text-[#262626] transition-all duration-700 ease-in-out group">
                                     <span className="absolute inset-0 bg-[#ab8c55] rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-in-out"></span>
                                     <span className="relative z-10 uppercase tracking-wider flex items-center justify-center gap-3">

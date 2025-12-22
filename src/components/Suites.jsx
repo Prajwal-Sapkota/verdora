@@ -260,7 +260,7 @@ const Suites = () => {
                                                         className={`flex flex-col items-center justify-center p-4 transition-all duration-700 hover:shadow-md hover:-translate-y-1 bg-[#f5efe620] rounded-lg ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                                                         style={{ transitionDelay: `${500 + (i * 100)}ms` }}
                                                     >
-                                                        <div className="flex items-center justify-center w-12 h-12 rounded-full mb-2 bg-[#f5efe6] text-[#ab8c55] text-xl">
+                                                        <div className="flex items-center justify-center w-12 h-12 rounded-full py-2 bg-[#f5efe6] text-[#ab8c55] text-xl">
                                                             {f.icon}
                                                         </div>
                                                         <span className="text-[#1f2937] text-center">{f.label}</span>

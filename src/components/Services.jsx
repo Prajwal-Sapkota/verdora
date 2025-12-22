@@ -193,7 +193,7 @@ const ServiceCard = ({ service, isMobile }) => {
                             />
 
                             <div className={`absolute inset-0 p-8 flex flex-col justify-center py-24 transition-opacity duration-300 ${isHovered ? 'opacity-100 delay-200' : 'opacity-0'}`}>
-                                <div className="flex items-center justify-center mb-6">
+                                <div className="flex items-center justify-center py-6">
                                     <h3 className="text-4xl font-bold text-white">{service.title}</h3>
                                 </div>
                                 <p className="text-white leading-relaxed py-2 text-center">{service.description}</p>

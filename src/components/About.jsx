@@ -56,13 +56,13 @@ const About = () => {
 
           <div className="space-y-6 sm:space-y-7 md:space-y-8 py-6 sm:py-8 md:py-10 lg:py-12">
             <div>
-              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <div className="flex items-center gap-2 sm:gap-3 ">
                 <span className="text-[#ab8c55] font-semibold tracking-wider uppercase text-xs sm:text-sm">
                   About resorts
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 py-2 sm:py-3">
                 Relax at the luxury resorts.
               </h1>
             </div>
