@@ -68,7 +68,7 @@ const Footer = () => {
           
           {/* Column 1 - Copyright */}
           <div className="flex flex-col items-center md:items-start md:text-left">
-            <p className="text-gray-600 ">
+            <p className="text-gray-600 text-sm ">
               © 2025 Vendora . All rights reserved. Crafted by S.A I.T Solution Nepal
             </p>
           </div>
