@@ -54,7 +54,7 @@ const Services = () => {
         if (!loaded) return;
         const interval = setInterval(() => {
             setCurrentIndex(prev => (prev + 1) % services.length);
-        }, 5000);
+        }, 2000);
         return () => clearInterval(interval);
     }, [loaded, services.length]);
 

@@ -153,7 +153,7 @@ const About = () => {
 
         </div>
       </div>
-      <div className="w-full  py-12 overflow-hidden ">
+      <div className="w-full py-4 overflow-hidden ">
 
 
         <div className="relative overflow-hidden bg-white">
