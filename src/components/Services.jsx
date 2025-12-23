@@ -49,14 +49,14 @@ const Services = () => {
         return () => observer.disconnect();
     }, []);
 
-    // Auto slide
     useEffect(() => {
-        if (!loaded) return;
-        const interval = setInterval(() => {
-            setCurrentIndex(prev => (prev + 1) % services.length);
-        }, 2000);
-        return () => clearInterval(interval);
-    }, [loaded, services.length]);
+    const interval = setInterval(() => {
+        setCurrentIndex(prev => (prev + 1) % services.length);
+    }, 1500); 
+
+    return () => clearInterval(interval);
+}, []);
+
 
     const nextSlide = () => setCurrentIndex(prev => (prev + 1) % services.length);
     const prevSlide = () => setCurrentIndex(prev => (prev - 1 + services.length) % services.length);
