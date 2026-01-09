@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const leftNavItems = [
     { label: "Home", href: "/" },
@@ -58,8 +60,15 @@ const Navbar = () => {
           </div>
 
           {/* Center Logo */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <img src={logoImage} alt="Verdora Logo" className="h-20 w-auto" />
+          <div
+            className="hidden md:flex absolute left-1/2 -translate-x-1/2 cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+            <img
+              src={logoImage}
+              alt="Verdora Logo"
+              className="h-20 w-auto"
+            />
           </div>
 
           {/* Right Nav */}
