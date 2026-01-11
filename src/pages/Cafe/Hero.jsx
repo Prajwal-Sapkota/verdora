@@ -33,7 +33,7 @@ const Hero = () => {
 
     return (
         <div className="pt-24">
-            <div className="relative rounded-2xl overflow-hidden h-[450px] md:h-[550px] lg:h-[650px]">
+            <div className="relative rounded-2xl overflow-hidden h-[450px] md:h-[550px] lg:h-[640px]">
                 
                 <div className="absolute inset-0">
                     <img 

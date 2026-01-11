@@ -64,7 +64,7 @@ const Features = () => {
       ref={sectionRef}
       className="py-16 sm:py-20 bg-[#f5f2ed] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-0 sm:px-4">
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -80,7 +80,7 @@ const Features = () => {
               <div
                 className="
                   relative mx-auto
-                  w-full max-w-[400px]
+                  w-full max-w-[420px]
                   h-[280px] sm:h-[300px] lg:h-[340px]
                 "
                 style={{ perspective: "1200px" }}

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaSmile, FaHeart, FaAward } from "react-icons/fa";
-import Stats from "./Stats";
+
 
 const Comfort = () => {
   const sectionRef = useRef(null);
@@ -97,7 +97,7 @@ const Comfort = () => {
               </div>
             </div>
 
-            <Stats />
+            
           </div>
 
         </div>

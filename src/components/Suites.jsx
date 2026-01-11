@@ -242,7 +242,7 @@ const Suites = () => {
                                 </div>
 
                                 {/* Right Content Section - Comes from right */}
-                                <div className={`md:w-1/2 pl-18 pr-28 py-24 flex flex-col h-full transition-all duration-1000 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+                                <div className={`md:w-1/2 px-8 sm:px-18 py-24 flex flex-col h-full transition-all duration-1000 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
                                     <div className="flex-row">
                                         <span className={`text-xl font-medium text-[#ab8c55] transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>{activeSuiteData?.subtitle}</span>
                                         <h2 className={`text-3xl font-bold text-[#1f2937] py-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}

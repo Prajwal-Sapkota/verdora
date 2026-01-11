@@ -30,7 +30,7 @@ const Hero = () => {
     return (
         <div className="pt-24">
             {/* Container for rounded corners and background */}
-            <div className="relative rounded-2xl overflow-hidden h-[450px] md:h-[550px] lg:h-[650px]">
+            <div className="relative rounded-2xl overflow-hidden h-[450px] md:h-[550px] lg:h-[640px]">
                 
                 {/* Background Image - Rooms specific */}
                 <div className="absolute inset-0">
