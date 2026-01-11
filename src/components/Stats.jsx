@@ -27,12 +27,7 @@ const Stats = () => {
       value: "24/7",
       description: "Care and round-the-clock support throughout your stay."
     },
-    {
-      icon: FaCrown,
-      prefix: "luxury",
-      value: "5-star",
-      description: "Experience premium amenities and world-class service."
-    }
+
   ];
 
   return (
