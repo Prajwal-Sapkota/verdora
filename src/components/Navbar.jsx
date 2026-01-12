@@ -68,7 +68,11 @@ const Navbar = () => {
               src={logoImage}
               alt="Verdora Logo"
               className="h-20 w-auto"
-             
+              width="150"
+              height="48"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
 
