@@ -16,18 +16,20 @@ const About = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <Hero/>
-        <Comfort/>
-        <Advantages/>
-        <Team/>
-        <Services/>
-        <News/>
-        <BookingForm/>
-        
-        <Footer/>
-        
-        
-        
+        <main>
+          <Hero />
+          <Comfort />
+          <Advantages />
+          <Team />
+          <Services />
+          <News />
+          <BookingForm />
+        </main>
+
+        <Footer />
+
+
+
       </div>
 
 

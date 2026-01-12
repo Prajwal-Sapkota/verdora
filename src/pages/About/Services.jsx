@@ -22,7 +22,7 @@ const Services = () => {
             title: "Car Rental", 
             description: "Premium vehicle rentals for your convenience and comfort during your stay. Whether you need a luxury sedan or an SUV for family trips, we have the perfect vehicle for you.", 
             shortDescription: "Premium rentals for comfort and convenience.", 
-            image: "/images/carrent.jpg", 
+            image: "/images/carrent.avif", 
             icon: <FaCar /> 
         },
         { 
@@ -30,7 +30,7 @@ const Services = () => {
             title: "Cozy Spa", 
             description: "Experience ultimate relaxation with our premium spa treatments. We specialize in crafting bespoke wellness experiences tailored to your unique preferences and needs.", 
             shortDescription: "Relax and rejuvenate with our spa.", 
-            image: "/images/cozyspa.jpg", 
+            image: "/images/cozyspa.avif", 
             icon: <FaSpa /> 
         },
         { 
@@ -38,7 +38,7 @@ const Services = () => {
             title: "Travel Events", 
             description: "Plan unforgettable trips and exclusive events tailored to your preferences. From romantic getaways to family adventures, we ensure every experience is unique and memorable.", 
             shortDescription: "Unforgettable trips and exclusive events.", 
-            image: "/images/travel.jpg", 
+            image: "/images/travel.avif", 
             icon: <FaHeart /> 
         }
     ];

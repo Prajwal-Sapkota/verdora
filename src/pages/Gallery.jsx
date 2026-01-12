@@ -14,16 +14,18 @@ const Gallery = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <Hero/>
-        <GalleryItems/>
-        <Video/>
-        <BookingForm/>
-       
-        
-        <Footer/>
-        
-        
-        
+        <main>
+          <Hero />
+          <GalleryItems />
+          <Video />
+          <BookingForm />
+        </main>
+
+
+        <Footer />
+
+
+
       </div>
 
 

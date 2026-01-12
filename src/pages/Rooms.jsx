@@ -13,15 +13,17 @@ const Rooms = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <Hero/>
-        <RoomTypes/>
-        <BookingForm/>
-       
-        
-        <Footer/>
-        
-        
-        
+        <main>
+          <Hero />
+          <RoomTypes />
+          <BookingForm />
+        </main>
+
+
+        <Footer />
+
+
+
       </div>
 
 

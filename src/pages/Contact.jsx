@@ -11,14 +11,17 @@ const Contact = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <Hero/>
-        <ContactForm/>
-       
-        
-        <Footer/>
-        
-        
-        
+        <main>
+          <Hero />
+          <ContactForm />
+
+        </main>
+
+
+        <Footer />
+
+
+
       </div>
 
 

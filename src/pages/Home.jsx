@@ -19,21 +19,24 @@ const Home = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <Hero />
-        
-        <About />
-        <Features/>
+        <main>
+          <Hero />
 
-        <Services />
-        
-        <Suites />
-        <Gallery/>
-        <Testimonial/>
-        <BookingForm/>
-        <Footer/>
-        
-        
-        
+          <About />
+          <Features />
+
+          <Services />
+
+          <Suites />
+          <Gallery />
+          <Testimonial />
+          <BookingForm />
+
+        </main>
+        <Footer />
+
+
+
       </div>
 
 
