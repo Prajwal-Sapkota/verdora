@@ -10,8 +10,10 @@ import Features from '../components/Features';
 import Testimonial from '../components/Testimonial';
 import Form from '../components/Form';
 import Footer from '../components/Footer';
+import usePageTitle from '../hooks/usePageTitle';
 
 const Home = () => {
+  usePageTitle('Home');
   return (
     <>
       <div className='overflow-x-hidden'>

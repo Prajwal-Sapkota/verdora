@@ -6,10 +6,13 @@ import CafeCarousel from './Cafe/CafeCarousel';
 import Menus from './Cafe/Menus';
 import Experiences from './Cafe/Experiences';
 import BookingForm from '../components/Form';
+import usePageTitle from '../hooks/usePageTitle';
 
 
 const Cafe = () => {
+  usePageTitle('Cafe');
   return (
+    
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
