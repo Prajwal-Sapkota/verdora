@@ -1,0 +1,6 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location (optional)
+Sitemap: https://verdora-bay.vercel.app/sitemap.xml
