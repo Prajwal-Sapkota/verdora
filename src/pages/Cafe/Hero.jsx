@@ -11,8 +11,8 @@ const Hero = () => {
         const animateElements = [
             { ref: headingRef, delay: 300 },
             { ref: textRef, delay: 600 },
-            { ref: featuresRef, delay: 900 },
-            { ref: buttonRef, delay: 1200 },
+            { ref: featuresRef, delay: 700 },
+            { ref: buttonRef, delay: 700 },
         ];
 
         animateElements.forEach(({ ref, delay }) => {
