@@ -154,7 +154,7 @@ const Hero = () => {
                 ref={imageRef}
                 className="absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-out"
               >
-                <img src="/images/banner.avif" alt="Eco Floral Arrangements" className="w-full h-full object-cover" fetchpriority="high"/>
+                <img src="/images/banner.avif" alt="Eco Floral Arrangements" className="w-full h-full object-cover" />
 
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,transparent_30%,white_70%)]"></div>
               </div>
