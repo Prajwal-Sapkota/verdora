@@ -28,7 +28,7 @@ const Navbar = () => {
 
           {/* Mobile Logo */}
           <div className="md:hidden">
-            <img src={logoImage} alt="Verdora Logo" className="h-18 w-auto"fetchPriority="high" />
+            <img src={logoImage} alt="Verdora Logo" className="h-18 w-auto" fetchPriority="high" />
           </div>
 
           {/* Mobile Menu Button */}
