@@ -19,11 +19,12 @@ const Footer = () => {
     { label: 'Contact Us', href: '/contact' },
   ];
   const socialIcons = [
-    { icon: <FaFacebookF />, label: 'Fb' },
-    { icon: <FaDribbble />, label: 'Dr' },
-    { icon: <FaTwitter />, label: 'Tw' },
-    { icon: <FaBehance />, label: 'Be' }
+    { icon: FaFacebookF, label: 'Facebook', href: 'https://facebook.com' },
+    { icon: FaDribbble, label: 'Dribbble', href: 'https://dribbble.com' },
+    { icon: FaTwitter, label: 'Twitter', href: 'https://twitter.com' },
+    { icon: FaBehance, label: 'Behance', href: 'https://behance.net' }
   ];
+
 
   return (
     <footer className="bg-[#f5f2ed] text-gray-800 py-12 px-12">
@@ -99,17 +100,23 @@ const Footer = () => {
           {/* Column 3 - Social Icons */}
           <div className="flex flex-col items-center md:items-end">
             <div className="flex gap-6">
-              {socialIcons.map((social, index) => (
-                <div key={index} className="flex flex-col items-center">
+              {socialIcons.map((social, index) => {
+                const Icon = social.icon;
+                return (
                   <a
-                    href="#"
+                    key={index}
+                    href={social.href}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-6 h-6 rounded-full bg-gray-800 text-white flex items-center justify-center hover:bg-[#ab8c55] transition-colors"
                   >
-                    {social.icon}
+                    <Icon aria-hidden="true" />
                   </a>
-                </div>
-              ))}
+                );
+              })}
             </div>
+
           </div>
 
         </div>
