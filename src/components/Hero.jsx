@@ -10,10 +10,10 @@ const Hero = () => {
 
   useEffect(() => {
     const animateElements = [
-      { ref: imageRef, delay: 200, type: 'fade-scale' },   // Image fades + scale
-      { ref: headingRef, delay: 400, type: 'fade-slide' }, // Heading slides up + fade
-      { ref: statsRef, delay: 700, type: 'fade-slide' },   // Stats slides up + fade
-      { ref: buttonRef, delay: 1000, type: 'fade-slide' }  // Button slides up + fade
+      { ref: imageRef, delay: 100, type: 'fade-scale' },   // Image fades + scale
+      { ref: headingRef, delay: 300, type: 'fade-slide' }, // Heading slides up + fade
+      { ref: statsRef, delay: 600, type: 'fade-slide' },   // Stats slides up + fade
+      { ref: buttonRef, delay: 9000, type: 'fade-slide' }  // Button slides up + fade
     ];
 
     animateElements.forEach(({ ref, delay, type }) => {
