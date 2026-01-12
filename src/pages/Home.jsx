@@ -11,6 +11,7 @@ import Testimonial from '../components/Testimonial';
 import Form from '../components/Form';
 import Footer from '../components/Footer';
 import usePageTitle from '../hooks/usePageTitle';
+import BookingForm from '../components/Form';
 
 const Home = () => {
   usePageTitle('Home');
@@ -28,7 +29,7 @@ const Home = () => {
         <Suites />
         <Gallery/>
         <Testimonial/>
-        <Form/>
+        <BookingForm/>
         <Footer/>
         
         

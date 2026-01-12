@@ -26,25 +26,25 @@ const BookingForm = () => {
     }, []);
 
     return (
-       <div className="relative min-h-[80vh] flex items-center justify-center p-6 " ref={sectionRef}>
-        {/* Fixed Background Image */}
-        <div className="absolute inset-0 -z-20">
-            <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-                style={{
-                    backgroundImage: 'url(https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'
-                }}
-            />
-            <div className="absolute inset-0 bg-black/20" />
-        </div>
+        <div className="relative min-h-[80vh] flex items-center justify-center p-6 " ref={sectionRef}>
+            {/* Fixed Background Image */}
+            <div className="absolute inset-0 -z-20">
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+                    style={{
+                        backgroundImage: 'url(https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/20" />
+            </div>
 
-        {/* Content Container - Perfectly centered */}
-        <div className={`w-full max-w-7xl z-10 transition-all duration-1000 my-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                
+            {/* Content Container - Perfectly centered */}
+            <div className={`w-full max-w-7xl z-10 transition-all duration-1000 my-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+
                 {/* Main Box with Backdrop Blur */}
                 <div className="backdrop-blur-xl bg-white/10 rounded-2xl shadow-2xl overflow-hidden border border-white/20">
                     <div className="grid grid-cols-1 lg:grid-cols-12">
-                        
+
                         {/* Left Part - Text */}
                         <div className="lg:col-span-5 p-8 md:p-10 text-white">
                             <h1 className="text-3xl md:text-4xl font-bold py-4">
@@ -65,7 +65,7 @@ const BookingForm = () => {
                         <div className="lg:col-span-4 p-8 md:p-10 text-white border-t lg:border-t-0 border-white/20">
                             <h1 className="text-xl font-semibold py-3">Reservation:</h1>
                             <div className="space-y-2 text-gray-200">
-                                <span>(+220) 1122 0088</span><br/>
+                                <span>(+220) 1122 0088</span><br />
                                 <span>support@example.com</span>
                             </div>
                         </div>
@@ -74,11 +74,16 @@ const BookingForm = () => {
                     {/* Booking Form Section */}
                     <div className="p-8 md:p-10 border-t border-white/20">
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-white">
-                            
+
                             {/* Adult Dropdown */}
                             <div>
+                                <label htmlFor="adults" className="sr-only">
+                                    Number of adults
+                                </label>
                                 <div className="py-3 font-medium">Adults</div>
                                 <select
+                                    id="adults"
+                                    name="adults"
                                     value={adults}
                                     onChange={(e) => setAdults(e.target.value)}
                                     className="w-full bg-white/20 text-white rounded-full p-3 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent backdrop-blur-sm"
@@ -91,10 +96,16 @@ const BookingForm = () => {
                                 </select>
                             </div>
 
+
                             {/* Children Dropdown */}
                             <div>
+                                <label htmlFor="children" className="sr-only">
+                                    Number of children
+                                </label>
                                 <div className="py-3 font-medium">Children</div>
                                 <select
+                                    id="children"
+                                    name="children"
                                     value={children}
                                     onChange={(e) => setChildren(e.target.value)}
                                     className="w-full bg-white/20 text-white rounded-full p-3 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent backdrop-blur-sm"
@@ -107,10 +118,16 @@ const BookingForm = () => {
                                 </select>
                             </div>
 
+
                             {/* Room Dropdown */}
                             <div>
+                                <label htmlFor="rooms" className="sr-only">
+                                    Number of rooms
+                                </label>
                                 <div className="py-3 font-medium">Rooms</div>
                                 <select
+                                    id="rooms"
+                                    name="rooms"
                                     value={rooms}
                                     onChange={(e) => setRooms(e.target.value)}
                                     className="w-full bg-white/20 text-white rounded-full p-3 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent backdrop-blur-sm"
@@ -122,6 +139,7 @@ const BookingForm = () => {
                                     ))}
                                 </select>
                             </div>
+
 
                             {/* Book Now Button */}
                             <div className="relative">
