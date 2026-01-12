@@ -108,9 +108,10 @@ const Gallery = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center ">
-          <span className="text-xl font-medium text-[#ab8c55] ">
+          <span className="text-xl font-semibold text-[#7a5c2e]">
             Our Gallery
           </span>
+
           <h1 className="text-3xl text-gray-600 max-w-2xl mx-auto py-6">
             A visual journey through our resort experiences, comfort, and
             natural beauty.

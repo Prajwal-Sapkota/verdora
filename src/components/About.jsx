@@ -57,8 +57,8 @@ const About = () => {
           <div className="space-y-6 sm:space-y-7 md:space-y-8 py-6 sm:py-8 md:py-10 lg:py-12">
             <div>
               <div className="flex items-center gap-2 sm:gap-3 py-3 sm:py-4">
-                <span className="text-[#ab8c55] font-semibold tracking-wider uppercase text-xs sm:text-sm">
-                  About resorts
+                <span className="text-[#8a6b3f] font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                  ABOUT RESORTS
                 </span>
               </div>
 
@@ -141,7 +141,7 @@ const About = () => {
                 className="absolute top-4 left-4 sm:top-6 sm:left-4 md:top-8 md:left-6 lg:top-10 lg:left-8 xl:top-12 xl:left-12 z-30 transition-transform duration-100 ease-in-out"
                 style={{ transform: `translateY(-${floatOffset}px)` }}
               >
-                <p className="text-xs sm:text-sm md:text-base tracking-widest text-gray-500 text-left px-2">
+                <p className="text-xs sm:text-sm md:text-base tracking-widest text-gray-700">
                   STARTED IN
                 </p>
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-gray-900">1995</p>
@@ -171,7 +171,7 @@ const About = () => {
                   <h1 className="text-[#242424] text-2xl">{item.description}</h1>
                 </div>
 
-                  <FiCircle size={12} className="mx-6 text-[#ab8c55]" />
+                <FiCircle size={12} className="mx-6 text-[#ab8c55]" />
 
               </React.Fragment>
             ))}
@@ -183,7 +183,7 @@ const About = () => {
                   <h1 className="text-[#242424] text-2xl">{item.description}</h1>
                 </div>
 
-                  <FiCircle size={12} className="mx-6 text-[#ab8c55]" />
+                <FiCircle size={12} className="mx-6 text-[#ab8c55]" />
 
               </React.Fragment>
             ))}
