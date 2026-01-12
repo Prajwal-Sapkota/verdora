@@ -34,10 +34,12 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(true)}
+            aria-label="Open navigation menu"
             className="md:hidden p-2 rounded-lg text-emerald-800 hover:bg-emerald-100 transition"
           >
             <FiMenu className="h-7 w-7" />
           </button>
+
 
           {/* Left Nav */}
           <div className="hidden md:flex items-center space-x-10">
