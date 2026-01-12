@@ -155,7 +155,7 @@ const Hero = () => {
                 className="absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-out"
               >
                 <img
-                  src="/images/banner.jpg"
+                  src="/images/banner.avif"
                   alt="Eco Floral Arrangements"
                   className="w-full h-full object-cover"
                 />
