@@ -13,21 +13,18 @@ const Hero = () => {
       const windowHeight = window.innerHeight;
       const progress = Math.min(scrollY / (windowHeight * 0.1), 1);
 
+      // Batch DOM writes
       imageRefs.current.forEach((img, i) => {
         if (!img) return;
         const startAngle = -12 - i * 3;
+
+        // Apply transform directly
         img.style.transform = `rotate(${startAngle * (1 - progress)}deg)`;
       });
 
       ticking.current = false;
     };
 
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(updateRotation);
-        ticking.current = true;
-      }
-    };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     updateRotation();
@@ -74,7 +71,7 @@ const Hero = () => {
 
   const images = [
     { src: "cafe1.webp", alt: "Luxury resort with mountain view" },
-    { src: "banner.avif", alt: "Elegant resort café interior" },
+    { src: "banner.jpg", alt: "Elegant resort café interior" },
   ];
 
   return (
@@ -112,6 +109,7 @@ const Hero = () => {
                     alt={images[1].alt}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     fetchpriority="high"
+                    loading="eager"
                   />
                 </div>
               </div>

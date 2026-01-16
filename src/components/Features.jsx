@@ -18,14 +18,14 @@ const features = [
   },
   {
     title: "Wildlife Experience",
-    image: "/images/wildlife.avif",
+    image: "/images/wildlife.jpg",
     icon: <FaBinoculars />,
     details:
       "Experience the thrill of nature with curated wildlife sightings and serene jungle surroundings."
   },
   {
     title: "Tropical Bar",
-    image: "/images/tropical.avif",
+    image: "/images/tropical.jpg",
     icon: <FaCocktail />,
     details:
       "Sip on handcrafted tropical cocktails and refreshing beverages inspired by jungle flavors."
