@@ -114,7 +114,9 @@ const Hero = () => {
                     alt={images[1].alt}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                     fetchpriority="high"
-                    
+                    width="817"
+                    height="546"
+
                   />
                 </div>
               </div>
