@@ -1,125 +1,140 @@
-// components/HeroSection.jsx
-import React, { useEffect, useRef } from 'react';
-import { FaArrowRight, FaMountain, FaUsers, FaHeadset } from 'react-icons/fa';
+import React, { useEffect, useRef } from "react";
+import { FaArrowRight, FaMountain, FaUsers, FaHeadset } from "react-icons/fa";
 
 const Hero = () => {
-  const headingRef = useRef(null);
-  const buttonRef = useRef(null);
-  const statsRef = useRef(null);
-  const imageRef = useRef(null);
+  const imageRefs = useRef([]);
 
   useEffect(() => {
-    const animateElements = [
-      { ref: imageRef, delay: 100, type: 'fade-scale' },   // Image fades + scale
-      { ref: headingRef, delay: 300, type: 'fade-slide' }, // Heading slides up + fade
-      { ref: statsRef, delay: 600, type: 'fade-slide' },   // Stats slides up + fade
-      { ref: buttonRef, delay: 700, type: 'fade-slide' }  // Button slides up + fade
-    ];
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
 
-    animateElements.forEach(({ ref, delay, type }) => {
-      setTimeout(() => {
-        if (ref.current) {
-          ref.current.classList.remove('opacity-0');
+      imageRefs.current.forEach((img, i) => {
+        if (!img) return;
 
-          if (type === 'fade-slide') {
-            ref.current.classList.remove('translate-y-8');
-            ref.current.classList.add('translate-y-0');
-          }
+        const progress = Math.min(scrollY / (windowHeight * 0.1), 1);
+        const startAngle = -12 - (i * 3);
+        const angle = startAngle * (1 - progress);
 
-          if (type === 'fade-scale') {
-            ref.current.classList.remove('scale-95');
-            ref.current.classList.add('scale-100');
-          }
-        }
-      }, delay);
-    });
+        img.style.transform = `rotate(${angle}deg)`;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Stats data
-  const resortStats = [
+  const stats = [
+    { icon: FaMountain, label: "Area", value: "32,100 m²" },
+    { icon: FaUsers, label: "Guests", value: "12K+" },
+    { icon: FaHeadset, label: "Support", value: "24/7" },
+  ];
+
+  const images = [
     {
-      icon: FaMountain,
-      prefix: "over",
-      value: "32,100 m²",
-      description: "We have enough space for you to relax and unwind according to your needs."
+      src: "cafe1.webp",
+      alt: "Luxury resort with mountain view",
     },
     {
-      icon: FaUsers,
-      prefix: "more",
-      value: "12K guests",
-      description: "More and more visitors are becoming our regular guests."
-    },
-    {
-      icon: FaHeadset,
-      prefix: "support",
-      value: "24/7",
-      description: "Care and round-the-clock support throughout your stay."
+      src: "banner.avif",
+      alt: "Elegant resort café interior",
     },
   ];
 
   return (
-    <div className="pl-0 sm:pl-6 lg:pl-12 pt-8 sm:pt-12">
+    <section className="relative min-h-screen bg-gradient-to-b from-[#fcf9f3] via-white to-[#faf8f3] overflow-hidden ">
       {/* Main Container */}
-      <div className="relative overflow-hidden h-auto lg:h-[740px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+      <div className="relative max-w-7xl mx-auto px-8 sm:px-8 lg:px-8 h-full flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full pt-12 ">
 
-          {/* Left Side - Text */}
-          <div className="relative p-8 md:p-12 lg:p-16 flex flex-col justify-center min-h-screen">
-            <div className="max-w-3xl">
+          {/* Left Column - IMAGES (switched to left) */}
+          <div className="order-1 lg:order-1 relative">
+            <div className="relative flex items-center justify-center lg:justify-start pt-32 sm:pt-32 lg:pt-44">
 
-              {/* Heading */}
-              <div
-                ref={headingRef}
-                className="opacity-0 translate-y-8 transition-all duration-700 ease-out py-6"
-              >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-                  Unwind and Rejuvenate <br />
-                  <span className="text-[#ab8c55]">in Nature's Embrace</span>
+              {/* Image Container - BIGGER */}
+              {/* Image Container - BIGGER */}
+              <div className="relative w-full max-w-lg lg:max-w-xl h-[420px] sm:h-[520px] lg:h-[700px]">
+
+                {/* Shadow Background */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#ab8c55]/5 via-transparent to-[#ab8c55]/3 rounded-[2.5rem] blur-xl"></div>
+
+                {/* Image 1 - LEFT side */}
+                <div
+                  ref={(el) => (imageRefs.current[0] = el)}
+                  className="absolute top-4 left-0 sm:left-2 lg:left-0 z-30 rounded-2xl overflow-hidden border-4 border-white shadow-2xl transition-all duration-700 w-[300px] sm:w-[360px] lg:w-[420px] h-[320px] sm:h-[360px] lg:h-[420px]"
+                  style={{
+                    transform: `rotate(-12deg)`,
+                    opacity: 0.95
+                  }}
+                >
+                  <img
+                    src={`/images/${images[0].src}`}
+                    alt={images[0].alt}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                  />
+
+                  {/* Gradient Overlay - REMOVED or made lighter */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Image 2 - RIGHT side - Positioned to NOT overlap */}
+                <div
+                  ref={(el) => (imageRefs.current[1] = el)}
+                  className="absolute top-32 sm:top-36 right-1 sm:right-2 lg:right-0 z-40 rounded-2xl overflow-hidden border-4 border-white shadow-2xl transition-all duration-700 w-[300px] sm:w-[360px] lg:w-[420px] h-[320px] sm:h-[360px] lg:h-[420px]"
+                  style={{
+                    transform: `rotate(-15deg)`,
+                    opacity: 0.95
+                  }}
+                >
+                  <img
+                    src={`/images/${images[1].src}`}
+                    alt={images[1].alt}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                  />
+
+                  {/* Gradient Overlay - REMOVED or made lighter */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - CONTENT (switched to right) */}
+          <div className="order-2 lg:order-2">
+            <div className="max-w-3xl mx-auto lg:mx-0 lg:mr-auto lg:pl-8 py-8 sm:py-0">
+
+              {/* Header Section */}
+              <div className="mb-10">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                  Where Time
+                  <br />
+                  <span className="text-[#ab8c55]">Gently Unfolds</span>
                 </h1>
+
+                <p className="text-lg text-gray-600 leading-relaxed mb-10">
+                  A refined wellness escape designed around silence, nature, and
+                  thoughtful luxury — created to restore balance and clarity.
+                </p>
               </div>
 
-              {/* Stats */}
-              <div
-                ref={statsRef}
-                className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {resortStats.map((stat, index) => {
+              {/* Stats Grid */}
+              <div className="mb-12">
+                <div className="grid grid-cols-3 gap-6">
+                  {stats.map((stat, i) => {
                     const Icon = stat.icon;
                     return (
-                      <div
-                        key={index}
-                        className="group relative p-4 rounded-lg border-l-4 border-gray-300
-                          hover:border-l-[#ab8c55] hover:shadow-sm transition-all duration-300 bg-white"
-                      >
-                        <div className="flex items-start gap-4">
-                          {/* Icon */}
-                          <div className="relative flex-shrink-0">
-                            <div className="relative w-10 h-10 overflow-hidden">
-                              {/* Default Icon */}
-                              <div className="absolute left-0 transition-transform duration-500 group-hover:-translate-x-full">
-                                <Icon className="w-6 h-6 text-gray-500" />
-                              </div>
-
-                              {/* Hover Icon */}
-                              <div className="absolute left-full transition-transform duration-500 group-hover:left-0">
-                                <Icon className="w-6 h-6 text-[#ab8c55]" />
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Content */}
-                          <div>
-                            <div className="flex items-baseline gap-1 mb-1">
-                              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wide">
-                                {stat.prefix}
-                              </span>
-                              <span className="text-xl sm:text-2xl font-bold text-[#262626]">
-                                {stat.value}
-                              </span>
-                            </div>
-                          </div>
+                      <div key={i} className="text-center group">
+                        <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center mx-auto mb-4 group-hover:shadow-md transition-all duration-300">
+                          <Icon className="text-[#ab8c55] text-2xl" />
                         </div>
+                        <p className="text-2xl font-bold text-gray-900 mb-2">
+                          {stat.value}
+                        </p>
+                        <p className="text-sm text-gray-500 font-medium">
+                          {stat.label}
+                        </p>
                       </div>
                     );
                   })}
@@ -127,57 +142,20 @@ const Hero = () => {
               </div>
 
               {/* CTA Button */}
-              <div
-                ref={buttonRef}
-                className="opacity-0 translate-y-8 transition-all duration-700 ease-out py-12"
-              >
-                <div className="relative group inline-block">
-                  <button className="relative overflow-hidden px-10 md:px-14 py-4 md:py-5 rounded-full font-semibold text-base md:text-lg shadow-xl bg-[#ab8c55] text-[#262626] hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
-                    <span className="absolute inset-0 bg-[#262626] rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-in-out"></span>
-                    <span className="relative z-10 flex items-center gap-3">
-                      Discover
-                      <FaArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
-                    </span>
-                  </button>
-                </div>
+              <div className="flex justify-center lg:justify-start">
+                <button
+                  className="px-12 py-5 bg-gradient-to-r from-[#ab8c55] to-[#c9a86a] text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3 hover:scale-105 active:scale-95 text-lg"
+                  aria-label="Explore our wellness retreat experience"
+                >
+                  <span>Discover Retreat</span>
+                  <FaArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </button>
               </div>
-
             </div>
           </div>
-
-          {/* Right Side - Image */}
-          <div className="relative h-[600px] lg:h-full">
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute inset-0"></div>
-
-              <div
-                ref={imageRef}
-                className="absolute inset-0 opacity-0 scale-95 transition-all duration-1000 ease-out"
-              >
-                <img src="/images/banner.avif" alt="Eco Floral Arrangements" className="w-full h-full object-cover" />
-
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,transparent_30%,white_70%)]"></div>
-              </div>
-
-              {/* Floating Circle */}
-              <div className="absolute bottom-1/4 left-1 w-32 h-32 rounded-full bg-gradient-to-br from-emerald-400/20 to-emerald-600/10 backdrop-blur-sm border border-emerald-200/30 animate-float-slow"></div>
-            </div>
-          </div>
-
         </div>
       </div>
-
-      {/* Floating Animation */}
-      <style jsx>{`
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(5deg); }
-        }
-        .animate-float-slow {
-          animation: float-slow 8s ease-in-out infinite;
-        }
-      `}</style>
-    </div>
+    </section>
   );
 };
 
