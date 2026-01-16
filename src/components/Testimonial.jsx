@@ -103,7 +103,7 @@ const Testimonial = () => {
                   <h2 className="text-2xl font-bold text-gray-900">
                     {testimonials[currentSlide].author}
                   </h2>
-                  <p className="text-gray-500">
+                  <p className="text-gray-700">
                     {testimonials[currentSlide].role}
                   </p>
                 </div>
