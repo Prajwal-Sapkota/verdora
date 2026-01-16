@@ -108,7 +108,7 @@ const Navbar = () => {
       >
         {/* Drawer Header */}
         <div className="border-b border-emerald-200 h-20 px-5 flex items-center justify-between">
-          <img src={logoImage} alt="Verdora Logo" className="h-14 w-auto" />
+          <img src={logoImage} alt="Verdora Logo" className="h-14 w-auto" fetchPriority="high" />
           <FiX
             className="h-7 w-7 cursor-pointer hover:text-emerald-700 transition"
             onClick={() => setIsMenuOpen(false)}
