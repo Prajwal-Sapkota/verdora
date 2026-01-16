@@ -149,7 +149,7 @@ const ServiceCard = ({ service, isMobile }) => {
                 {isMobile ? (
                     <div className="absolute inset-0 z-20 flex items-center justify-center text-center p-4">
                         <div className="flex flex-col justify-center items-center h-full py-8">
-                            <h3 className="text-4xl font-bold text-white py-2">{service.title}</h3>
+                            <h2 className="text-4xl font-bold text-white py-2">{service.title}</h2>
                             <p className="text-md font-medium text-white leading-relaxed py-2">{service.shortDescription}</p>
                         </div>
                     </div>

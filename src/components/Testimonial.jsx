@@ -100,9 +100,9 @@ const Testimonial = () => {
                 
                 {/* Author Info */}
                 <div className="mt-6">
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-gray-900">
                     {testimonials[currentSlide].author}
-                  </h3>
+                  </h2>
                   <p className="text-gray-500">
                     {testimonials[currentSlide].role}
                   </p>
