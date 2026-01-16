@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FaUsers, FaTree, FaBinoculars, FaCocktail } from "react-icons/fa";
 
+// Features Data
 const features = [
   {
     title: "Grand Capacity",
@@ -32,6 +33,7 @@ const features = [
   }
 ];
 
+// Entry Animations
 const entryAnimation = [
   "translate-x-[-60px] opacity-0",
   "translate-y-[60px] opacity-0",
@@ -42,6 +44,8 @@ const entryAnimation = [
 const Features = () => {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [flipped, setFlipped] = useState({}); // Track which cards are flipped
+  const [hovered, setHovered] = useState(null); // Track hover index
 
   // Scroll reveal once
   useEffect(() => {
@@ -59,35 +63,46 @@ const Features = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Determine transform based on click or hover
+  const getTransform = (index) => {
+    if (flipped[index]) return "rotateY(180deg)";
+    if (hovered === index) return "rotateY(180deg)";
+    return "rotateY(0deg)";
+  };
+
   return (
     <section
       ref={sectionRef}
       className="py-16 sm:py-20 bg-[#f5f2ed] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-0 sm:px-4">
-
-        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((item, index) => (
             <div
               key={index}
-              className={`group transition-all duration-1000 ease-out
-                ${visible ? "opacity-100 translate-x-0 translate-y-0" : entryAnimation[index]}
-              `}
+              className={`transition-all duration-1000 ease-out ${
+                visible
+                  ? "opacity-100 translate-x-0 translate-y-0"
+                  : entryAnimation[index]
+              }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Flip Card */}
               <div
-                className="
-                  relative mx-auto
-                  w-full max-w-[420px]
-                  h-[280px] sm:h-[300px] lg:h-[340px]
-                "
+                className="relative mx-auto w-full max-w-[420px] h-[280px] sm:h-[300px] lg:h-[340px]"
                 style={{ perspective: "1200px" }}
+                onClick={() =>
+                  setFlipped((prev) => ({ ...prev, [index]: !prev[index] }))
+                }
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
               >
                 <div
                   className="relative w-full h-full transition-transform duration-700"
-                  style={{ transformStyle: "preserve-3d" }}
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transform: getTransform(index)
+                  }}
                 >
                   {/* Front */}
                   <div
@@ -97,7 +112,10 @@ const Features = () => {
                     <img
                       src={item.image}
                       alt={item.title}
+                      width={420}
+                      height={340}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
 
@@ -110,33 +128,21 @@ const Features = () => {
                       backgroundColor: "#ab8c55"
                     }}
                   >
-                    <div className="text-white text-3xl mb-3">
-                      {item.icon}
-                    </div>
+                    <div className="text-white text-3xl mb-3">{item.icon}</div>
                     <p className="text-white text-md leading-relaxed">
                       {item.details}
                     </p>
                   </div>
                 </div>
-
-                {/* Flip trigger */}
-                <style>
-                  {`
-                    .group:hover div[style*="preserve-3d"] {
-                      transform: rotateY(180deg);
-                    }
-                  `}
-                </style>
               </div>
 
-              {/* Title outside */}
+              {/* Title below */}
               <h3 className="mt-5 text-center text-xl font-semibold text-[#ab8655]">
                 {item.title}
               </h3>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
