@@ -8,29 +8,29 @@ const features = [
     image: "/images/capacity.avif",
     icon: <FaUsers />,
     details:
-      "Designed to host intimate gatherings to grand celebrations, accommodating 25 to 6,000 guests comfortably amidst nature."
+      "Designed to host intimate gatherings to grand celebrations, accommodating 25 to 6,000 guests comfortably amidst nature.",
   },
   {
     title: "Canopy Views",
     image: "/images/canopy.avif",
     icon: <FaTree />,
     details:
-      "Enjoy breathtaking elevated views from our jungle canopy spaces, blending luxury with untouched wilderness."
+      "Enjoy breathtaking elevated views from our jungle canopy spaces, blending luxury with untouched wilderness.",
   },
   {
     title: "Wildlife Experience",
     image: "/images/wildlife.jpg",
     icon: <FaBinoculars />,
     details:
-      "Experience the thrill of nature with curated wildlife sightings and serene jungle surroundings."
+      "Experience the thrill of nature with curated wildlife sightings and serene jungle surroundings.",
   },
   {
     title: "Tropical Bar",
     image: "/images/tropical.jpg",
     icon: <FaCocktail />,
     details:
-      "Sip on handcrafted tropical cocktails and refreshing beverages inspired by jungle flavors."
-  }
+      "Sip on handcrafted tropical cocktails and refreshing beverages inspired by jungle flavors.",
+  },
 ];
 
 // Entry Animations
@@ -38,14 +38,14 @@ const entryAnimation = [
   "translate-x-[-60px] opacity-0",
   "translate-y-[60px] opacity-0",
   "translate-y-[-60px] opacity-0",
-  "translate-x-[60px] opacity-0"
+  "translate-x-[60px] opacity-0",
 ];
 
 const Features = () => {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
-  const [flipped, setFlipped] = useState({}); // Track which cards are flipped
-  const [hovered, setHovered] = useState(null); // Track hover index
+  const [flippedIndex, setFlippedIndex] = useState(null); // Only one card flipped
+  const [hoveredIndex, setHoveredIndex] = useState(null); // For hover on desktop
 
   // Scroll reveal once
   useEffect(() => {
@@ -63,10 +63,10 @@ const Features = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Determine transform based on click or hover
+  // Determine transform based on hover or click
   const getTransform = (index) => {
-    if (flipped[index]) return "rotateY(180deg)";
-    if (hovered === index) return "rotateY(180deg)";
+    if (window.innerWidth >= 1024 && hoveredIndex === index) return "rotateY(180deg)"; // Desktop hover
+    if (window.innerWidth < 1024 && flippedIndex === index) return "rotateY(180deg)"; // Mobile click
     return "rotateY(0deg)";
   };
 
@@ -91,17 +91,24 @@ const Features = () => {
               <div
                 className="relative mx-auto w-full max-w-[420px] h-[280px] sm:h-[300px] lg:h-[340px]"
                 style={{ perspective: "1200px" }}
-                onClick={() =>
-                  setFlipped((prev) => ({ ...prev, [index]: !prev[index] }))
-                }
-                onMouseEnter={() => setHovered(index)}
-                onMouseLeave={() => setHovered(null)}
+                onClick={() => {
+                  if (window.innerWidth < 1024) {
+                    // Only one card flips on mobile
+                    setFlippedIndex(flippedIndex === index ? null : index);
+                  }
+                }}
+                onMouseEnter={() => {
+                  if (window.innerWidth >= 1024) setHoveredIndex(index);
+                }}
+                onMouseLeave={() => {
+                  if (window.innerWidth >= 1024) setHoveredIndex(null);
+                }}
               >
                 <div
                   className="relative w-full h-full transition-transform duration-700"
                   style={{
                     transformStyle: "preserve-3d",
-                    transform: getTransform(index)
+                    transform: getTransform(index),
                   }}
                 >
                   {/* Front */}
@@ -125,7 +132,7 @@ const Features = () => {
                     style={{
                       backfaceVisibility: "hidden",
                       transform: "rotateY(180deg)",
-                      backgroundColor: "#ab8c55"
+                      backgroundColor: "#ab8c55",
                     }}
                   >
                     <div className="text-white text-3xl mb-3">{item.icon}</div>
@@ -137,9 +144,9 @@ const Features = () => {
               </div>
 
               {/* Title below */}
-              <h1 className="mt-5 text-center text-xl font-semibold text-[#ab8655]">
+              <h3 className="mt-5 text-center text-xl font-semibold text-[#ab8655]">
                 {item.title}
-              </h1>
+              </h3>
             </div>
           ))}
         </div>

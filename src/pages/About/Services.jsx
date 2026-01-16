@@ -95,12 +95,14 @@ const Services = () => {
                                 <button
                                     onClick={prevSlide}
                                     className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white border shadow-lg hover:bg-[#ab8c55] hover:text-white transition-all duration-300 z-30"
+                                    aria-label="Previous slide"
                                 >
                                     <FaChevronLeft />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white border shadow-lg hover:bg-[#ab8c55] hover:text-white transition-all duration-300 z-30"
+                                    aria-label="Next slide"
                                 >
                                     <FaChevronRight />
                                 </button>
