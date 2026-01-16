@@ -24,7 +24,12 @@ const Hero = () => {
 
       ticking.current = false;
     };
-
+    const handleScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(updateRotation);
+        ticking.current = true;
+      }
+    };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     updateRotation();
