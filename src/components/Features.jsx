@@ -137,9 +137,9 @@ const Features = () => {
               </div>
 
               {/* Title below */}
-              <h3 className="mt-5 text-center text-xl font-semibold text-[#ab8655]">
+              <h1 className="mt-5 text-center text-xl font-semibold text-[#ab8655]">
                 {item.title}
-              </h3>
+              </h1>
             </div>
           ))}
         </div>

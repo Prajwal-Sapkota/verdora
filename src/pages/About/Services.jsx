@@ -112,7 +112,7 @@ const Services = () => {
                                     <button
                                         key={index}
                                         onClick={() => setCurrentIndex(index)}
-                                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#ab8c55] w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
+                                        className={`w-3 h-3 p-4 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#ab8c55] w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
                                    ></button>
                                 ))}
                             </div>

@@ -57,7 +57,7 @@ const About = () => {
           <div className="space-y-6 sm:space-y-7 md:space-y-8 py-6 sm:py-8 md:py-10 lg:py-12">
             <div>
               <div className="flex items-center gap-2 sm:gap-3 py-3 sm:py-4">
-                <span className="text-[#8a6b3f] font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                <span class="text-[#5a3d1f] font-semibold tracking-wider uppercase text-xs sm:text-sm">
                   ABOUT RESORTS
                 </span>
               </div>
