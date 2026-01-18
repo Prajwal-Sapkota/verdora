@@ -1,164 +1,142 @@
-import React, { useEffect, useRef } from "react";
-import { FaArrowRight, FaMountain, FaUsers, FaHeadset } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+
+const slides = [
+  {
+    image: "/images/bg1.jpg",
+    text: "Where refined luxury meets untouched wilderness"
+  },
+  {
+    image: "/images/wildlife.avif",
+    text: "A sanctuary designed for calm, comfort, and connection"
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2070&q=80",
+    text: "Moments of stillness wrapped in nature's beauty"
+  }
+];
 
 const Hero = () => {
-  const imageRefs = useRef([]);
-  const textRef = useRef(null);
-  const ticking = useRef(false);
+  const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(false);
 
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  /* Slider */
   useEffect(() => {
-    // Scroll rotation
-    const updateRotation = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const progress = Math.min(scrollY / (windowHeight * 0.1), 1);
-
-      // Batch DOM writes
-      imageRefs.current.forEach((img, i) => {
-        if (!img) return;
-        const startAngle = -12 - i * 3;
-
-        // Apply transform directly
-        img.style.transform = `rotate(${startAngle * (1 - progress)}deg)`;
-      });
-
-      ticking.current = false;
-    };
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(updateRotation);
-        ticking.current = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    updateRotation();
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 6500);
+    return () => clearInterval(interval);
   }, []);
 
-  // Entrance animation on mount
+  /* Entrance animation */
   useEffect(() => {
-    const [img1, img2] = imageRefs.current;
-    const text = textRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-    if (img1 && img2 && text) {
-      // Initial positions
-      img1.style.transform = "translateX(-200px) rotate(-12deg)";
-      img1.style.opacity = "0";
-      img2.style.transform = "translateY(-200px) rotate(-15deg)";
-      img2.style.opacity = "0";
-      text.style.transform = "translateY(50px)";
-      text.style.opacity = "0";
-
-      // Animate in after short delay
-      setTimeout(() => {
-        img1.style.transition = "transform 1s ease-out, opacity 1s ease-out";
-        img1.style.transform = "translateX(0) rotate(-12deg)";
-        img1.style.opacity = "1";
-
-        img2.style.transition = "transform 1s ease-out, opacity 1s ease-out 0.2s";
-        img2.style.transform = "translateY(0) rotate(-15deg)";
-        img2.style.opacity = "1";
-
-        text.style.transition = "transform 1s ease-out, opacity 1s ease-out 0.4s";
-        text.style.transform = "translateY(0)";
-        text.style.opacity = "1";
-      }, 100);
-    }
+    if (leftRef.current) observer.observe(leftRef.current);
+    return () => observer.disconnect();
   }, []);
-
-  const stats = [
-    { icon: FaMountain, label: "Area", value: "32,100 m²" },
-    { icon: FaUsers, label: "Guests", value: "12K+" },
-    { icon: FaHeadset, label: "Support", value: "24/7" },
-  ];
-
-  const images = [
-    { src: "cafe1.webp", alt: "Luxury resort with mountain view" },
-    { src: "banner.jpg", alt: "Elegant resort café interior" },
-  ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-[#fcf9f3] via-white to-[#faf8f3] overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-8 h-full flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full pt-12">
+    <section className="w-full overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-[90vh]">
 
-          {/* LEFT – IMAGES */}
-          <div className="relative">
-            <div className="relative flex items-center justify-center lg:justify-start pt-32 lg:pt-44">
-              <div className="relative w-full max-w-lg lg:max-w-xl h-[420px] sm:h-[520px] lg:h-[700px]">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#ab8c55]/5 via-transparent to-[#ab8c55]/3 rounded-[2.5rem] blur-xl"></div>
+        {/* ================= LEFT ================= */}
+        <div className="relative h-full">
+          <img
+            src="/images/banner.avif"
+            alt="Verdora Resort"
+            fetchpriority="high"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-                {/* Image 1 */}
-                <div
-                  ref={(el) => (imageRefs.current[0] = el)}
-                  className="absolute top-4 left-0 z-30 rounded-2xl overflow-hidden border-4 border-white shadow-2xl w-[300px] sm:w-[360px] lg:w-[420px] h-[320px] sm:h-[360px] lg:h-[420px]"
-                  style={{ transform: "rotate(-12deg)" }}
-                >
-                  <img
-                    src={`/images/${images[0].src}`}
-                    alt={images[0].alt}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f8f5f0]/90 via-[#f3eee6]/80 to-[#eae3d7]/70" />
 
-                {/* Image 2 */}
-                <div
-                  ref={(el) => (imageRefs.current[1] = el)}
-                  className="absolute top-32 right-1 z-40 rounded-2xl overflow-hidden border-4 border-white shadow-2xl w-[300px] sm:w-[360px] lg:w-[420px] h-[320px] sm:h-[360px] lg:h-[420px]"
-                  style={{ transform: "rotate(-15deg)" }}
-                >
-                  <img
-                    src={`/images/${images[1].src}`}
-                    alt={images[1].alt}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    fetchpriority="high"
-                    width="817"
-                    height="546"
+          <div
+            ref={leftRef}
+            className={`relative z-10 h-full flex items-center justify-center p-6 md:p-10 lg:p-12
+              transition-all duration-1000 ease-out
+              ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"}
+            `}
+          >
+            <div className="text-center max-w-xl">
 
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+              <span className="block text-sm tracking-[0.4em] uppercase text-[#7a6a4a] mb-6">
+                Wilderness Retreat
+              </span>
 
-          {/* RIGHT – CONTENT */}
-          <div ref={textRef}>
-            <div className="max-w-4xl lg:pl-8 py-8">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Where Time
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-[#1c1b18] leading-[0.85] mb-8">
+                Verdora
                 <br />
-                <span className="text-[#ab8c55]">Gently Unfolds</span>
+                Resort
               </h1>
 
-              <p className="text-lg text-gray-600 mb-10">
-                A refined wellness escape designed around silence, nature, and
-                thoughtful luxury — created to restore balance and clarity.
-              </p>
+              <div className="h-[2px] w-40 bg-[#ab8c55] mx-auto"></div>
+            </div>
+          </div>
+        </div>
 
-              <div className="grid grid-cols-3 gap-6 mb-12">
-                {stats.map((stat, i) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div key={i} className="text-center">
-                      <div className="w-16 h-16 bg-white rounded-2xl border flex items-center justify-center mx-auto mb-4">
-                        <Icon className="text-[#ab8c55] text-2xl" />
-                      </div>
-                      <p className="text-2xl font-bold">{stat.value}</p>
-                      <p className="text-sm text-gray-500">{stat.label}</p>
-                    </div>
-                  );
-                })}
-              </div>
+        {/* ================= RIGHT ================= */}
+        <div className="relative h-full">
 
-              <button className="px-12 py-5 bg-gradient-to-r from-[#ab8c55] to-[#c9a86a] text-white font-semibold rounded-full shadow-xl flex items-center gap-3 hover:scale-105 transition">
-                Discover Retreat
-                <FaArrowRight />
+          {slides.map((slide, index) => (
+            <img
+              key={index}
+              src={slide.image}
+              alt=""
+              loading={index === 0 ? "eager" : "lazy"}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                index === current ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+
+          <div className="absolute inset-0 bg-black/50" />
+
+          <div
+            ref={rightRef}
+            className={`relative z-10 h-full flex items-center justify-center p-6 md:p-10 lg:p-12
+              transition-all duration-1000 ease-out delay-200
+              ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-16"}
+            `}
+          >
+            <div className="text-center max-w-lg">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-10 text-white">
+                "{slides[current].text}"
+              </h2>
+
+              <button
+                aria-label="Reserve your stay"
+                className="px-10 py-4 bg-[#ab8c55] text-white tracking-wider hover:bg-[#927344] transition duration-300 text-lg rounded-full"
+              >
+                Reserve Your Stay
               </button>
             </div>
           </div>
 
+          {/* Dots */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Slide ${i + 1}`}
+                onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full ${
+                  current === i ? "bg-white" : "bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

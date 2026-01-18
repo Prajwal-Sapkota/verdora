@@ -19,22 +19,19 @@ const Home = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <main>
-          <Hero />
-
-          <About />
-          <Features />
-
-          <Services />
-
-          <Suites />
-          <Gallery />
-          <Testimonial />
-          <BookingForm />
-
-        </main>
-        <Footer />
-
+        <div className="pt-20"> {/* Add this wrapper with padding-top */}
+          <main>
+            <Hero />
+            <About />
+            <Features />
+            <Services />
+            <Suites />
+            <Gallery />
+            <Testimonial />
+            <BookingForm />
+          </main>
+          <Footer />
+        </div>
 
 
       </div>
