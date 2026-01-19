@@ -190,7 +190,7 @@ const Navbar = () => {
                 {/* Wood grain effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-20" />
                 
-                <span className="relative flex items-center justify-center gap-1">
+                <span className=" hidden relative sm:flex items-center justify-center gap-1">
                   <span>BOOK NOW</span>
                   
                 </span>
@@ -243,7 +243,7 @@ const Navbar = () => {
             <img
               src={logoImage}
               alt="Verdora Logo"
-              className="relative h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="relative h-12 w-auto transition-transform duration-300 group-hover:scale-110"
               loading="eager"
               fetchPriority="high"
             />
@@ -251,16 +251,7 @@ const Navbar = () => {
 
           <div className="flex flex-col items-center">
             {/* Centered BOOK NOW Button on Mobile */}
-            <button
-              onClick={() => navigate("/book")}
-              className="relative px-4 py-1.5 rounded-full bg-gradient-to-br from-[#8a6a3f] via-[#9a7a4f] to-[#8a6a3f] text-white text-xs tracking-wider font-medium shadow hover:shadow-lg transition-all duration-300 overflow-hidden border border-[#6a4a2f]/30 mb-1"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-20" />
-              <span className="relative flex items-center gap-1">
-                <span>BOOK NOW</span>
-                
-              </span>
-            </button>
+            
             
             <button
               onClick={() => setIsMenuOpen(true)}
@@ -300,7 +291,7 @@ const Navbar = () => {
               <img
                 src={logoImage}
                 alt="Verdora Logo"
-                className="relative h-10 w-auto"
+                className="relative h-12 w-auto"
                 loading="eager"
               />
             </div>
