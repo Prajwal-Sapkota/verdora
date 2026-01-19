@@ -196,6 +196,7 @@ const Navbar = () => {
           {/* Enhanced Menu Button */}
           <button
             onClick={() => setIsMenuOpen(true)}
+            aria-label="Open menu"
             className="relative w-10 h-10 rounded-lg bg-white border border-emerald-200 shadow-sm flex items-center justify-center hover:border-emerald-300 hover:shadow-md transition-all duration-300 group"
           >
             <div className="relative w-5 h-4">
@@ -254,6 +255,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
               className="w-10 h-10 rounded-lg bg-white border border-emerald-200 shadow-sm flex items-center justify-center hover:border-emerald-300 hover:shadow-md transition-all duration-300"
             >
               <FiX className="h-5 w-5 text-emerald-700" />

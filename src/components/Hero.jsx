@@ -110,9 +110,14 @@ const Hero = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 aria-label={`Slide ${i + 1}`}
-                className={`w-2 h-2 rounded-full transition ${current === i ? "bg-white" : "bg-white/40"
+                className={`w-3 h-3 rounded-full transition ${current === i ? "bg-white" : "bg-white/40"
                   }`}
-              />
+              >
+                <span
+                  className={`w-2 h-2 rounded-full ${current === i ? "bg-white" : "bg-white/40"
+                    }`}
+                />
+              </button>
             ))}
           </div>
         </div>
