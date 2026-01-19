@@ -7,6 +7,7 @@ import Menus from './Cafe/Menus';
 import Experiences from './Cafe/Experiences';
 import BookingForm from '../components/Form';
 import usePageTitle from '../hooks/usePageTitle';
+import BackToTop from '../components/BackToTop';
 
 
 const Cafe = () => {
@@ -25,6 +26,7 @@ const Cafe = () => {
         </main>
 
         <Footer />
+        <BackToTop/>
 
 
 

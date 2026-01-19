@@ -24,9 +24,9 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="pt-24">
+        <div className="pt-18 sm:pt-0">
             {/* Container for rounded corners and background */}
-            <div className="relative rounded-2xl overflow-hidden  h-[450px] md:h-[550px] lg:h-[640px]">
+            <div className="relative rounded-b-2xl overflow-hidden  h-[500px] md:h-[550px] lg:h-[740px]">
                 
                 {/* Background Image - Use a gallery-related image */}
                 <div className="absolute inset-0">
@@ -48,7 +48,6 @@ const Hero = () => {
                             <div ref={headingRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out mb-6">
                                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
                                     Our Gallery<br />
-                                    <span className="text-[#ab8c55]">Visual Stories</span>
                                 </h1>
                             </div>
 
@@ -63,7 +62,7 @@ const Hero = () => {
                             {/* Button */}
                             <div ref={buttonRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
                                 <div className="relative group inline-block">
-                                    <button className="relative overflow-hidden px-10 md:px-14 py-4 md:py-5 rounded-full font-semibold text-base md:text-lg shadow-xl bg-[#ab8c55] text-[#262626] hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
+                                    <button className="relative overflow-hidden px-10 md:px-14 py-4 md:py-5 rounded-full font-semibold text-base md:text-lg shadow-xl bg-[#8a6a3f] text-[#262626] hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
                                         {/* Gray overlay that appears on hover */}
                                         <span className="absolute inset-0 bg-[#262626] rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-in-out"></span>
                                         

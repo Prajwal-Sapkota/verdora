@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Hero from './Contact/Hero';
 import ContactForm from './Contact/ContactForm';
 import usePageTitle from '../hooks/usePageTitle';
+import BackToTop from '../components/BackToTop';
 
 const Contact = () => {
   usePageTitle('Contact');
@@ -19,6 +20,7 @@ const Contact = () => {
 
 
         <Footer />
+        <BackToTop/>
 
 
 

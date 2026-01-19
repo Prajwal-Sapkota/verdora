@@ -9,6 +9,7 @@ import Services from './About/Services';
 import News from './About/News';
 import BookingForm from '../components/Form';
 import usePageTitle from '../hooks/usePageTitle';
+import BackToTop from '../components/BackToTop';
 
 const About = () => {
   usePageTitle('About');
@@ -27,6 +28,7 @@ const About = () => {
         </main>
 
         <Footer />
+        <BackToTop/>
 
 
 

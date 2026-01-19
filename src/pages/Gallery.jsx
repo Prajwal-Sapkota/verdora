@@ -6,6 +6,7 @@ import GalleryItems from './Gallery/Gallery';
 import Video from './Gallery/Video';
 import BookingForm from '../components/Form';
 import usePageTitle from '../hooks/usePageTitle';
+import BackToTop from '../components/BackToTop';
 
 
 const Gallery = () => {
@@ -23,6 +24,7 @@ const Gallery = () => {
 
 
         <Footer />
+        <BackToTop/>
 
 
 

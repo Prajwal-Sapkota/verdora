@@ -12,6 +12,7 @@ import Form from '../components/Form';
 import Footer from '../components/Footer';
 import usePageTitle from '../hooks/usePageTitle';
 import BookingForm from '../components/Form';
+import BackToTop from '../components/BackToTop';
 
 const Home = () => {
   usePageTitle('Home');
@@ -30,6 +31,7 @@ const Home = () => {
             <BookingForm />
           </main>
           <Footer />
+          <BackToTop/>
 
 
       </div>

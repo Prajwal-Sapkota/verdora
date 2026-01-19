@@ -5,6 +5,7 @@ import Hero from './Rooms/Hero';
 import RoomTypes from './Rooms/RoomTypes';
 import BookingForm from '../components/Form';
 import usePageTitle from '../hooks/usePageTitle';
+import BackToTop from '../components/BackToTop';
 
 
 const Rooms = () => {
@@ -21,6 +22,7 @@ const Rooms = () => {
 
 
         <Footer />
+        <BackToTop/>
 
 
 

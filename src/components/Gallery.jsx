@@ -36,7 +36,7 @@ const galleryItems = [
 
   {
     id: 5,
-    src: "/images/gallery5.jpg",
+    src: "/images/gallery5.webp",
     col: "md:col-span-2",
     row: "md:row-span-1",
     shape: "rounded-3xl",

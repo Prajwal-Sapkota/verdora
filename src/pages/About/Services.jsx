@@ -38,7 +38,7 @@ const Services = () => {
             title: "Travel Events", 
             description: "Plan unforgettable trips and exclusive events tailored to your preferences. From romantic getaways to family adventures, we ensure every experience is unique and memorable.", 
             shortDescription: "Unforgettable trips and exclusive events.", 
-            image: "/images/travel.avif", 
+            image: "/images/travel.jpg", 
             icon: <FaHeart /> 
         }
     ];
@@ -114,7 +114,7 @@ const Services = () => {
                                     <button
                                         key={index}
                                         onClick={() => setCurrentIndex(index)}
-                                        className={`w-3 h-3 p-4 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#ab8c55] w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
+                                        className={`w-2 h-2 p-1 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#ab8c55] w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
                                    ></button>
                                 ))}
                             </div>

@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const slides = [
-  { image: "/images/hero1.avif" },
   { image: "/images/hero3.avif" },
-  { image: "/images/hero4.avif" },
+  { image: "/images/hero1.avif" },
+  { image: "/images/hero4.avif" }, 
 ];
 
 const Hero = () => {
@@ -13,6 +14,10 @@ const Hero = () => {
 
   const leftRef = useRef(null);
   const rightRef = useRef(null);
+  const headingRef = useRef(null);
+  const textRef = useRef(null);
+  const buttonRef = useRef(null);
+  const subtitleRef = useRef(null);
 
   /* Preload ALL images on component mount */
   useEffect(() => {
@@ -39,6 +44,24 @@ const Hero = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
+          
+          // Animate elements with delays
+          const animateElements = [
+            { ref: subtitleRef, delay: 300 },
+            { ref: headingRef, delay: 600 },
+            { ref: textRef, delay: 900 },
+            { ref: buttonRef, delay: 1200 },
+          ];
+
+          animateElements.forEach(({ ref, delay }) => {
+            setTimeout(() => {
+              if (ref.current) {
+                ref.current.classList.remove('opacity-0', 'translate-y-8');
+                ref.current.classList.add('opacity-100', 'translate-y-0');
+              }
+            }, delay);
+          });
+          
           observer.disconnect();
         }
       },
@@ -59,13 +82,10 @@ const Hero = () => {
             src="/images/banner.avif"
             alt="Verdora Resort"
             fetchPriority="high"
-            loading="eager"
-            width={1080}
-            height={720}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#f8f5f0]/80 via-[#f3eee6]/65 to-[#eae3d7]/30" />
-
+          
           {/* Content */}
           <div
             ref={leftRef}
@@ -75,34 +95,56 @@ const Hero = () => {
             `}
           >
             <div className="text-center max-w-xl">
-              <span className="block text-sm md:text-base tracking-[0.4em] uppercase text-[#7a6a4a] mb-4 sm:mb-6">
-                Wilderness Retreat
-              </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-[#1c1b18] leading-tight mb-4 sm:mb-6">
-                Verdora
-                <br />
-                Resort
-              </h1>
+              {/* Subtitle with animation */}
+              <div ref={subtitleRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out mb-4 sm:mb-6">
+                <span className="block text-sm md:text-base tracking-[0.4em] uppercase text-[#7a6a4a]">
+                  Wilderness Retreat
+                </span>
+              </div>
+
+              {/* Heading with animation */}
+              <div ref={headingRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out mb-4 sm:mb-6">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-[#1c1b18] leading-tight">
+                  Verdora
+                  <br />
+                  Resort
+                </h1>
+              </div>
+
+              {/* Divider line */}
               <div className="h-[2px] w-32 sm:w-40 bg-[#8a6a3f] mx-auto mb-4 sm:mb-6"></div>
-              <button className="px-8 sm:px-10 py-3 sm:py-4 bg-[#8a6a3f] text-white tracking-wider hover:bg-[#735632] transition duration-300 text-base sm:text-lg rounded-full">
-                Reserve Your Stay
-              </button>
+
+              {/* Button with exact same effect */}
+              <div ref={buttonRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
+                <div className="relative group inline-block">
+                  <button className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl bg-[#8a6a3f] text-[#262626] hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
+                    {/* Gray overlay that appears on hover */}
+                    <span className="absolute inset-0 bg-[#262626] rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-in-out"></span>
+                    
+                    {/* Button Text */}
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      Reserve Your Stay
+                      <FaArrowRight className="group-hover:translate-x-3 transition-transform duration-500" />
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* RIGHT SIDE SLIDER - FIXED VERSION */}
+        {/* Right side slider */}
         <div
           ref={rightRef}
-          className={`relative h-[50vh] lg:h-[100vh] overflow-hidden will-change-transform
-    transition-all duration-1000 ease-out delay-200
-    ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-24"}
-  `}
+          className={`relative h-[50vh] lg:h-[100vh] overflow-hidden
+            transition-all duration-1000 ease-out delay-200
+            ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-24"}
+          `}
         >
-          {/* DARK GRADIENT PLACEHOLDER (Shows instead of white) */}
+          {/* Dark gradient placeholder */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 z-0" />
-
-          {/* RENDER ALL IMAGES */}
+          
+          {/* Render all images */}
           {slides.map((slide, index) => (
             <img
               key={index}
@@ -111,15 +153,16 @@ const Hero = () => {
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={index === current ? "high" : "low"}
-              className={`absolute inset-0 w-full h-full object-cover will-change-transform
-    transition-all duration-500 ease-out
-    ${current === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}
-  `}
+              className={`absolute inset-0 w-full h-full object-cover
+                transition-all duration-500 ease-out
+                ${current === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}
+                ${loadedImages[index] ? "" : "blur-md brightness-75"}
+              `}
               onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
             />
           ))}
-
-          {/* DARK OVERLAY GRADIENT */}
+          
+          {/* Dark overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none z-10" />
 
           {/* Slider dots */}

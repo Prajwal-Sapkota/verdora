@@ -118,7 +118,7 @@ const Testimonial = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 p-4 rounded-full transition-all ${
+                className={`w-3 h-3 p-1 rounded-full transition-all ${
                   currentSlide === index 
                     ? 'bg-[#ab8c55] w-8' 
                     : 'bg-gray-300 hover:bg-gray-400'
