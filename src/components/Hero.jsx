@@ -47,7 +47,7 @@ const Hero = () => {
           <img
             src="/images/banner.avif"
             alt="Verdora Resort"
-            fetchpriority="high"
+            
             className="absolute inset-0 w-full h-full object-cover"
           />
 

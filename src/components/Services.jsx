@@ -157,7 +157,7 @@ const ServiceCard = ({ service, isMobile }) => {
                     <>
                         {/* Desktop overlay */}
                         <div className={`absolute inset-0 z-20 flex flex-col justify-center py-16 transition-all duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-                            <h3 className="text-4xl font-bold text-white text-center">{service.title}</h3>
+                            <h2 className="text-4xl font-bold text-white text-center">{service.title}</h2>
                         </div>
 
                         <div className="absolute inset-0 overflow-hidden rounded-t-full rounded-b-2xl">
