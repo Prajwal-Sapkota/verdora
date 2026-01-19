@@ -19,7 +19,6 @@ const Home = () => {
     <>
       <div className='overflow-x-hidden'>
         <Navbar />
-        <div className="pt-20"> {/* Add this wrapper with padding-top */}
           <main>
             <Hero />
             <About />
@@ -31,7 +30,6 @@ const Home = () => {
             <BookingForm />
           </main>
           <Footer />
-        </div>
 
 
       </div>
