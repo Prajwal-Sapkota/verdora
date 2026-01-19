@@ -44,7 +44,7 @@ const galleryItems = [
   },
   {
     id: 6,
-    src: "/images/gallery6.webp",
+    src: "/images/gallery6.avif",
     col: "md:col-span-1",
     row: "md:row-span-1",
     shape: "rounded-full",

@@ -39,7 +39,7 @@ const GalleryItems = () => {
     // Row 2
     { id: 4, src: "/images/gallery4.webp", shape: "rounded-[40%]", col: "md:col-span-1", row: "md:row-span-1" },
     { id: 5, src: "/images/gallery5.webp", shape: "rounded-full", col: "md:col-span-1", row: "md:row-span-2" },
-    { id: 6, src: "/images/gallery6.webp", shape: "rounded-[20px_60px_20px_60px]", col: "md:col-span-2", row: "md:row-span-1" },
+    { id: 6, src: "/images/gallery6.avif", shape: "rounded-[20px_60px_20px_60px]", col: "md:col-span-2", row: "md:row-span-1" },
     
     // Row 3
     { id: 7, src: "/images/gallery7.webp", shape: "rounded-[10px] ", col: "md:col-span-1", row: "md:row-span-1" },

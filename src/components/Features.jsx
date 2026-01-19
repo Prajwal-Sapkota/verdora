@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: "Tropical Bar",
-    image: "/images/tropical.jpg",
+    image: "/images/tropical.javif",
     icon: <FaCocktail />,
     details:
       "Sip on handcrafted tropical cocktails and refreshing beverages inspired by jungle flavors.",
