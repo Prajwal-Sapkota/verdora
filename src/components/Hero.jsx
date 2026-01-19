@@ -104,6 +104,7 @@ const Hero = () => {
               src={slide.image}
               alt={`Slide ${index + 1}`}
               loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100" : "opacity-0"
                 }`}
             />
