@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const slides = [
   { image: "/images/hero3.jpg" },
-  { image: "/images/hero1.avif" },
+  { image: "/images/hero1.jpg" },
   { image: "/images/hero4.jpg" },
 ];
 
@@ -103,7 +103,7 @@ const Hero = () => {
               key={index}
               src={slide.image}
               alt={`Slide ${index + 1}`}
-              loading={index === 0 ? "eager" : "lazy"}
+              loading={index === current ? "eager" : "lazy"}
               decoding="async"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100" : "opacity-0"
                 }`}
