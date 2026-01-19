@@ -74,9 +74,9 @@ const Hero = () => {
                 Resort
               </h1>
 
-              <div className="h-[2px] w-32 sm:w-40 bg-[#ab8c55] mx-auto mb-4 sm:mb-6"></div>
+              <div className="h-[2px] w-32 sm:w-40 bg-[#8a6a3f] mx-auto mb-4 sm:mb-6"></div>
 
-              <button className="px-8 sm:px-10 py-3 sm:py-4 bg-[#ab8c55] text-white tracking-wider hover:bg-[#927344] transition duration-300 text-base sm:text-lg rounded-full">
+              <button className="px-8 sm:px-10 py-3 sm:py-4 bg-[#8a6a3f] text-white tracking-wider hover:bg-[#735632] transition duration-300 text-base sm:text-lg rounded-full">
                 Reserve Your Stay
               </button>
             </div>

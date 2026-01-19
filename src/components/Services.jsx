@@ -163,7 +163,7 @@ const ServiceCard = ({ service, isMobile }) => {
                         <div className="absolute inset-0 overflow-hidden rounded-t-full rounded-b-2xl">
                             <div className={`absolute inset-0 bg-[#ab8c55] rounded-t-full rounded-b-2xl ${isHovered ? 'animate-slide-up-enter' : 'animate-slide-up-exit'}`} />
                             <div className={`absolute inset-0 p-8 flex flex-col justify-center py-24 transition-opacity duration-300 ${isHovered ? 'opacity-100 delay-200' : 'opacity-0'}`}>
-                                <h3 className="text-4xl font-bold text-white text-center mb-4">{service.title}</h3>
+                                <h2 className="text-4xl font-bold text-white text-center mb-4">{service.title}</h2>
                                 <p className="text-white leading-relaxed py-2 text-center">{service.description}</p>
                             </div>
                         </div>
