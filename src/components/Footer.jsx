@@ -126,7 +126,7 @@ const Footer = () => {
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[#ab8c55] hover:text-gray-900 text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-[#8a6a3f] hover:text-gray-900 text-sm font-medium transition-colors"
               >
                 <FaMapMarkerAlt className="w-3 h-3" />
                 <span>Get Directions</span>
