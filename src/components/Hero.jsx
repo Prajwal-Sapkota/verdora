@@ -90,7 +90,15 @@ const Hero = () => {
             ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-24"}
           `}
         >
-          {slides.map((slide, index) => (
+          {slides.map((slide, index) => {
+  const shouldLoad =
+    index === current ||
+    index === (current + 1) % slides.length;
+
+  if (!shouldLoad) return null;
+
+  return (
+
             <img
               key={index}
               src={slide.image}
@@ -99,7 +107,7 @@ const Hero = () => {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100" : "opacity-0"
                 }`}
             />
-          ))}
+          );})}
           <div className="absolute inset-0 bg-white/10 pointer-events-none" />
 
 
