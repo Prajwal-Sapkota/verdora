@@ -59,10 +59,13 @@ const Hero = () => {
             src="/images/banner.avif"
             alt="Verdora Resort"
             fetchPriority="high"
+            loading="eager"
+            width={1080}
+            height={720}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#f8f5f0]/80 via-[#f3eee6]/65 to-[#eae3d7]/30" />
-          
+
           {/* Content */}
           <div
             ref={leftRef}
@@ -91,14 +94,14 @@ const Hero = () => {
         {/* RIGHT SIDE SLIDER - FIXED VERSION */}
         <div
           ref={rightRef}
-          className={`relative h-[50vh] lg:h-[100vh] overflow-hidden
-            transition-all duration-1000 ease-out delay-200
-            ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-24"}
-          `}
+          className={`relative h-[50vh] lg:h-[100vh] overflow-hidden will-change-transform
+    transition-all duration-1000 ease-out delay-200
+    ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-24"}
+  `}
         >
           {/* DARK GRADIENT PLACEHOLDER (Shows instead of white) */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 z-0" />
-          
+
           {/* RENDER ALL IMAGES */}
           {slides.map((slide, index) => (
             <img
@@ -108,15 +111,14 @@ const Hero = () => {
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={index === current ? "high" : "low"}
-              className={`absolute inset-0 w-full h-full object-cover
-                transition-all duration-500 ease-out
-                ${current === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}
-                ${loadedImages[index] ? "" : "blur-md brightness-75"}
-              `}
+              className={`absolute inset-0 w-full h-full object-cover will-change-transform
+    transition-all duration-500 ease-out
+    ${current === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}
+  `}
               onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
             />
           ))}
-          
+
           {/* DARK OVERLAY GRADIENT */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none z-10" />
 
