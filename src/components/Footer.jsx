@@ -24,7 +24,7 @@ const Footer = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Verdora Resort
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
+          <p className="text-gray-800 max-w-xl mx-auto">
             A sanctuary of calm where nature meets luxury in the heart of Chitwan, Nepal.
           </p>
         </div>
@@ -148,7 +148,7 @@ const Footer = () => {
           </div>
           
           <div className="text-right">
-            <p className="text-gray-500 text-xs">
+            <p className="text-gray-700 text-xs">
               Crafted by <span className="text-gray-900 font-medium">S.A I.T Solution Nepal</span>
             </p>
           </div>
