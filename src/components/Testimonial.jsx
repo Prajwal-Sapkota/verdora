@@ -83,7 +83,7 @@ const Testimonial = () => {
               {/* Testimonial Content */}
               <div className="flex-1">
                 {/* Quote Icon */}
-                <div className="text-gray-300 py-2">
+                <div className="text-gray-700 py-2">
                   <FaQuoteLeft className="text-2xl" />
                 </div>
                 

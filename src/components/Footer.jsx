@@ -106,7 +106,7 @@ const Footer = () => {
               </h4>
 
               {/* Partners Grid with Sliding Effect */}
-              <div className="relative h-72">
+              <div className="relative h-48">
                 {/* Sliding Container */}
                 <div 
                   className="absolute inset-0 transition-all duration-500 ease-in-out"
