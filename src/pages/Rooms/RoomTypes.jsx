@@ -1,73 +1,12 @@
+// components/RoomTypes.jsx
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import roomsData from '../../data/rooms.json';
 
 const RoomTypes = () => {
     const sectionRef = useRef(null);
     const [hasAnimated, setHasAnimated] = useState(false);
 
-    const rooms = [
-        {
-            id: 1,
-            name: "Bungalow Apartments",
-            description: "Experience the ultimate in comfort and relaxation as you indulge in the serenity of your own private retreat.",
-            price: "$39 / NIGHT",
-            image: "/images/bunglow.jpg",
-            bathrooms: 1,
-            bedrooms: 2,
-            persons: "2-4"
-        },
-        {
-            id: 2,
-            name: "Family Cottage",
-            description: "Our cottage provides a serene retreat for those seeking solace in nature's embrace for a peaceful and memorable stay.",
-            price: "$58 / NIGHT",
-            image: "/images/family.avif",
-            bathrooms: 2,
-            bedrooms: 3,
-            persons: "4-7"
-        },
-        {
-            id: 3,
-            name: "Bubble House",
-            description: "Perfect for romantic getaways, intimate gatherings, or solo adventures seeking a whimsical escape.",
-            price: "$54 / NIGHT",
-            image: "/images/bubble.avif",
-            bathrooms: 2,
-            bedrooms: 2,
-            persons: "2-3"
-        },
-        {
-            id: 4,
-            name: "Standard Cottage",
-            description: "Relax in rustic elegance, unwind on your private veranda, and immerse yourself in the beauty of the surroundings.",
-            price: "$60 / NIGHT",
-            image: "/images/standard.avif",
-            bathrooms: 1,
-            bedrooms: 2,
-            persons: "3-5"
-        },
-        {
-            id: 5,
-            name: "Villa Bodrum",
-            description: "With spacious interiors, modern amenities, and private outdoor spaces, each Villa is a haven of relaxation and rejuvenation.",
-            price: "$108 / NIGHT",
-            image: "/images/villa.avif",
-            bathrooms: 3,
-            bedrooms: 4,
-            persons: "6-11"
-        },
-        {
-            id: 6,
-            name: "Single Apartments",
-            description: "Designed for solo travelers or cozy couples, our apartments offer a cozy retreat amidst picturesque surroundings.",
-            price: "$46 / NIGHT",
-            image: "/images/single.avif",
-            bathrooms: 1,
-            bedrooms: 1,
-            persons: "1-2"
-        }
-    ];
-
-    // Intersection Observer for scroll animation
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -92,10 +31,11 @@ const RoomTypes = () => {
             <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16 md:py-24">
                 {/* Room Types Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
-                    {rooms.map((room, index) => (
-                        <div 
+                    {roomsData.rooms.map((room, index) => (
+                        <Link 
+                            to={`/rooms/${room.slug}`}
                             key={room.id} 
-                            className="group cursor-pointer"
+                            className="group cursor-pointer block"
                             style={{
                                 transform: hasAnimated 
                                     ? 'translateY(0)' 
@@ -123,7 +63,7 @@ const RoomTypes = () => {
 
                                 {/* Description */}
                                 <p className="text-[#262626]/80 text-lg leading-relaxed">
-                                    {room.description}
+                                    {room.shortDescription}
                                 </p>
 
                                 {/* Room Details */}
@@ -146,7 +86,7 @@ const RoomTypes = () => {
                                     {room.price}
                                 </h1>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
@@ -160,12 +100,14 @@ const RoomTypes = () => {
                         willChange: 'transform, opacity'
                     }}
                 >
-                    <button className="group relative overflow-hidden px-8 py-4 rounded-full font-semibold text-base shadow-lg bg-[#ab8c55] text-[#262626] hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-500 mt-4">
-                        <span className="relative z-10 flex items-center justify-center gap-3">
-                            View All Accommodations
-                            <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
-                        </span>
-                    </button>
+                    <Link to="/rooms">
+                        <button className="group relative overflow-hidden px-8 py-4 rounded-full font-semibold text-base shadow-lg bg-[#ab8c55] text-[#262626] hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-500 mt-4">
+                            <span className="relative z-10 flex items-center justify-center gap-3">
+                                View All Accommodations
+                                <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                            </span>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

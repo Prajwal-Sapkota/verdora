@@ -1,0 +1,368 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "slug": "bubble-house",
+      "name": "Bubble House",
+      "shortDescription": "Perfect for romantic getaways, intimate gatherings, or solo adventures seeking a warm and cozy atmosphere.",
+      "description": "Perfect for romantic getaways, intimate gatherings, or solo adventures seeking a whimsical escape.",
+      "price": "$54 / NIGHT",
+      "image": "/images/bubble.avif",
+      "heroImage": "/images/bubble-hero.webp",
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "persons": "2-3",
+      "intro": {
+        "title": "Bubble House For Rent: Experience Unparalleled Luxury And Serenity",
+        "description": "Perched atop a secluded hillside overlooking the mountains, the Bubble Hotel offers a one-of-a-kind retreat in Bubble House immersed in nature's embrace. Located just a short drive from the main town center, it provides easy access to local attractions while offering an exclusive sanctuary away from the hustle and bustle.",
+        "longDescription": "Indulge in the ultimate luxury getaway at the Bubble House, where breathtaking views, unparalleled privacy, and exquisitely designed rooms cater to your every need. Whether you seek relaxation, adventure, or simply a chance to reconnect with nature, this exquisite retreat promises to elevate your stay to new heights of serenity and sophistication."
+      },
+      "advantages": [
+        {
+          "title": "Unparalleled Privacy",
+          "description": "Tucked away from the beaten path, the Bubble House offers an exclusive retreat where guests can unwind in complete privacy. Surrounded by lush greenery and panoramic views, it's the perfect escape for couples seeking a romantic getaway or individuals craving solitude and tranquility."
+        },
+        {
+          "title": "Immersive Nature Experience",
+          "description": "Designed to blur the boundaries between indoor luxury and outdoor beauty, the Bubble House allows guests to immerse themselves in nature like never before. With its expansive walls and ceiling, guests can truly experience the art of nature indoors, with breathtaking sunsets framing the comfort of their own private escape."
+        },
+        {
+          "title": "Luxurious Amenities",
+          "description": "Despite its remote location, the Bubble House spans no expense when it comes to luxury and comfort. From plush bedding and designer furnishings to state-of-the-art technology and thoughtful touches, every aspect of the house is meticulously curated to exceed guest expectations."
+        },
+        {
+          "title": "Sustainable Design",
+          "description": "Built with sustainability in mind, the Bubble House embraces eco-friendly materials, energy-efficient features, and innovative design elements to minimize its environmental footprint. Guests can rest assured knowing that their stay supports responsible tourism practices without compromising on luxury or comfort."
+        },
+        {
+          "title": "Tailored Experience",
+          "description": "Whether it's a romantic dinner under the stars, a rejuvenating spa treatment in the heart of nature, or an adrenaline-pumping adventure exploring the surrounding wilderness, the hotel's dedicated concierge team is on hand to curate bespoke experiences tailored to guests' preferences and desires."
+        }
+      ],
+      "features": {
+        "bedrooms": {
+          "count": 2,
+          "description": "The highlight of the Bubble House is its unique bubble-shaped rooms, each equipped with transparent walls and ceilings that offer uninterrupted views of the surrounding landscape. Furnished with sumptuous bedding, plush seating, and modern amenities, these intimate sanctuaries provide the ultimate blend of comfort and awe-inspiring beauty."
+        },
+        "bathrooms": {
+          "count": 2,
+          "description": "Guests can pamper themselves in the sleek and stylish en-suite bathrooms, featuring rain showers, luxurious toilets, and designer fixtures. With floor-to-ceiling windows offering panoramic views of the outdoors, every shower becomes a rejuvenating experience amidst nature's splendor."
+        },
+        "commonAreas": "The Bubble House also boasts spacious common areas where guests can socialize, relax, and unwind. From the chic lounge with its cozy fireplace and panoramic views to the gourmet kitchen equipped with top-of-the-line appliances, and dining area perfect for entertaining, every space is designed with both style and functionality in mind.",
+        "outdoorSpaces": "Step outside to discover a world of outdoor living opportunities, from the expansive terrace with its comfortable seating and dining areas to the private infinity pool overlooking the valley below. Whether it's soaking up the sun, stargazing under the night sky, or simply basking in the serenity of nature, the outdoor spaces at the Bubble House offer endless possibilities for relaxation and rejuvenation."
+      },
+      "rules": {
+        "noSmoking": "For the comfort and safety of all guests, smoking is strictly prohibited in the hotel rooms. Designated smoking areas are available outside the premises for those who wish to smoke.",
+        "noiseControl": "Please be considerate of other guests and keep noise levels to a minimum, especially during late hours. Excessive noise can disrupt the peaceful atmosphere of the hotel and disturb the rest of fellow guests.",
+        "roomCapacity": "Each room has a maximum occupancy limit based on the safety regulations and room size. Please adhere to this limit to ensure the safety and comfort of all guests. Additional guests beyond the specified limit may not be permitted.",
+        "security": "For your safety and security, always keep your room door locked when inside or leaving the room. Do not share your room key or access codes with anyone outside your party, and report any suspicious activity to hotel staff immediately."
+      },
+      "galleryImages": [
+        "/images/bubble-interior.jpg",
+        "/images/bubble-bathroom.jpg",
+        "/images/bubble-outdoor.jpg",
+        "/images/bubble-bedroom.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "bungalow-apartments",
+      "name": "Bungalow Apartments",
+      "shortDescription": "Perfect for romantic getaways, intimate gatherings, or solo adventures seeking a warm and cozy atmosphere.",
+      "description": "Experience the ultimate in comfort and relaxation as you indulge in the serenity of your own private retreat.",
+      "price": "$500 / NIGHT",
+      "image": "/images/bunglow.jpg",
+      "heroImage": "/images/bungalow-hero.webp",
+      "bathrooms": 1,
+      "bedrooms": 2,
+      "persons": "2-4",
+      "intro": {
+        "title": "Bungalow Apartments For Rent: Experience Unparalleled Luxury And Serenity",
+        "description": "Nestled in a tranquil setting surrounded by nature, our Bungalow Apartments offer a perfect blend of rustic charm and modern luxury. Located within easy reach of local attractions while providing a peaceful sanctuary away from the city noise.",
+        "longDescription": "Enjoy a luxurious escape at our Bungalow Apartments, where comfort meets elegance. Each apartment is thoughtfully designed to provide maximum comfort while maintaining a connection with the natural surroundings. Whether you're looking for a romantic getaway or a peaceful solo retreat, our bungalows offer the perfect setting."
+      },
+      "advantages": [
+        {
+          "title": "Private Retreat",
+          "description": "Each bungalow offers complete privacy with its own entrance and outdoor space, perfect for couples or small families seeking a quiet escape."
+        },
+        {
+          "title": "Modern Comforts",
+          "description": "Despite their rustic appearance, our bungalows are equipped with all modern amenities including high-speed internet, smart TVs, and fully equipped kitchens."
+        },
+        {
+          "title": "Natural Setting",
+          "description": "Wake up to the sound of birds and enjoy your morning coffee on your private patio surrounded by lush gardens and natural beauty."
+        },
+        {
+          "title": "Eco-Friendly",
+          "description": "Built using sustainable materials and designed to minimize environmental impact while providing maximum comfort."
+        }
+      ],
+      "features": {
+        "bedrooms": {
+          "count": 2,
+          "description": "Spacious bedrooms with comfortable king-sized beds, quality linens, and ample storage space. Large windows provide plenty of natural light and beautiful garden views."
+        },
+        "bathrooms": {
+          "count": 1,
+          "description": "Modern bathroom with walk-in shower, premium toiletries, and quality fixtures. Clean, bright, and designed for relaxation."
+        },
+        "commonAreas": "Open-plan living area with comfortable seating, dining space, and fully equipped kitchen. Perfect for relaxing after a day of exploration or preparing your own meals.",
+        "outdoorSpaces": "Private patio or balcony with seating area, perfect for enjoying morning coffee or evening drinks. Some units feature outdoor dining areas and garden access."
+      },
+      "rules": {
+        "noSmoking": "Smoking is not allowed inside the bungalows. Designated smoking areas are available in the garden.",
+        "noiseControl": "Quiet hours are observed from 10 PM to 7 AM to ensure all guests can enjoy a peaceful stay.",
+        "roomCapacity": "Maximum occupancy is 4 persons. Additional guests are not permitted.",
+        "security": "Please secure your bungalow when leaving. Keep doors and windows locked for safety."
+      },
+      "galleryImages": [
+        "/images/bungalow-interior.jpg",
+        "/images/bungalow-bedroom.jpg",
+        "/images/bungalow-outdoor.jpg",
+        "/images/bungalow-view.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "villa-bodrum",
+      "name": "Villa Bodrum",
+      "shortDescription": "Luxury villa experience with premium amenities and spacious living areas.",
+      "description": "With spacious interiors, modern amenities, and private outdoor spaces, each Villa is a haven of relaxation and rejuvenation.",
+      "price": "$500 / NIGHT",
+      "image": "/images/villa.avif",
+      "heroImage": "/images/villa-hero.webp",
+      "bathrooms": 3,
+      "bedrooms": 4,
+      "persons": "6-11",
+      "intro": {
+        "title": "Villa Bodrum: Ultimate Luxury Villa Experience",
+        "description": "Experience the epitome of luxury at Villa Bodrum, where contemporary design meets Mediterranean charm. This expansive villa offers the perfect setting for large families, groups of friends, or corporate retreats.",
+        "longDescription": "Villa Bodrum redefines luxury living with its spacious layout, premium amenities, and attention to detail. From the moment you enter, you'll be captivated by the elegant interiors, stunning views, and impeccable service designed to make your stay unforgettable."
+      },
+      "advantages": [
+        {
+          "title": "Spacious Luxury",
+          "description": "Generously sized rooms and living areas provide ample space for relaxation and entertainment, perfect for large groups or families."
+        },
+        {
+          "title": "Premium Amenities",
+          "description": "Enjoy exclusive amenities including private pool, home theater, game room, and professional-grade kitchen appliances."
+        },
+        {
+          "title": "Panoramic Views",
+          "description": "Strategic location offers breathtaking views of the surrounding landscape from multiple vantage points throughout the villa."
+        },
+        {
+          "title": "Personalized Service",
+          "description": "Dedicated concierge and housekeeping services ensure every detail of your stay is perfectly managed."
+        }
+      ],
+      "features": {
+        "bedrooms": {
+          "count": 4,
+          "description": "Four spacious bedrooms including a master suite with private balcony, walk-in closet, and en-suite bathroom. All rooms feature premium bedding and luxury furnishings."
+        },
+        "bathrooms": {
+          "count": 3,
+          "description": "Three luxurious bathrooms including a master bathroom with soaking tub, rain shower, and premium bath amenities. Marble finishes and designer fixtures throughout."
+        },
+        "commonAreas": "Multiple living areas including formal living room, family room, and entertainment room. Gourmet kitchen with professional appliances and separate dining room for 10+ guests.",
+        "outdoorSpaces": "Expansive outdoor area featuring private infinity pool, multiple terraces, outdoor kitchen and barbecue area, dining spaces, and landscaped gardens."
+      },
+      "rules": {
+        "noSmoking": "Smoking is strictly prohibited inside the villa. Designated outdoor smoking areas are provided.",
+        "noiseControl": "Please respect neighbors and maintain reasonable noise levels, especially in outdoor areas after 11 PM.",
+        "roomCapacity": "Maximum capacity is 11 guests. Additional visitors must be approved in advance.",
+        "security": "24/7 security monitoring. Please use provided safes for valuables and keep gates secured."
+      },
+      "galleryImages": [
+        "/images/villa-interior.jpg",
+        "/images/villa-pool.jpg",
+        "/images/villa-living.jpg",
+        "/images/villa-kitchen.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "family-cottage",
+      "name": "Family Cottage",
+      "shortDescription": "Perfect family getaway with comfortable accommodations and family-friendly amenities.",
+      "description": "Our cottage provides a serene retreat for those seeking solace in nature's embrace.",
+      "price": "$500 / NIGHT",
+      "image": "/images/family.avif",
+      "heroImage": "/images/family-hero.webp",
+      "bathrooms": 2,
+      "bedrooms": 3,
+      "persons": "6-7",
+      "intro": {
+        "title": "Family Cottage: Your Home Away From Home",
+        "description": "Designed with families in mind, our Family Cottage offers the perfect blend of comfort, space, and functionality. Located in a peaceful setting, it's ideal for creating lasting family memories.",
+        "longDescription": "The Family Cottage combines rustic charm with modern conveniences to create the perfect family vacation home. With dedicated spaces for both adults and children, everyone can relax and enjoy their time together in a comfortable, welcoming environment."
+      },
+      "advantages": [
+        {
+          "title": "Family-Focused Design",
+          "description": "Thoughtfully designed with families in mind, featuring child-safe spaces, flexible sleeping arrangements, and entertainment options for all ages."
+        },
+        {
+          "title": "Safe Environment",
+          "description": "Secure, gated property with child-friendly outdoor areas and safety features throughout the cottage."
+        },
+        {
+          "title": "Convenient Location",
+          "description": "Close to family-friendly attractions, parks, and activities while maintaining a peaceful, natural setting."
+        },
+        {
+          "title": "All-Inclusive Comfort",
+          "description": "Fully equipped with everything a family needs, from kitchen essentials to entertainment systems and comfortable bedding."
+        }
+      ],
+      "features": {
+        "bedrooms": {
+          "count": 3,
+          "description": "Three comfortable bedrooms including a master bedroom, children's room with bunk beds, and flexible guest room. All rooms feature blackout curtains and quality mattresses."
+        },
+        "bathrooms": {
+          "count": 2,
+          "description": "Two full bathrooms including one with bathtub for children. Family-friendly amenities and safety features throughout."
+        },
+        "commonAreas": "Open-plan living area with comfortable family seating, dedicated play area for children, and family dining space. Well-equipped kitchen with family-sized appliances.",
+        "outdoorSpaces": "Secure garden area with children's play equipment, family-sized outdoor dining area, barbecue facilities, and safe swimming area."
+      },
+      "rules": {
+        "noSmoking": "Strictly no smoking anywhere on the property to ensure a healthy environment for children.",
+        "noiseControl": "Family-friendly quiet hours from 9 PM to 8 AM to ensure all guests can rest comfortably.",
+        "roomCapacity": "Maximum occupancy of 7 persons including children. Must be one adult per two children under 12.",
+        "security": "Please supervise children at all times, especially near water features. Keep gates and doors locked."
+      },
+      "galleryImages": [
+        "/images/family-interior.jpg",
+        "/images/family-kitchen.jpg",
+        "/images/family-garden.jpg",
+        "/images/family-play.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "standard-cottage",
+      "name": "Standard Cottage",
+      "shortDescription": "Classic cottage experience with comfortable amenities and charming decor.",
+      "description": "Relax in rustic elegance, unwind on your private veranda, and immerse yourself in the beauty of the surroundings.",
+      "price": "$60 / NIGHT",
+      "image": "/images/standard.avif",
+      "heroImage": "/images/standard-hero.webp",
+      "bathrooms": 1,
+      "bedrooms": 2,
+      "persons": "3-5",
+      "intro": {
+        "title": "Standard Cottage: Authentic Rustic Charm",
+        "description": "Experience traditional cottage living with all the modern comforts. Our Standard Cottage offers a genuine rustic experience without compromising on comfort or convenience.",
+        "longDescription": "The Standard Cottage captures the essence of country living with its charming decor, cozy atmosphere, and attention to traditional details. Perfect for couples or small families looking for an authentic retreat in a peaceful setting."
+      },
+      "advantages": [
+        {
+          "title": "Authentic Experience",
+          "description": "Traditional cottage architecture and decor provide an authentic rustic experience with modern comforts."
+        },
+        {
+          "title": "Cozy Atmosphere",
+          "description": "Warm, inviting interiors with fireplace, comfortable furnishings, and charming details create a perfect cozy retreat."
+        },
+        {
+          "title": "Value Excellence",
+          "description": "All the essential amenities at an excellent value, providing comfortable accommodations without unnecessary luxuries."
+        },
+        {
+          "title": "Prime Location",
+          "description": "Located close to hiking trails, local attractions, and natural wonders while maintaining peaceful seclusion."
+        }
+      ],
+      "features": {
+        "bedrooms": {
+          "count": 2,
+          "description": "Two cozy bedrooms with comfortable double beds, traditional furnishings, and garden views. Simple, clean, and comfortable."
+        },
+        "bathrooms": {
+          "count": 1,
+          "description": "Compact but fully functional bathroom with shower, toilet, and basic amenities. Clean and well-maintained."
+        },
+        "commonAreas": "Cozy living area with comfortable seating, dining space for 4, and basic kitchenette with essential appliances and cookware.",
+        "outdoorSpaces": "Private veranda with seating, small garden area, and access to shared outdoor facilities including barbecue area and garden seating."
+      },
+      "rules": {
+        "noSmoking": "No smoking inside the cottage. Smoking allowed only in designated outdoor areas.",
+        "noiseControl": "Respect other guests and maintain quiet atmosphere, especially after 10 PM.",
+        "roomCapacity": "Maximum 5 guests. Additional guests not permitted without prior approval.",
+        "security": "Basic security measures. Please lock doors when leaving and keep valuables secure."
+      },
+      "galleryImages": [
+        "/images/standard-interior.jpg",
+        "/images/standard-bedroom.jpg",
+        "/images/standard-veranda.jpg",
+        "/images/standard-garden.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "single-apartments",
+      "name": "Single Apartments",
+      "shortDescription": "Compact and efficient apartments perfect for solo travelers or couples.",
+      "description": "Designed for solo travelers or cozy couples, our apartments offer a cozy retreat amidst picturesque surroundings.",
+      "price": "$46 / NIGHT",
+      "image": "/images/single.avif",
+      "heroImage": "/images/single-hero.webp",
+      "bathrooms": 1,
+      "bedrooms": 1,
+      "persons": "1-2",
+      "intro": {
+        "title": "Single Apartments: Compact Comfort",
+        "description": "Perfectly designed for solo travelers or couples, our Single Apartments maximize space and efficiency while providing all necessary comforts in a compact, well-designed package.",
+        "longDescription": "Our Single Apartments prove that good things come in small packages. Thoughtfully designed to make the most of every square foot, these apartments provide a comfortable, functional, and affordable option for travelers who value simplicity and efficiency."
+      },
+      "advantages": [
+        {
+          "title": "Space Efficiency",
+          "description": "Clever design maximizes limited space, providing all essential amenities without feeling cramped or crowded."
+        },
+        {
+          "title": "Budget Friendly",
+          "description": "Excellent value for money, offering comfortable accommodations at an affordable price point."
+        },
+        {
+          "title": "Convenient Location",
+          "description": "Centrally located with easy access to public transportation, dining options, and local attractions."
+        },
+        {
+          "title": "Low Maintenance",
+          "description": "Easy to keep clean and organized, perfect for travelers who want to spend more time exploring and less time maintaining."
+        }
+      ],
+      "features": {
+        "bedrooms": {
+          "count": 1,
+          "description": "Compact bedroom area with comfortable double bed, integrated storage solutions, and blackout curtains for restful sleep."
+        },
+        "bathrooms": {
+          "count": 1,
+          "description": "Efficient bathroom with shower, toilet, and sink. Compact but fully functional with basic amenities."
+        },
+        "commonAreas": "Multi-functional living space combining sleeping, sitting, and dining areas. Compact kitchenette with basic cooking facilities and mini-refrigerator.",
+        "outdoorSpaces": "Access to shared balcony or patio area, communal garden space, and shared outdoor seating areas."
+      },
+      "rules": {
+        "noSmoking": "Strictly no smoking in apartments. Designated smoking areas available in common outdoor spaces.",
+        "noiseControl": "Be considerate of neighbors in adjacent apartments. Keep noise levels moderate at all times.",
+        "roomCapacity": "Maximum 2 guests. Not suitable for additional visitors or overnight guests.",
+        "security": "Individual door locks. Keep apartment secured when leaving and use provided safe for valuables."
+      },
+      "galleryImages": [
+        "/images/single-interior.jpg",
+        "/images/single-kitchen.jpg",
+        "/images/single-bathroom.jpg",
+        "/images/single-balcony.jpg"
+      ]
+    }
+  ]
+}
