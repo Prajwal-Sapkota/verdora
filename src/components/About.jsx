@@ -57,7 +57,7 @@ const About = () => {
           <div className="space-y-6 sm:space-y-7 md:space-y-8 py-6 sm:py-8 md:py-10 lg:py-12">
             <div>
               <div className="flex items-center gap-2 sm:gap-3 py-3 sm:py-4">
-                <span class="text-[#5a3d1f] font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                <span className="text-[#5a3d1f] font-semibold tracking-wider uppercase text-xs sm:text-sm">
                   ABOUT RESORTS
                 </span>
               </div>
@@ -124,7 +124,7 @@ const About = () => {
                 <div className="relative overflow-hidden rounded-lg shadow-xl border-3 sm:border-4 border-white 
         w-[220px] sm:w-[250px] md:w-[280px] lg:w-[320px] xl:w-[350px]">
                   <img
-                    src="/images/resort2.avif"
+                    src="/images/resort2.jpg"
                     alt="Pool View"
                     className="w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[340px] xl:h-[360px] object-cover"
                   />

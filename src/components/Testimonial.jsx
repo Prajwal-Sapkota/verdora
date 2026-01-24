@@ -10,7 +10,7 @@ const Testimonial = () => {
       text: "The hotel exudes sophistication and elegance, creating a truly luxurious atmosphere. The attention to detail in every aspect of the hotel, from the chic decor to the gourmet dining options, is evident.",
       author: "Albert Garcia",
       role: "Guest",
-      image: "/images/t2.avif"
+      image: "/images/t2.jpg"
     },
     {
       id: 2,

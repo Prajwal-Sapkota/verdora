@@ -79,7 +79,7 @@ const Hero = () => {
         <div className="relative h-[50vh] lg:h-[100vh]">
           {/* Background image */}
           <img
-            src="/images/banner.avif"
+            src="/images/banner.jpg"
             alt="Verdora Resort"
             fetchPriority="high"
             loading="eager" 
