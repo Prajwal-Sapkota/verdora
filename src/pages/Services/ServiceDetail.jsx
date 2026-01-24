@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
-import * as IoIcons from "react-icons/io5";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import BookingForm from "./BookingForm";
@@ -9,6 +7,9 @@ import ShareModal from "./ShareModal";
 import GallerySlider from "./GallerySlider";
 import servicesData from "../../data/services.json";
 import usePageTitle from "../../hooks/usePageTitle";
+import { IoCallOutline, IoCheckmarkCircle, IoHeadsetOutline, IoLocationOutline, IoMailOutline, IoSearchOutline, IoTimeOutline } from "react-icons/io5";
+import { FaArrowLeft, FaArrowRight, FaClock, FaMoneyBillWave, FaSpa, FaTag } from "react-icons/fa6";
+import { FaShareAlt } from "react-icons/fa";
 
 const ServiceDetail = () => {
     const { slug } = useParams();
@@ -125,7 +126,7 @@ const ServiceDetail = () => {
             <div className="min-h-screen flex items-center justify-center bg-gray-50">
                 <div className="text-center p-8">
                     <div className="text-6xl text-gray-300 mb-6">
-                        <IoIcons.IoSearchOutline />
+                        <IoSearchOutline />
                     </div>
                     <h2 className="text-2xl font-bold text-gray-700 mb-4">Service Not Found</h2>
                     <p className="text-gray-600 mb-6">The service you're looking for doesn't exist.</p>
@@ -133,7 +134,7 @@ const ServiceDetail = () => {
                         to="/services"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ab8c55] text-white hover:bg-[#8a6a3f] transition-colors"
                     >
-                        <FaIcons.FaArrowLeft /> Back to Services
+                        <FaArrowLeft /> Back to Services
                     </Link>
                 </div>
             </div>
@@ -196,7 +197,7 @@ const ServiceDetail = () => {
                                         {/* Price */}
                                         {service.price && (
                                             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 sm:py-3 rounded-lg">
-                                                <FaIcons.FaMoneyBillWave className="text-base sm:text-lg" />
+                                                <FaMoneyBillWave className="text-base sm:text-lg" />
                                                 <div>
                                                     <div className="text-lg sm:text-xl font-bold">{service.price.split(' ')[0]}</div>
                                                     <div className="text-[10px] sm:text-xs text-gray-300">Starting Price</div>
@@ -207,7 +208,7 @@ const ServiceDetail = () => {
                                         {/* Duration */}
                                         {service.duration && (
                                             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 sm:py-3 rounded-lg">
-                                                <FaIcons.FaClock className="text-base sm:text-lg" />
+                                                <FaClock className="text-base sm:text-lg" />
                                                 <div>
                                                     <div className="text-lg sm:text-xl font-bold">{service.duration}</div>
                                                     <div className="text-[10px] sm:text-xs text-gray-300">Duration</div>
@@ -228,14 +229,14 @@ const ServiceDetail = () => {
                                         onClick={() => setBookingModal(true)}
                                         className="px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full bg-[#ab8c55] text-white font-semibold hover:bg-[#8a6d42] transition-all flex items-center gap-2 sm:gap-3 group text-sm sm:text-base md:text-lg"
                                     >
-                                        Book Now <FaIcons.FaArrowRight className="group-hover:translate-x-2 transition-transform" />
+                                        Book Now <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
                                     </button>
 
                                     <button
                                         onClick={() => setShareModal(true)}
                                         className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-white/10 backdrop-blur-sm text-white font-semibold hover:bg-white/20 transition-all flex items-center gap-2 sm:gap-3 group text-sm sm:text-base md:text-lg"
                                     >
-                                        Share <FaIcons.FaShareAlt className="group-hover:scale-110 transition-transform" />
+                                        Share <FaShareAlt className="group-hover:scale-110 transition-transform" />
                                     </button>
                                 </div>
                             </div>
@@ -244,9 +245,7 @@ const ServiceDetail = () => {
                 </div>
             </div>
 
-            {/* Main Content */}
 
-            {/* Intro Section - White background */}
             <div className="bg-[#f5f2ed]">
                 <div
                     ref={introRef}
@@ -387,7 +386,7 @@ const ServiceDetail = () => {
                                         ? 'bg-[#ab8c55] text-white'
                                         : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'}`}
                                 >
-                                    <FaIcons.FaSpa className="inline mr-1.5 sm:mr-2" />
+                                    <FaSpa className="inline mr-1.5 sm:mr-2" />
                                     Treatments
                                 </button>
                             )}
@@ -398,7 +397,7 @@ const ServiceDetail = () => {
                                         ? 'bg-[#ab8c55] text-white'
                                         : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'}`}
                                 >
-                                    <FaIcons.FaTag className="inline mr-1.5 sm:mr-2" />
+                                    <FaTag className="inline mr-1.5 sm:mr-2" />
                                     Packages
                                 </button>
                             )}
@@ -430,7 +429,7 @@ const ServiceDetail = () => {
                                                             </p>
                                                             {item.duration && (
                                                                 <span className="text-xs text-gray-500 flex items-center gap-1 mt-0.5">
-                                                                    <IoIcons.IoTimeOutline className="text-xs" />
+                                                                    <IoTimeOutline className="text-xs" />
                                                                     {item.duration}
                                                                 </span>
                                                             )}
@@ -472,14 +471,14 @@ const ServiceDetail = () => {
                                             </p>
 
                                             <p className="text-xs sm:text-sm flex items-center gap-2 mb-3 sm:mb-4 opacity-90">
-                                                <IoIcons.IoTimeOutline />
+                                                <IoTimeOutline />
                                                 {pkg.duration}
                                             </p>
 
                                             <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 md:mb-6 text-xs sm:text-sm">
                                                 {pkg.includes.slice(0, 4).map((item, i) => (
                                                     <li key={i} className="flex items-start gap-2">
-                                                        <IoIcons.IoCheckmarkCircle className="mt-0.5 flex-shrink-0" />
+                                                        <IoCheckmarkCircle className="mt-0.5 flex-shrink-0" />
                                                         <span className="flex-1">{item}</span>
                                                     </li>
                                                 ))}
@@ -556,7 +555,7 @@ const ServiceDetail = () => {
                                                     </span>
                                                     <div className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 text-xs sm:text-sm text-gray-500">
                                                         <span className="flex items-center gap-1">
-                                                            <FaIcons.FaClock className="text-xs" />
+                                                            <FaClock className="text-xs" />
                                                             {s.duration}
                                                         </span>
                                                         <span className="flex items-center gap-1">
@@ -592,20 +591,20 @@ const ServiceDetail = () => {
                                     </p>
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
-                                            <IoIcons.IoCallOutline className="text-xl" />
+                                            <IoCallOutline className="text-xl" />
                                             <a href={`tel:${service.contact.phone}`} className="hover:text-white/80">
                                                 {service.contact.phone}
                                             </a>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <IoIcons.IoMailOutline className="text-xl" />
+                                            <IoMailOutline className="text-xl" />
                                             <a href={`mailto:${service.contact.email}`} className="hover:text-white/80">
                                                 {service.contact.email}
                                             </a>
                                         </div>
                                         {service.contact.location && (
                                             <div className="flex items-center gap-3">
-                                                <IoIcons.IoLocationOutline className="text-xl" />
+                                                <IoLocationOutline className="text-xl" />
                                                 <span>{service.contact.location}</span>
                                             </div>
                                         )}
@@ -613,7 +612,7 @@ const ServiceDetail = () => {
                                 </div>
                                 <div className="text-center">
                                     <div className="inline-block p-6 bg-white/10 backdrop-blur-sm rounded-xl">
-                                        <IoIcons.IoHeadsetOutline className="text-4xl mb-4 mx-auto" />
+                                        <IoHeadsetOutline className="text-4xl mb-4 mx-auto" />
                                         <p className="text-lg font-medium">24/7 Support Available</p>
                                     </div>
                                 </div>
