@@ -1,0 +1,1250 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "slug": "spa-wellness",
+      "name": "Spa & Wellness",
+      "subtitle": "A Ritual of Renewal",
+      "tagline": "Reconnect with Your Inner Peace",
+      "shortDescription": "Deeply immersive wellness experience designed to restore balance and calm the senses.",
+      "description": "A deeply immersive wellness experience designed to restore balance, calm the senses, and reconnect you with yourself. Our spa offers a sanctuary of peace where traditional healing meets modern luxury.",
+      "image": "/images/cozyspa.avif",
+      "heroImage": "/images/spa.jpg",
+      "icon": "FaSpa",
+      "color": "#8a6a3f",
+      "intro": {
+        "title": "Spa & Wellness Sanctuary",
+        "subtitle": "Reconnect with Your Inner Peace",
+        "description": "Step into a world of tranquility at our award-winning spa, where ancient healing traditions meet contemporary wellness practices.",
+        "longDescription": "Our Spa & Wellness center is more than just treatments—it's a holistic journey towards balance and rejuvenation. Each therapy is carefully crafted to address your unique needs, combining expert techniques with premium organic products in an atmosphere of complete serenity."
+      },
+      "features": [
+        {
+          "title": "Holistic Treatments",
+          "description": "Comprehensive therapies including massage, aromatherapy, reflexology, and energy healing.",
+          "icon": "FaHeart"
+        },
+        {
+          "title": "Expert Therapists",
+          "description": "Certified wellness practitioners with extensive training in traditional and modern techniques.",
+          "icon": "FaHandsHelping"
+        },
+        {
+          "title": "Premium Products",
+          "description": "Organic, sustainably sourced products from trusted wellness brands.",
+          "icon": "FaLeaf"
+        },
+        {
+          "title": "Private Suites",
+          "description": "Personal treatment rooms with temperature control and sound therapy.",
+          "icon": "FaHome"
+        },
+        {
+          "title": "Wellness Programs",
+          "description": "Customized multi-day retreats including yoga, meditation, and nutrition.",
+          "icon": "FaBookOpen"
+        },
+        {
+          "title": "Relaxation Areas",
+          "description": "Post-treatment lounges with herbal tea and garden views.",
+          "icon": "FaCoffee"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Massage Therapy",
+          "items": [
+            { "name": "Traditional Thai Massage", "duration": "90 mins", "price": "$120" },
+            { "name": "Swedish Relaxation", "duration": "60 mins", "price": "$95" },
+            { "name": "Deep Tissue Therapy", "duration": "75 mins", "price": "$110" },
+            { "name": "Hot Stone Massage", "duration": "90 mins", "price": "$135" },
+            { "name": "Aromatherapy Massage", "duration": "60 mins", "price": "$100" },
+            { "name": "Couples Massage", "duration": "120 mins", "price": "$220" }
+          ]
+        },
+        {
+          "category": "Facial Treatments",
+          "items": [
+            { "name": "Hydrating Facial", "duration": "60 mins", "price": "$90" },
+            { "name": "Anti-Aging Treatment", "duration": "75 mins", "price": "$120" },
+            { "name": "Brightening Facial", "duration": "60 mins", "price": "$95" },
+            { "name": "Detox & Purifying", "duration": "90 mins", "price": "$130" }
+          ]
+        },
+        {
+          "category": "Body Treatments",
+          "items": [
+            { "name": "Body Scrub", "duration": "60 mins", "price": "$85" },
+            { "name": "Body Wrap", "duration": "75 mins", "price": "$110" },
+            { "name": "Detox Therapy", "duration": "90 mins", "price": "$140" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Wellness Escape",
+          "price": "$250",
+          "duration": "3 hours",
+          "includes": ["Full body massage", "Signature facial", "Body scrub", "Herbal tea", "Lounge access"]
+        },
+        {
+          "name": "Ultimate Relaxation",
+          "price": "$450",
+          "duration": "5 hours",
+          "includes": ["Couples massage", "Hot stone therapy", "Aromatherapy facial", "Champagne", "Private suite"]
+        },
+        {
+          "name": "Royal Spa Day",
+          "price": "$650",
+          "duration": "Full day",
+          "includes": ["All treatments", "Private therapist", "Gourmet lunch", "Wellness consultation", "Gift package"]
+        }
+      ],
+      "duration": "60-180 minutes",
+      "price": "Starting from $95",
+      "includes": [
+        "Consultation with wellness expert",
+        "Pre-treatment relaxation time",
+        "Full treatment session",
+        "Post-treatment herbal tea",
+        "Access to relaxation areas",
+        "Wellness guidance"
+      ],
+      "operatingHours": {
+        "weekdays": "9:00 AM - 9:00 PM",
+        "weekends": "8:00 AM - 10:00 PM",
+        "lastAppointment": "8:00 PM"
+      },
+      "galleryImages": [
+        "/images/spainterior.webp",
+        "/images/spatreatment.jpeg",
+        "/images/spaproducts.jpg",
+        "/images/sparelaxation.jpg",
+        "/images/spagarden.avif",
+        "/images/spacouple.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Sarah Johnson",
+          "rating": 5,
+          "comment": "The most relaxing experience I've ever had. Pure bliss.",
+          "date": "March 2024"
+        }
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 123",
+        "email": "spa@verdora.com",
+        "location": "Ground Floor, East Wing"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "luxury-event-hall",
+      "name": "Luxury Event Hall",
+      "subtitle": "Moments That Matter",
+      "tagline": "Where Dreams Become Celebrations",
+      "shortDescription": "A refined space crafted for weddings, celebrations, and gatherings that deserve elegance and atmosphere.",
+      "description": "A refined space crafted for weddings, celebrations, and gatherings that deserve elegance and atmosphere. Our luxury event hall combines timeless sophistication with state-of-the-art facilities.",
+      "image": "/images/hall.jpg",
+      "heroImage": "/images/hall.jpg",
+      "icon": "FaGlassCheers",
+      "color": "#9a7a4f",
+      "intro": {
+        "title": "Luxury Event Hall",
+        "subtitle": "Where Dreams Become Celebrations",
+        "description": "Transform your special moments into unforgettable celebrations in our exquisite event hall.",
+        "longDescription": "From initial planning to flawless execution, we ensure every detail reflects your unique style and exceeds expectations."
+      },
+      "features": [
+        {
+          "title": "Grand Ballroom",
+          "description": "5,000 sq.ft. hall with 20-foot ceilings and crystal chandeliers.",
+          "icon": "FaHome"
+        },
+        {
+          "title": "Advanced AV Systems",
+          "description": "State-of-the-art sound, lighting, and projection systems.",
+          "icon": "FaWifi"
+        },
+        {
+          "title": "Flexible Layouts",
+          "description": "Modular design for various event setups up to 500 guests.",
+          "icon": "FaUsers"
+        },
+        {
+          "title": "Executive Suites",
+          "description": "Private preparation rooms and VIP lounges.",
+          "icon": "FaShieldAlt"
+        },
+        {
+          "title": "Gourmet Catering",
+          "description": "In-house culinary team with diverse menu options.",
+          "icon": "FaUtensils"
+        },
+        {
+          "title": "Event Coordination",
+          "description": "Dedicated planners ensuring seamless execution.",
+          "icon": "FaHandsHelping"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Wedding Packages",
+          "items": [
+            { "name": "Intimate Wedding", "duration": "4 hours", "price": "$2,500" },
+            { "name": "Traditional Wedding", "duration": "6 hours", "price": "$5,000" },
+            { "name": "Luxury Wedding", "duration": "8 hours", "price": "$8,500" },
+            { "name": "Royal Wedding", "duration": "12 hours", "price": "$15,000" }
+          ]
+        },
+        {
+          "category": "Corporate Events",
+          "items": [
+            { "name": "Business Conference", "duration": "6 hours", "price": "$3,000" },
+            { "name": "Product Launch", "duration": "4 hours", "price": "$4,000" },
+            { "name": "Annual Gala", "duration": "5 hours", "price": "$6,000" },
+            { "name": "Award Ceremony", "duration": "4 hours", "price": "$5,500" }
+          ]
+        },
+        {
+          "category": "Social Events",
+          "items": [
+            { "name": "Birthday Celebration", "duration": "4 hours", "price": "$1,800" },
+            { "name": "Anniversary Party", "duration": "5 hours", "price": "$2,200" },
+            { "name": "Engagement Ceremony", "duration": "4 hours", "price": "$2,000" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Intimate Gathering",
+          "price": "$2,500",
+          "duration": "4 hours",
+          "includes": ["Up to 50 guests", "Basic AV setup", "Standard decor", "Light snacks"]
+        },
+        {
+          "name": "Grand Celebration",
+          "price": "$5,000",
+          "duration": "6 hours",
+          "includes": ["Up to 200 guests", "Premium AV", "Custom decor", "Cocktail hour", "Basic catering"]
+        },
+        {
+          "name": "Premium Event",
+          "price": "$8,000",
+          "duration": "8 hours",
+          "includes": ["Up to 500 guests", "Full production", "Luxury decor", "VIP services", "Gourmet catering"]
+        }
+      ],
+      "capacity": {
+        "theater": "500 guests",
+        "banquet": "350 guests",
+        "classroom": "250 guests",
+        "cocktail": "400 guests"
+      },
+      "galleryImages": [
+        "/images/hallinterior.avif",
+        "/images/hallwedding.webp",
+        "/images/hallcorporate.webp",
+        "/images/hallsetup.png",
+        "/images/halldecor.jpg",
+        "/images/hallstage.webp"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 456",
+        "email": "events@verdora.com",
+        "location": "Convention Center, Main Building"
+      }
+    },
+    {
+      "id": 3,
+      "slug": "infinity-pool",
+      "name": "Infinity Pool",
+      "subtitle": "Where Water Meets Horizon",
+      "tagline": "Swim in the Sky",
+      "shortDescription": "An open, tranquil space where time slows down and the landscape becomes part of your experience.",
+      "description": "An open, tranquil space where time slows down and the landscape becomes part of your experience. Our infinity pool offers breathtaking views and serene relaxation.",
+      "image": "/images/pool.jpg",
+      "heroImage": "/images/pool.jpg",
+      "icon": "FaSwimmingPool",
+      "color": "#4a9fb8",
+      "intro": {
+        "title": "Infinity Pool",
+        "subtitle": "Merge with Nature's Majesty",
+        "description": "Experience the illusion of swimming into the horizon at our spectacular infinity pool.",
+        "longDescription": "More than a swimming facility—it's a sensory experience where water, sky, and landscape merge seamlessly."
+      },
+      "features": [
+        {
+          "title": "Horizon Views",
+          "description": "25-meter infinity edge with panoramic mountain views.",
+          "icon": "FaMountain"
+        },
+        {
+          "title": "Temperature Control",
+          "description": "Maintained at 28-30°C year-round with advanced heating.",
+          "icon": "FaSun"
+        },
+        {
+          "title": "Underwater Features",
+          "description": "Integrated sound system and LED mood lighting.",
+          "icon": "FaWater"
+        },
+        {
+          "title": "Poolside Luxury",
+          "description": "Premium sun loungers and cabanas with butler service.",
+          "icon": "FaStar"
+        },
+        {
+          "title": "Hydrotherapy Area",
+          "description": "Separate Jacuzzi heated to 38°C for relaxation.",
+          "icon": "FaWind"
+        },
+        {
+          "title": "Safety Features",
+          "description": "Certified lifeguards and non-slip surfaces.",
+          "icon": "FaShieldAlt"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Day Passes",
+          "items": [
+            { "name": "Morning Session", "duration": "9AM-1PM", "price": "$45" },
+            { "name": "Afternoon Session", "duration": "2PM-6PM", "price": "$55" },
+            { "name": "Evening Session", "duration": "6PM-10PM", "price": "$65" },
+            { "name": "Full Day Pass", "duration": "9AM-10PM", "price": "$95" }
+          ]
+        },
+        {
+          "category": "Weekly Passes",
+          "items": [
+            { "name": "3-Day Pass", "duration": "Any 3 days", "price": "$250" },
+            { "name": "5-Day Pass", "duration": "Any 5 days", "price": "$380" },
+            { "name": "7-Day Pass", "duration": "Full week", "price": "$500" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Poolside Relaxation",
+          "price": "$120",
+          "duration": "4 hours",
+          "includes": ["Standard cabana", "2 loungers", "Towel service", "Fruit platter", "Unlimited water"]
+        },
+        {
+          "name": "Premium Pool Day",
+          "price": "$200",
+          "duration": "6 hours",
+          "includes": ["Premium cabana", "4 loungers", "Personal butler", "Champagne", "Gourmet snacks"]
+        },
+        {
+          "name": "Ultimate Pool Experience",
+          "price": "$350",
+          "duration": "8 hours",
+          "includes": ["Private cabana", "Unlimited guests", "Full bar service", "Gourmet lunch", "Pool toys"]
+        }
+      ],
+      "specifications": {
+        "dimensions": "25m × 10m",
+        "depth": "1.2m to 1.8m",
+        "temperature": "28-30°C",
+        "capacity": "50 swimmers"
+      },
+      "cabanas": [
+        {
+          "type": "Standard Cabana",
+          "price": "$120/4 hours",
+          "includes": ["Private space", "2 loungers", "Mini fridge"]
+        },
+        {
+          "type": "Premium Cabana",
+          "price": "$200/4 hours",
+          "includes": ["Private space", "4 loungers", "Personal butler", "Fruit platter"]
+        }
+      ],
+      "galleryImages": [
+        "/images/poolday.webp",
+        "/images/poolnight.webp",
+        "/images/poolcabana.jpg",
+        "/images/poolview.jpg",
+        "/images/pooljacuzzi.jpg",
+        "/images/poolservice.jpg"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 789",
+        "email": "recreation@verdora.com",
+        "location": "Resort Level 3, West Wing"
+      }
+    },
+    {
+      "id": 4,
+      "slug": "fine-dining",
+      "name": "Fine Dining",
+      "subtitle": "Curated Culinary Journeys",
+      "tagline": "A Symphony of Flavors",
+      "shortDescription": "A thoughtful blend of local flavors and global inspiration, served with intention and artistry.",
+      "description": "A thoughtful blend of local flavors and global inspiration, served with intention and artistry. Our fine dining restaurant offers an unforgettable gastronomic journey.",
+      "image": "/images/dining.jpg",
+      "heroImage": "/images/dininghero.webp",
+      "icon": "FaUtensils",
+      "color": "#c19a6b",
+      "intro": {
+        "title": "Fine Dining Restaurant",
+        "subtitle": "A Symphony of Flavors and Elegance",
+        "description": "Embark on a culinary adventure where master chefs transform the finest local ingredients into works of art.",
+        "longDescription": "Beyond exceptional food—it's a complete sensory journey with curated wine pairings, impeccable service, and elegant ambiance."
+      },
+      "features": [
+        {
+          "title": "Chef's Table",
+          "description": "Exclusive counter seating with kitchen view and chef interaction.",
+          "icon": "FaUserTie"
+        },
+        {
+          "title": "Seasonal Menus",
+          "description": "Regularly updated menus featuring freshest local ingredients.",
+          "icon": "FaLeaf"
+        },
+        {
+          "title": "Wine Collection",
+          "description": "Over 500 labels from renowned vineyards worldwide.",
+          "icon": "FaWineGlassAlt"
+        },
+        {
+          "title": "Private Dining",
+          "description": "Intimate rooms for special occasions with customized menus.",
+          "icon": "FaGlassCheers"
+        },
+        {
+          "title": "Cooking Classes",
+          "description": "Interactive sessions with our master chefs.",
+          "icon": "FaBookOpen"
+        },
+        {
+          "title": "Farm to Table",
+          "description": "Direct partnerships with local farmers and producers.",
+          "icon": "FaTree"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Tasting Menus",
+          "items": [
+            { "name": "5-Course Discovery", "duration": "2.5 hours", "price": "$120" },
+            { "name": "7-Course Signature", "duration": "3.5 hours", "price": "$180" },
+            { "name": "9-Course Degustation", "duration": "4 hours", "price": "$250" },
+            { "name": "Chef's Surprise", "duration": "3 hours", "price": "$200" }
+          ]
+        },
+        {
+          "category": "Wine Pairings",
+          "items": [
+            { "name": "Standard Pairing", "duration": "Per course", "price": "$60" },
+            { "name": "Premium Pairing", "duration": "Per course", "price": "$120" },
+            { "name": "Reserve Pairing", "duration": "Per course", "price": "$200" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Romantic Dinner",
+          "price": "$350",
+          "duration": "3 hours",
+          "includes": ["Private table", "5-course menu", "Champagne", "Rose petals", "Personal waiter"]
+        },
+        {
+          "name": "Celebration Feast",
+          "price": "$600",
+          "duration": "4 hours",
+          "includes": ["Private dining room", "7-course menu", "Wine pairing", "Birthday cake", "Photographer"]
+        },
+        {
+          "name": "Gourmet Experience",
+          "price": "$1,000",
+          "duration": "5 hours",
+          "includes": ["Chef's table", "9-course menu", "Premium pairing", "Kitchen tour", "Signed menu"]
+        }
+      ],
+      "cuisineTypes": [
+        "Modern Nepalese Fusion",
+        "Contemporary European",
+        "Asian Specialties",
+        "Vegetarian & Vegan",
+        "Gluten-free Options"
+      ],
+      "diningOptions": {
+        "breakfast": "7:00 AM - 11:00 AM",
+        "lunch": "12:00 PM - 3:00 PM",
+        "dinner": "6:00 PM - 11:00 PM",
+        "bar": "5:00 PM - 1:00 AM"
+      },
+      "chefSpecialties": [
+        "Himalayan Truffle Risotto",
+        "Pan-seared Himalayan Trout",
+        "Slow-cooked Lamb Shank",
+        "Organic Vegetable Terrine"
+      ],
+      "galleryImages": [
+        "/images/dininginterior.avif",
+        "/images/diningfood.jpg",
+        "/images/diningchef.webp",
+        "/images/diningwine.jpg",
+        "/images/diningtable.webp",
+        "/images/diningview.jpg"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 234",
+        "email": "dining@verdora.com",
+        "location": "Main Building, Level 2"
+      }
+    },
+    {
+      "id": 5,
+      "slug": "nature-experiences",
+      "name": "Nature Experiences",
+      "subtitle": "Immersed in the Wild",
+      "tagline": "Rediscover Your Wild Spirit",
+      "shortDescription": "Explore lush surroundings through mindful walks, fresh air, and moments of quiet discovery.",
+      "description": "Explore lush surroundings through mindful walks, fresh air, and moments of quiet discovery. Connect with nature through our guided experiences.",
+      "image": "/images/nature.jpg",
+      "heroImage": "/images/nature.jpg",
+      "icon": "FaLeaf",
+      "color": "#5a8c5a",
+      "intro": {
+        "title": "Nature Experiences",
+        "subtitle": "Rediscover Your Wild Spirit",
+        "description": "Step outside and immerse yourself in the breathtaking natural beauty surrounding our resort.",
+        "longDescription": "Designed to foster deeper connection with nature through education, adventure, and mindfulness."
+      },
+      "features": [
+        {
+          "title": "Guided Nature Walks",
+          "description": "Interpretive walks through diverse ecosystems with expert naturalists.",
+          "icon": "FaTree"
+        },
+        {
+          "title": "Bird Watching",
+          "description": "Sessions to spot over 150 species of local and migratory birds.",
+          "icon": "FaFeather"
+        },
+        {
+          "title": "Forest Meditation",
+          "description": "Mindfulness sessions in serene forest clearings.",
+          "icon": "FaPeace"
+        },
+        {
+          "title": "Wildlife Safaris",
+          "description": "Jeep and walking safaris to observe native wildlife.",
+          "icon": "FaBinoculars"
+        },
+        {
+          "title": "Photography Tours",
+          "description": "Guided excursions focusing on landscape and wildlife photography.",
+          "icon": "FaCamera"
+        },
+        {
+          "title": "Star Gazing",
+          "description": "Nighttime astronomy sessions with telescopes.",
+          "icon": "FaStar"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Guided Tours",
+          "items": [
+            { "name": "Morning Bird Walk", "duration": "2 hours", "price": "$45" },
+            { "name": "Sunset Nature Walk", "duration": "2 hours", "price": "$50" },
+            { "name": "Forest Meditation", "duration": "1.5 hours", "price": "$35" },
+            { "name": "Wildlife Safari", "duration": "3 hours", "price": "$80" }
+          ]
+        },
+        {
+          "category": "Photography Tours",
+          "items": [
+            { "name": "Landscape Photography", "duration": "3 hours", "price": "$120" },
+            { "name": "Bird Photography", "duration": "4 hours", "price": "$150" },
+            { "name": "Sunrise Photography", "duration": "2 hours", "price": "$90" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Nature Discovery",
+          "price": "$180",
+          "duration": "6 hours",
+          "includes": ["2 guided walks", "Bird watching", "Forest meditation", "Picnic lunch", "Guide"]
+        },
+        {
+          "name": "Wildlife Adventure",
+          "price": "$350",
+          "duration": "8 hours",
+          "includes": ["Jeep safari", "Walking safari", "Photography session", "Gourmet lunch", "Expert guide"]
+        },
+        {
+          "name": "Premium Nature Retreat",
+          "price": "$600",
+          "duration": "2 days",
+          "includes": ["All activities", "Private guide", "Luxury picnic", "Transportation", "Photo package"]
+        }
+      ],
+      "activities": [
+        "Sunrise Mountain View Hikes",
+        "Riverbank Nature Trails",
+        "Butterfly Garden Exploration",
+        "Herbal Plant Identification",
+        "Waterfall Discovery Walks",
+        "Sunset Viewpoint Visits"
+      ],
+      "duration": "2-4 hours per activity",
+      "difficulty": "Easy to Moderate",
+      "included": [
+        "Expert naturalist guide",
+        "All necessary equipment",
+        "Refreshments and snacks",
+        "Transportation if required",
+        "Entry permits and fees"
+      ],
+      "galleryImages": [
+        "/images/naturewalk.jpg",
+        "/images/naturebird.jpg",
+        "/images/naturewildlife.jpg",
+        "/images/naturesunset.jpg",
+        "/images/natureforest.jpg",
+        "/images/natureriver.jpg"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 567",
+        "email": "nature@verdora.com",
+        "location": "Activities Desk, Lobby"
+      }
+    },
+    {
+      "id": 6,
+      "slug": "personal-concierge",
+      "name": "Personal Concierge",
+      "subtitle": "Thoughtfully Arranged",
+      "tagline": "Your Gateway to Perfection",
+      "shortDescription": "From arrival to departure, every detail is handled with care, discretion, and personalized attention.",
+      "description": "From arrival to departure, every detail is handled with care, discretion, and personalized attention. Experience seamless service with our dedicated concierge team.",
+      "image": "/images/concierge.jpg",
+      "heroImage": "/images/conciergehero.jpg",
+      "icon": "FaConciergeBell",
+      "color": "#6b7280",
+      "intro": {
+        "title": "Personal Concierge",
+        "subtitle": "Your Gateway to Perfection",
+        "description": "Experience the ultimate in personalized service with our dedicated concierge team.",
+        "longDescription": "Transforms your stay into a truly bespoke experience with extensive local knowledge and impeccable attention to detail."
+      },
+      "features": [
+        {
+          "title": "24/7 Availability",
+          "description": "Round-the-clock access for any request, anytime.",
+          "icon": "FaClock"
+        },
+        {
+          "title": "Pre-arrival Planning",
+          "description": "Comprehensive itinerary planning before your arrival.",
+          "icon": "FaCalendarAlt"
+        },
+        {
+          "title": "VIP Access",
+          "description": "Exclusive access to sold-out events and premium experiences.",
+          "icon": "FaStar"
+        },
+        {
+          "title": "Transport Coordination",
+          "description": "Seamless arrangement of private transfers and charters.",
+          "icon": "FaCar"
+        },
+        {
+          "title": "Dining Reservations",
+          "description": "Priority bookings at sought-after restaurants.",
+          "icon": "FaUtensils"
+        },
+        {
+          "title": "Event Management",
+          "description": "Full coordination of special celebrations and surprises.",
+          "icon": "FaGlassCheers"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Basic Services",
+          "items": [
+            { "name": "Restaurant Reservation", "duration": "15 mins", "price": "$25" },
+            { "name": "Transport Booking", "duration": "20 mins", "price": "$30" },
+            { "name": "Activity Planning", "duration": "30 mins", "price": "$40" },
+            { "name": "Spa Appointment", "duration": "10 mins", "price": "$20" }
+          ]
+        },
+        {
+          "category": "Premium Services",
+          "items": [
+            { "name": "VIP Event Access", "duration": "1 hour", "price": "$150" },
+            { "name": "Private Shopping", "duration": "2 hours", "price": "$200" },
+            { "name": "Custom Itinerary", "duration": "3 hours", "price": "$300" },
+            { "name": "Special Surprise", "duration": "2 hours", "price": "$250" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Essential Concierge",
+          "price": "$200",
+          "duration": "3 days",
+          "includes": ["5 reservations", "Basic planning", "Airport pickup", "Daily check-ins"]
+        },
+        {
+          "name": "Premium Concierge",
+          "price": "$500",
+          "duration": "7 days",
+          "includes": ["Unlimited requests", "Full itinerary", "VIP access", "24/7 dedicated line"]
+        },
+        {
+          "name": "Executive Concierge",
+          "price": "$1,000",
+          "duration": "14 days",
+          "includes": ["Personal assistant", "All access passes", "Luxury transport", "Exclusive experiences"]
+        }
+      ],
+      "services": [
+        "Airport Meet & Greet",
+        "Luggage Handling",
+        "Flight Rebooking",
+        "Medical Assistance",
+        "Shopping Services",
+        "Sightseeing Arrangements",
+        "Business Support",
+        "Gift Purchasing"
+      ],
+      "specialRequests": [
+        "Romantic Surprise Arrangements",
+        "Birthday Celebrations",
+        "Family Activity Coordination",
+        "Wellness Scheduling",
+        "Adventure Bookings",
+        "Cultural Immersion"
+      ],
+      "responseTime": "Under 15 minutes",
+      "galleryImages": [
+        "/images/conciergeservice.jpg",
+        "/images/conciergearrival.jpg",
+        "/images/conciergeplanning.jpg",
+        "/images/conciergevip.jpg",
+        "/images/conciergedesk.jpg",
+        "/images/conciergeteam.jpg"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 890",
+        "email": "concierge@verdora.com",
+        "location": "Main Lobby, 24/7 Desk"
+      }
+    },
+    {
+      "id": 7,
+      "slug": "car-rental",
+      "name": "Car Rental",
+      "subtitle": "Freedom to Explore",
+      "tagline": "Premium Mobility at Your Fingertips",
+      "shortDescription": "Premium vehicle rentals for your convenience and comfort during your stay.",
+      "description": "Premium vehicle rentals for your convenience and comfort during your stay. Whether you need a luxury sedan or an SUV for family trips, we have the perfect vehicle for you.",
+      "image": "/images/carrent.avif",
+      "heroImage": "/images/carrenthero.jpg",
+      "icon": "FaCar",
+      "color": "#3a7ca5",
+      "intro": {
+        "title": "Premium Car Rental",
+        "subtitle": "Explore Chitwan in Comfort and Style",
+        "description": "Discover the freedom to explore Chitwan and beyond with our premium fleet of vehicles, maintained to the highest standards.",
+        "longDescription": "Our car rental service offers the ultimate convenience for exploring the region. With a diverse fleet ranging from compact cars for city driving to spacious SUVs for family adventures, we ensure your journey is comfortable, safe, and memorable."
+      },
+      "features": [
+        {
+          "title": "Premium Fleet",
+          "description": "Latest model vehicles including luxury sedans, SUVs, and 4x4s for all terrain types.",
+          "icon": "FaCar"
+        },
+        {
+          "title": "Flexible Rentals",
+          "description": "Daily, weekly, and monthly rental options with unlimited mileage packages.",
+          "icon": "FaClock"
+        },
+        {
+          "title": "Full Insurance",
+          "description": "Comprehensive coverage including collision damage waiver and third-party liability.",
+          "icon": "FaShieldAlt"
+        },
+        {
+          "title": "24/7 Support",
+          "description": "Round-the-clock roadside assistance and emergency support services.",
+          "icon": "FaPhone"
+        },
+        {
+          "title": "GPS Navigation",
+          "description": "Latest GPS systems with pre-loaded tourist attractions and scenic routes.",
+          "icon": "FaMapMarkerAlt"
+        },
+        {
+          "title": "Child Safety",
+          "description": "Child seats available in various sizes for different age groups.",
+          "icon": "FaChild"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Luxury Sedans",
+          "items": [
+            { "model": "Toyota Camry", "seats": 5, "price": "$75/day" },
+            { "model": "Honda Accord", "seats": 5, "price": "$70/day" },
+            { "model": "Mercedes E-Class", "seats": 5, "price": "$120/day" }
+          ]
+        },
+        {
+          "category": "SUVs & 4x4",
+          "items": [
+            { "model": "Toyota Fortuner", "seats": 7, "price": "$90/day" },
+            { "model": "Mitsubishi Pajero", "seats": 7, "price": "$95/day" },
+            { "model": "Land Cruiser", "seats": 8, "price": "$150/day" }
+          ]
+        },
+        {
+          "category": "Compact Cars",
+          "items": [
+            { "model": "Suzuki Swift", "seats": 5, "price": "$50/day" },
+            { "model": "Hyundai i20", "seats": 5, "price": "$45/day" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Weekend Explorer",
+          "price": "$200",
+          "duration": "3 days",
+          "includes": ["SUV rental", "Unlimited mileage", "Full insurance", "GPS navigation", "24/7 support"]
+        },
+        {
+          "name": "Weekly Adventure",
+          "price": "$450",
+          "duration": "7 days",
+          "includes": ["Luxury SUV", "Unlimited mileage", "Premium insurance", "Child seats", "Roadside assistance"]
+        },
+        {
+          "name": "Monthly Explorer",
+          "price": "$1,200",
+          "duration": "30 days",
+          "includes": ["Any vehicle", "Unlimited mileage", "Full coverage", "Two drivers", "Maintenance included"]
+        }
+      ],
+      "includes": [
+        "Full tank of fuel at pickup",
+        "Unlimited mileage",
+        "Comprehensive insurance",
+        "24/7 roadside assistance",
+        "GPS navigation system",
+        "Airport pickup/drop-off"
+      ],
+      "requirements": [
+        "Valid driver's license",
+        "International driving permit (for foreigners)",
+        "Credit card for security deposit",
+        "Minimum age: 23 years",
+        "One year driving experience"
+      ],
+      "galleryImages": [
+        "/images/carsedan.jpg",
+        "/images/carsuv.webp",
+        "/images/car.jpg",
+        "/images/carinterior.webp",
+        "/images/carrental.jpg",
+        "/images/carservice.webp"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 111",
+        "email": "carrental@verdora.com",
+        "location": "Resort Parking Area"
+      }
+    },
+    {
+      "id": 8,
+      "slug": "dry-sauna",
+      "name": "Dry Sauna",
+      "subtitle": "Heat Therapy Haven",
+      "tagline": "Purify Body and Mind",
+      "shortDescription": "Rejuvenate your body and mind in our premium wellness facility.",
+      "description": "Our state-of-the-art dry sauna offers a serene retreat from the hustle and bustle of the outside world. Rejuvenate your body and mind in our premium wellness facility.",
+      "image": "/images/drysauna.jpg",
+      "heroImage": "/images/drysaunahero.jpg",
+      "icon": "FaFire",
+      "color": "#c94c4c",
+      "intro": {
+        "title": "Traditional Dry Sauna",
+        "subtitle": "Ancient Heat Therapy for Modern Wellness",
+        "description": "Experience the therapeutic benefits of traditional dry heat in our authentic Finnish-style sauna.",
+        "longDescription": "Our dry sauna combines centuries-old heat therapy with modern comfort and safety features. The dry heat helps detoxify the body, improve circulation, relieve muscle tension, and promote deep relaxation."
+      },
+      "features": [
+        {
+          "title": "Finnish Design",
+          "description": "Authentic cedar wood construction with optimal heat retention properties.",
+          "icon": "FaHome"
+        },
+        {
+          "title": "Temperature Control",
+          "description": "Precise temperature regulation from 70°C to 100°C (158°F to 212°F).",
+          "icon": "FaThermometerHalf"
+        },
+        {
+          "title": "Aromatherapy Options",
+          "description": "Essential oil infusions including eucalyptus, pine, and lavender.",
+          "icon": "FaLeaf"
+        },
+        {
+          "title": "Relaxation Area",
+          "description": "Adjacent cool-down lounge with hydration station and comfortable seating.",
+          "icon": "FaCoffee"
+        },
+        {
+          "title": "Safety Features",
+          "description": "Emergency call buttons, timers, and temperature monitoring systems.",
+          "icon": "FaShieldAlt"
+        },
+        {
+          "title": "Private Sessions",
+          "description": "Bookable private sessions for individuals, couples, or small groups.",
+          "icon": "FaUsers"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Sauna Sessions",
+          "items": [
+            { "name": "Standard Session", "duration": "60 minutes", "price": "$45" },
+            { "name": "Couples Session", "duration": "90 minutes", "price": "$80" },
+            { "name": "Group Session", "duration": "120 minutes", "price": "$120" }
+          ]
+        },
+        {
+          "category": "Add-on Services",
+          "items": [
+            { "name": "Aromatherapy", "duration": "15 minutes", "price": "$20" },
+            { "name": "Cold Plunge", "duration": "30 minutes", "price": "$25" },
+            { "name": "Herbal Tea Service", "duration": "Service", "price": "$15" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Sauna Experience",
+          "price": "$75",
+          "duration": "90 minutes",
+          "includes": ["Private sauna", "Aromatherapy", "Herbal tea", "Cold plunge", "Towels"]
+        },
+        {
+          "name": "Wellness Package",
+          "price": "$120",
+          "duration": "120 minutes",
+          "includes": ["Sauna session", "Cold therapy", "Relaxation massage", "Nutritional guidance", "Lounge access"]
+        },
+        {
+          "name": "Ultimate Detox",
+          "price": "$200",
+          "duration": "3 hours",
+          "includes": ["Multiple sessions", "All therapies", "Private guide", "Wellness meal", "Gift set"]
+        }
+      ],
+      "benefits": [
+        "Detoxification through sweating",
+        "Improved cardiovascular health",
+        "Muscle tension relief",
+        "Stress reduction and relaxation",
+        "Skin purification",
+        "Improved sleep quality",
+        "Boosted immune system"
+      ],
+      "saunaProtocol": [
+        "Shower before entering",
+        "Limit sessions to 15-20 minutes",
+        "Cool down gradually",
+        "Stay hydrated throughout",
+        "Listen to your body",
+        "Consult doctor if pregnant or with health conditions"
+      ],
+      "operatingHours": {
+        "men": "8:00 AM - 12:00 PM, 6:00 PM - 10:00 PM",
+        "women": "1:00 PM - 5:00 PM, 8:00 PM - 11:00 PM",
+        "mixed": "Weekends 10:00 AM - 4:00 PM",
+        "private": "Available on request"
+      },
+      "galleryImages": [
+        "/images/saunainterior.webp",
+        "/images/saunaheat.jpg",
+        "/images/saunarelax.jpg",
+        "/images/saunawood.jpeg",
+        "/images/saunalounge.jpeg",
+        "/images/saunawellness.webp"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 222",
+        "email": "wellness@verdora.com",
+        "location": "Spa & Wellness Center, Lower Level"
+      }
+    },
+    {
+      "id": 9,
+      "slug": "kids-camp",
+      "name": "Kids' Camp",
+      "subtitle": "Adventures in Fun",
+      "tagline": "Where Children Discover and Play",
+      "shortDescription": "Fun and safe activities for kids.",
+      "description": "Engaging activities and supervised care for children of all ages. Our trained professionals ensure your kids have a fun, educational, and safe experience.",
+      "image": "/images/kids.jpg",
+      "heroImage": "/images/kidscamphero.jpg",
+      "icon": "FaChild",
+      "color": "#ff9f1c",
+      "intro": {
+        "title": "Verdora Kids' Camp",
+        "subtitle": "Creative Adventures for Young Explorers",
+        "description": "A safe, engaging, and educational environment where children can play, learn, and make new friends while parents enjoy their vacation.",
+        "longDescription": "Our Kids' Camp is designed to provide children with memorable experiences through carefully curated activities that combine fun, education, and adventure. Supervised by certified childcare professionals in a secure, stimulating environment."
+      },
+      "features": [
+        {
+          "title": "Certified Supervisors",
+          "description": "First-aid certified staff with background checks and child development training.",
+          "icon": "FaShieldAlt"
+        },
+        {
+          "title": "Age-Appropriate Activities",
+          "description": "Programs tailored for different age groups: 3-5, 6-9, and 10-12 years.",
+          "icon": "FaUsers"
+        },
+        {
+          "title": "Educational Programming",
+          "description": "Activities that combine learning with fun, focusing on nature, culture, and creativity.",
+          "icon": "FaBookOpen"
+        },
+        {
+          "title": "Safe Environment",
+          "description": "Secure facility with CCTV, controlled access, and safety protocols.",
+          "icon": "FaLock"
+        },
+        {
+          "title": "Flexible Hours",
+          "description": "Half-day, full-day, and evening programs to suit family schedules.",
+          "icon": "FaClock"
+        },
+        {
+          "title": "Healthy Meals",
+          "description": "Nutritious snacks and meals included, accommodating dietary restrictions.",
+          "icon": "FaAppleAlt"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Daily Programs",
+          "items": [
+            { "name": "Morning Session", "duration": "9AM-12PM", "price": "$35" },
+            { "name": "Afternoon Session", "duration": "1PM-4PM", "price": "$35" },
+            { "name": "Evening Session", "duration": "6PM-9PM", "price": "$40" },
+            { "name": "Full Day", "duration": "9AM-4PM", "price": "$65" }
+          ]
+        },
+        {
+          "category": "Special Activities",
+          "items": [
+            { "name": "Arts & Crafts", "duration": "2 hours", "price": "$25" },
+            { "name": "Nature Walk", "duration": "2 hours", "price": "$30" },
+            { "name": "Cooking Class", "duration": "1.5 hours", "price": "$35" },
+            { "name": "Science Lab", "duration": "2 hours", "price": "$40" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Half Day",
+          "price": "$35",
+          "duration": "3 hours",
+          "includes": ["Supervised activities", "Snacks", "Materials", "Age-appropriate games"]
+        },
+        {
+          "name": "Full Day",
+          "price": "$65",
+          "duration": "6 hours",
+          "includes": ["All activities", "Lunch & snacks", "Educational materials", "Progress report"]
+        },
+        {
+          "name": "Weekly Pass",
+          "price": "$250",
+          "duration": "5 days",
+          "includes": ["Full day program", "Special excursions", "Camp T-shirt", "Certificate", "Photo album"]
+        }
+      ],
+      "ageGroups": [
+        {
+          "group": "Toddlers (3-5 years)",
+          "activities": ["Story time", "Arts & crafts", "Music & movement", "Outdoor play"]
+        },
+        {
+          "group": "Children (6-9 years)",
+          "activities": ["Nature walks", "Science experiments", "Cooking classes", "Games"]
+        },
+        {
+          "group": "Tweens (10-12 years)",
+          "activities": ["Adventure challenges", "Cultural workshops", "Team sports", "Creative projects"]
+        }
+      ],
+      "requirements": [
+        "Completed registration form",
+        "Emergency contact information",
+        "List of allergies or medical conditions",
+        "Signed consent forms",
+        "Change of clothes (for younger children)"
+      ],
+      "galleryImages": [
+        "/images/kidsactivities.jpg",
+        "/images/kidscampcraft.jpg",
+        "/images/kidscampoutdoor.webp",
+        "/images/kidscamplearning.webp",
+        "/images/kidscampplay.jpg",
+        "/images/kidscampevent.jpg"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 333",
+        "email": "kidscamp@verdora.com",
+        "location": "Family Wing, Ground Floor"
+      }
+    },
+    {
+      "id": 10,
+      "slug": "travel-events",
+      "name": "Travel Events",
+      "subtitle": "Journeys of Discovery",
+      "tagline": "Crafting Unforgettable Experiences",
+      "shortDescription": "Unforgettable trips and exclusive events tailored to your preferences.",
+      "description": "Plan unforgettable trips and exclusive events tailored to your preferences. From romantic getaways to family adventures, we ensure every experience is unique and memorable.",
+      "image": "/images/travel.jpg",
+      "heroImage": "/images/travel.jpg",
+      "icon": "FaHeart",
+      "color": "#e63946",
+      "intro": {
+        "title": "Curated Travel Experiences",
+        "subtitle": "Beyond Ordinary Journeys",
+        "description": "Transform your vacation into an extraordinary adventure with our bespoke travel experiences and exclusive events.",
+        "longDescription": "Our travel event specialists create personalized itineraries that go beyond typical tourism, offering authentic cultural immersion, unique adventures, and exclusive access to hidden gems."
+      },
+      "features": [
+        {
+          "title": "Bespoke Itineraries",
+          "description": "Completely customized travel plans based on your interests, pace, and preferences.",
+          "icon": "FaMapMarkerAlt"
+        },
+        {
+          "title": "Local Experts",
+          "description": "Guides with deep cultural knowledge and connections to local communities.",
+          "icon": "FaUserTie"
+        },
+        {
+          "title": "Exclusive Access",
+          "description": "Special entry to private venues, cultural sites, and unique experiences.",
+          "icon": "FaStar"
+        },
+        {
+          "title": "Adventure Planning",
+          "description": "From gentle explorations to adrenaline-packed adventures, we arrange it all.",
+          "icon": "FaMountain"
+        },
+        {
+          "title": "Romantic Getaways",
+          "description": "Special packages for couples including private dinners and secluded experiences.",
+          "icon": "FaHeart"
+        },
+        {
+          "title": "Family Adventures",
+          "description": "Age-appropriate activities that engage every family member.",
+          "icon": "FaUsers"
+        }
+      ],
+      "treatments": [
+        {
+          "category": "Day Tours",
+          "items": [
+            { "name": "Chitwan Safari", "duration": "8 hours", "price": "$120" },
+            { "name": "Cultural Tour", "duration": "6 hours", "price": "$90" },
+            { "name": "Adventure Day", "duration": "8 hours", "price": "$150" },
+            { "name": "Photography Tour", "duration": "6 hours", "price": "$130" }
+          ]
+        },
+        {
+          "category": "Custom Services",
+          "items": [
+            { "name": "Private Guide", "duration": "8 hours", "price": "$200" },
+            { "name": "Photographer", "duration": "4 hours", "price": "$150" },
+            { "name": "Transport Service", "duration": "Daily", "price": "$100" }
+          ]
+        }
+      ],
+      "packages": [
+        {
+          "name": "Chitwan Safari Experience",
+          "price": "$450/person",
+          "duration": "3 days, 2 nights",
+          "includes": ["Jungle safari", "Elephant interaction", "Tharu culture show", "Bird watching", "Guide"]
+        },
+        {
+          "name": "Romantic Himalayan Getaway",
+          "price": "$750/couple",
+          "duration": "4 days, 3 nights",
+          "includes": ["Private dinners", "Couples spa", "Sunrise viewing", "Cultural experiences", "Transport"]
+        },
+        {
+          "name": "Family Adventure Week",
+          "price": "$1,200/family",
+          "duration": "7 days, 6 nights",
+          "includes": ["Kid activities", "Educational tours", "Adventure sports", "Cultural workshops", "Guide"]
+        }
+      ],
+      "experienceTypes": [
+        {
+          "type": "Cultural Immersion",
+          "examples": ["Village homestays", "Traditional cooking classes", "Local festival participation"]
+        },
+        {
+          "type": "Adventure Travel",
+          "examples": ["White-water rafting", "Jungle safaris", "Mountain trekking", "Zip-lining"]
+        },
+        {
+          "type": "Wellness Retreats",
+          "examples": ["Yoga retreats", "Meditation journeys", "Ayurvedic wellness packages"]
+        },
+        {
+          "type": "Photography Tours",
+          "examples": ["Wildlife photography", "Landscape photography", "Cultural photography"]
+        }
+      ],
+      "customization": [
+        "Personal travel consultant",
+        "Flexible scheduling",
+        "Transportation arrangements",
+        "Accommodation booking",
+        "Meal planning",
+        "Activity coordination",
+        "Guide services",
+        "24/7 support"
+      ],
+      "galleryImages": [
+        "/images/travelsafari.jpeg",
+        "/images/travelculture.webp",
+        "/images/traveladventure.jpg",
+        "/images/travelromantic.jpg",
+        "/images/travelfamily.webp",
+        "/images/travelexclusive.jpeg"
+      ],
+      "contact": {
+        "phone": "+977 1-1234567 ext. 444",
+        "email": "travelevents@verdora.com",
+        "location": "Tour Desk, Main Lobby"
+      }
+    }
+  ]
+}

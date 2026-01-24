@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaSpa,
   FaGlassCheers,
@@ -7,56 +8,33 @@ import {
   FaLeaf,
   FaConciergeBell,
   FaArrowRight,
+  FaCar,
+  FaFire,
+  FaChild,
+  FaHeart
 } from "react-icons/fa";
 
-const services = [
-  {
-    title: "Spa & Wellness",
-    subtitle: "A Ritual of Renewal",
-    description: "A deeply immersive wellness experience designed to restore balance, calm the senses, and reconnect you with yourself.",
-    image: "/images/cozyspa.avif",
-    icon: FaSpa,
-  },
-  {
-    title: "Luxury Event Hall",
-    subtitle: "Moments That Matter",
-    description: "A refined space crafted for weddings, celebrations, and gatherings that deserve elegance and atmosphere.",
-    image: "/images/hall.jpg",
-    icon: FaGlassCheers,
-  },
-  {
-    title: "Infinity Pool",
-    subtitle: "Where Water Meets Horizon",
-    description: "An open, tranquil space where time slows down and the landscape becomes part of your experience.",
-    image: "/images/pool.jpg",
-    icon: FaSwimmingPool,
-  },
-  {
-    title: "Fine Dining",
-    subtitle: "Curated Culinary Journeys",
-    description: "A thoughtful blend of local flavors and global inspiration, served with intention and artistry.",
-    image: "/images/dining.jpg",
-    icon: FaUtensils,
-  },
-  {
-    title: "Nature Experiences",
-    subtitle: "Immersed in the Wild",
-    description: "Explore lush surroundings through mindful walks, fresh air, and moments of quiet discovery.",
-    image: "/images/nature.jpg",
-    icon: FaLeaf,
-  },
-  {
-    title: "Personal Concierge",
-    subtitle: "Thoughtfully Arranged",
-    description: "From arrival to departure, every detail is handled with care, discretion, and personalized attention.",
-    image: "/images/concierge.jpg",
-    icon: FaConciergeBell,
-  },
-];
+import servicesData from '../../data/services.json';
 
 const ServicesContent = () => {
   const serviceRefs = useRef([]);
   const [visibleIndexes, setVisibleIndexes] = useState([]);
+
+  const getIconComponent = (iconName) => {
+    const icons = {
+      FaSpa: FaSpa,
+      FaGlassCheers: FaGlassCheers,
+      FaSwimmingPool: FaSwimmingPool,
+      FaUtensils: FaUtensils,
+      FaLeaf: FaLeaf,
+      FaConciergeBell: FaConciergeBell,
+      FaCar: FaCar,
+      FaFire: FaFire,
+      FaChild: FaChild,
+      FaHeart: FaHeart
+    };
+    return icons[iconName] || FaSpa; // Default to FaSpa if not found
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -86,14 +64,12 @@ const ServicesContent = () => {
     <section className="bg-white">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-16">
-        <div className="text-center ">
+        <div className="text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-[#ab8c55] font-semibold tracking-wider uppercase text-xs sm:text-sm">
               VERDORA EXPERIENCE
             </span>
           </div>
-          
-          
           
           <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal text-[#262626] leading-tight py-1 max-w-6xl mx-auto">
             Discover exceptional hospitality and curated experiences in the heart of Chitwan.
@@ -102,14 +78,14 @@ const ServicesContent = () => {
       </div>
 
       {/* Services Sections - Each within max-w-7xl */}
-      {services.map((service, index) => {
-        const Icon = service.icon;
+      {servicesData.services.map((service, index) => {
+        const Icon = getIconComponent(service.icon);
         const isEven = index % 2 === 0;
         const isVisible = visibleIndexes.includes(index);
 
         return (
           <div
-            key={index}
+            key={service.id}
             data-index={index}
             ref={(el) => (serviceRefs.current[index] = el)}
             className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mb-8"
@@ -131,7 +107,7 @@ const ServicesContent = () => {
               <div className="relative w-full lg:w-1/2 h-[60vh] lg:h-[90vh] overflow-hidden group">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={service.name}
                   className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
@@ -150,21 +126,24 @@ const ServicesContent = () => {
                   </div>
 
                   <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-4">
-                    {service.title}
+                    {service.name}
                   </h2>
 
                   <p className="italic text-lg text-gray-700 mb-6">
-                    {service.subtitle}
+                    {service.tagline || service.subtitle}
                   </p>
 
                   <p className="text-gray-600 leading-relaxed text-base mb-8">
                     {service.description}
                   </p>
 
-                  <button className="group inline-flex items-center text-[#8a6a3f] font-medium hover:text-[#6a4a2f] transition-colors duration-300">
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="group inline-flex items-center text-[#8a6a3f] font-medium hover:text-[#6a4a2f] transition-colors duration-300"
+                  >
                     <span>Discover More</span>
                     <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -181,10 +160,13 @@ const ServicesContent = () => {
           <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
             Join us for an unforgettable stay in Chitwan
           </p>
-          <button className="group bg-white text-[#8a6a3f] font-medium px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 inline-flex items-center space-x-2 hover:bg-white/95">
+          <Link
+            to="/booking"
+            className="group bg-white text-[#8a7a4f] font-medium px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 inline-flex items-center space-x-2 hover:bg-white/95"
+          >
             <span>Book Your Stay</span>
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

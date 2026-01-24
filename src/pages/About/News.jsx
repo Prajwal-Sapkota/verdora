@@ -17,7 +17,7 @@ const News = () => {
     ];
 
     return (
-        <div className="bg-[#f5f2ed]">
+        <div className="bg-white">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16 md:py-20">
                 {/* Header */}
                 <div className="text-center mb-16">

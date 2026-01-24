@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import { Routes, Route } from 'react-router-dom';
 import Services from './pages/Services';
 import RoomDetail from './pages/Rooms/RoomDetail';
+import ServiceDetail from './pages/Services/ServiceDetail';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/services/:slug" element={<ServiceDetail />} />
+
 
     </Routes>
   );

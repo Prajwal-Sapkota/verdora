@@ -64,7 +64,7 @@ const Team = () => {
   return (
     <div
       ref={sectionRef}
-      className="min-h-screen bg-[#f5f2ed] py-16 sm:py-20 lg:py-28"
+      className="min-h-screen bg-[#f5f2ed] py-16 sm:py-20 lg:py-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

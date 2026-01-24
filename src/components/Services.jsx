@@ -1,14 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {
-    FaCar,
-    FaSpa,
-    FaUtensils,
-    FaFire,
-    FaChild,
-    FaHeart,
-    FaChevronLeft,
-    FaChevronRight
-} from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
+import servicesData from '../data/services.json';
 
 const Services = () => {
     const textRef = useRef(null);
@@ -19,16 +11,13 @@ const Services = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
 
-    const services = [
-        { id: 1, title: "Car Rental", description: "Premium vehicle rentals for your convenience and comfort during your stay. Whether you need a luxury sedan or an SUV for family trips, we have the perfect vehicle for you.", shortDescription: "Premium rentals for comfort and convenience.", image: "/images/carrent.avif", icon: <FaCar /> },
-        { id: 2, title: "Cozy Spa", description: "We specialize in crafting bespoke travel events tailored to your unique preferences and interests. Experience ultimate relaxation with our premium spa treatments.", shortDescription: "Relax and rejuvenate with our spa.", image: "/images/cozyspa.avif", icon: <FaSpa /> },
-        { id: 3, title: "Food Court", description: "Experience culinary excellence with our diverse range of international cuisines. From local delicacies to gourmet international dishes, we cater to every palate.", shortDescription: "Delicious international cuisines for every palate.", image: "/images/food.avif", icon: <FaUtensils /> },
-        { id: 4, title: "Dry Sauna", description: "Our state-of-the-art dry sauna offers a serene retreat from the hustle and bustle of the outside world. Rejuvenate your body and mind in our premium wellness facility.", shortDescription: "Rejuvenate in our premium dry sauna.", image: "/images/drysauna.jpg", icon: <FaFire /> },
-        { id: 5, title: "Kids' Camp", description: "Engaging activities and supervised care for children of all ages. Our trained professionals ensure your kids have a fun, educational, and safe experience.", shortDescription: "Fun and safe activities for kids.", image: "/images/kids.jpg", icon: <FaChild /> },
-        { id: 6, title: "Travel Events", description: "Plan unforgettable trips and exclusive events tailored to your preferences. From romantic getaways to family adventures, we ensure every experience is unique and memorable.", shortDescription: "Unforgettable trips and exclusive events.", image: "/images/travel.jpg", icon: <FaHeart /> }
-    ];
+    const services = servicesData.services;
 
-    // Check mobile screen
+    const getIcon = (iconName) => {
+        const IconComponent = FaIcons[iconName];
+        return IconComponent ? <IconComponent /> : <FaIcons.FaStar />;
+    };
+
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
         checkMobile();
@@ -36,7 +25,6 @@ const Services = () => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // Intersection Observer for animation
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
@@ -50,13 +38,12 @@ const Services = () => {
     }, []);
 
     useEffect(() => {
-    const interval = setInterval(() => {
-        setCurrentIndex(prev => (prev + 1) % services.length);
-    }, 1500); 
+        const interval = setInterval(() => {
+            setCurrentIndex(prev => (prev + 1) % services.length);
+        }, 1500);
 
-    return () => clearInterval(interval);
-}, []);
-
+        return () => clearInterval(interval);
+    }, [services.length]);
 
     const nextSlide = () => setCurrentIndex(prev => (prev + 1) % services.length);
     const prevSlide = () => setCurrentIndex(prev => (prev - 1 + services.length) % services.length);
@@ -88,8 +75,10 @@ const Services = () => {
                         <div className="grid grid-cols-2 gap-8 py-2">
                             {services.slice(0, 4).map(service => (
                                 <div key={service.id} className="flex items-center gap-3">
-                                    <span className="text-[#ab8c55] text-lg">{service.icon}</span>
-                                    <span className="text-gray-700">{service.title}</span>
+                                    <span className="text-[#ab8c55] text-lg">
+                                        {getIcon(service.icon)}
+                                    </span>
+                                    <span className="text-gray-700">{service.name}</span>
                                 </div>
                             ))}
                         </div>
@@ -101,7 +90,11 @@ const Services = () => {
                         className={`flex justify-center transform transition-all duration-1000 ease-out delay-200 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'}`}
                     >
                         <div className="flex flex-col items-center w-full max-w-md">
-                            <ServiceCard service={services[currentIndex]} isMobile={isMobile} />
+                            <ServiceCard 
+                                service={services[currentIndex]} 
+                                isMobile={isMobile} 
+                                getIcon={getIcon}
+                            />
 
                             {/* Navigation buttons */}
                             <div className="flex justify-center gap-6 mt-6">
@@ -109,13 +102,13 @@ const Services = () => {
                                     onClick={prevSlide}
                                     className="w-12 h-12 flex items-center justify-center rounded-full bg-white border shadow hover:bg-[#ab8c55] hover:text-white transition"
                                 >
-                                    <FaChevronLeft />
+                                    <FaIcons.FaChevronLeft />
                                 </button>
                                 <button
                                     onClick={nextSlide}
                                     className="w-12 h-12 flex items-center justify-center rounded-full bg-white border shadow hover:bg-[#ab8c55] hover:text-white transition"
                                 >
-                                    <FaChevronRight />
+                                    <FaIcons.FaChevronRight />
                                 </button>
                             </div>
                         </div>
@@ -127,7 +120,7 @@ const Services = () => {
     );
 };
 
-const ServiceCard = ({ service, isMobile }) => {
+const ServiceCard = ({ service, isMobile, getIcon }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -140,7 +133,7 @@ const ServiceCard = ({ service, isMobile }) => {
                 <div className="relative w-full h-full">
                     <img
                         src={service.image}
-                        alt={service.title}
+                        alt={service.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/40"></div>
@@ -149,7 +142,7 @@ const ServiceCard = ({ service, isMobile }) => {
                 {isMobile ? (
                     <div className="absolute inset-0 z-20 flex items-center justify-center text-center p-4">
                         <div className="flex flex-col justify-center items-center h-full py-8">
-                            <h2 className="text-4xl font-bold text-white py-2">{service.title}</h2>
+                            <h2 className="text-4xl font-bold text-white py-2">{service.name}</h2>
                             <p className="text-md font-medium text-white leading-relaxed py-2">{service.shortDescription}</p>
                         </div>
                     </div>
@@ -157,13 +150,13 @@ const ServiceCard = ({ service, isMobile }) => {
                     <>
                         {/* Desktop overlay */}
                         <div className={`absolute inset-0 z-20 flex flex-col justify-center py-16 transition-all duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-                            <h2 className="text-4xl font-bold text-white text-center">{service.title}</h2>
+                            <h2 className="text-4xl font-bold text-white text-center">{service.name}</h2>
                         </div>
 
                         <div className="absolute inset-0 overflow-hidden rounded-t-full rounded-b-2xl">
                             <div className={`absolute inset-0 bg-[#ab8c55] rounded-t-full rounded-b-2xl ${isHovered ? 'animate-slide-up-enter' : 'animate-slide-up-exit'}`} />
                             <div className={`absolute inset-0 p-8 flex flex-col justify-center py-24 transition-opacity duration-300 ${isHovered ? 'opacity-100 delay-200' : 'opacity-0'}`}>
-                                <h2 className="text-4xl font-bold text-white text-center mb-4">{service.title}</h2>
+                                <h2 className="text-4xl font-bold text-white text-center mb-4">{service.name}</h2>
                                 <p className="text-white leading-relaxed py-2 text-center">{service.description}</p>
                             </div>
                         </div>

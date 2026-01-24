@@ -7,8 +7,8 @@
       "shortDescription": "Perfect for romantic getaways, intimate gatherings, or solo adventures seeking a warm and cozy atmosphere.",
       "description": "Perfect for romantic getaways, intimate gatherings, or solo adventures seeking a whimsical escape.",
       "price": "$54 / NIGHT",
-      "image": "/images/bubble.avif",
-      "heroImage": "/images/bubble-hero.webp",
+      "image": "/images/bubble.jpg",
+      "heroImage": "/images/bubble.avif",
       "bathrooms": 2,
       "bedrooms": 2,
       "persons": "2-3",
@@ -37,6 +37,10 @@
         {
           "title": "Tailored Experience",
           "description": "Whether it's a romantic dinner under the stars, a rejuvenating spa treatment in the heart of nature, or an adrenaline-pumping adventure exploring the surrounding wilderness, the hotel's dedicated concierge team is on hand to curate bespoke experiences tailored to guests' preferences and desires."
+        },
+        {
+          "title": "360-Degree Panoramic Views",
+          "description": "Experience the surrounding landscape from every angle with our transparent bubble design. Wake up to sunrise views, enjoy daytime mountain vistas, and stargaze at night without ever leaving the comfort of your bed."
         }
       ],
       "features": {
@@ -58,10 +62,10 @@
         "security": "For your safety and security, always keep your room door locked when inside or leaving the room. Do not share your room key or access codes with anyone outside your party, and report any suspicious activity to hotel staff immediately."
       },
       "galleryImages": [
-        "/images/bubble-interior.jpg",
-        "/images/bubble-bathroom.jpg",
-        "/images/bubble-outdoor.jpg",
-        "/images/bubble-bedroom.jpg"
+        "/images/bubbleinterior.avif",
+        "/images/bubblebathroom.avif",
+        "/images/bubbleoutdoor.avif",
+        "/images/bubblebedroom.avif"
       ]
     },
     {
@@ -72,7 +76,7 @@
       "description": "Experience the ultimate in comfort and relaxation as you indulge in the serenity of your own private retreat.",
       "price": "$500 / NIGHT",
       "image": "/images/bunglow.jpg",
-      "heroImage": "/images/bungalow-hero.webp",
+      "heroImage": "/images/bunglow.avif",
       "bathrooms": 1,
       "bedrooms": 2,
       "persons": "2-4",
@@ -84,19 +88,27 @@
       "advantages": [
         {
           "title": "Private Retreat",
-          "description": "Each bungalow offers complete privacy with its own entrance and outdoor space, perfect for couples or small families seeking a quiet escape."
+          "description": "Each bungalow offers complete privacy with its own entrance and outdoor space, perfect for couples or small families seeking a quiet escape away from crowded hotels."
         },
         {
           "title": "Modern Comforts",
-          "description": "Despite their rustic appearance, our bungalows are equipped with all modern amenities including high-speed internet, smart TVs, and fully equipped kitchens."
+          "description": "Despite their rustic appearance, our bungalows are equipped with all modern amenities including high-speed internet, smart TVs, and fully equipped kitchens for a comfortable stay."
         },
         {
           "title": "Natural Setting",
-          "description": "Wake up to the sound of birds and enjoy your morning coffee on your private patio surrounded by lush gardens and natural beauty."
+          "description": "Wake up to the sound of birds and enjoy your morning coffee on your private patio surrounded by lush gardens and natural beauty, providing a true connection with nature."
         },
         {
-          "title": "Eco-Friendly",
-          "description": "Built using sustainable materials and designed to minimize environmental impact while providing maximum comfort."
+          "title": "Eco-Friendly Design",
+          "description": "Built using sustainable materials and designed to minimize environmental impact while providing maximum comfort, ensuring your stay is both luxurious and environmentally conscious."
+        },
+        {
+          "title": "Spacious Layout",
+          "description": "Generously sized living areas with high ceilings and large windows create an airy, open atmosphere perfect for relaxation and entertainment."
+        },
+        {
+          "title": "Perfect Location",
+          "description": "Situated within easy reach of local attractions while providing a peaceful sanctuary away from the city noise, offering the best of both worlds."
         }
       ],
       "features": {
@@ -118,10 +130,10 @@
         "security": "Please secure your bungalow when leaving. Keep doors and windows locked for safety."
       },
       "galleryImages": [
-        "/images/bungalow-interior.jpg",
-        "/images/bungalow-bedroom.jpg",
-        "/images/bungalow-outdoor.jpg",
-        "/images/bungalow-view.jpg"
+        "/images/bunglowinterior.avif",
+        "/images/bunglowbedroom.avif",
+        "/images/bunglowoutdoor.avif",
+        "/images/bunglowview.avif"
       ]
     },
     {
@@ -132,7 +144,7 @@
       "description": "With spacious interiors, modern amenities, and private outdoor spaces, each Villa is a haven of relaxation and rejuvenation.",
       "price": "$500 / NIGHT",
       "image": "/images/villa.avif",
-      "heroImage": "/images/villa-hero.webp",
+      "heroImage": "/images/villa.webp",
       "bathrooms": 3,
       "bedrooms": 4,
       "persons": "6-11",
@@ -144,19 +156,27 @@
       "advantages": [
         {
           "title": "Spacious Luxury",
-          "description": "Generously sized rooms and living areas provide ample space for relaxation and entertainment, perfect for large groups or families."
+          "description": "Generously sized rooms and living areas provide ample space for relaxation and entertainment, perfect for large groups or families needing room to spread out."
         },
         {
           "title": "Premium Amenities",
-          "description": "Enjoy exclusive amenities including private pool, home theater, game room, and professional-grade kitchen appliances."
+          "description": "Enjoy exclusive amenities including private infinity pool, home theater, game room, and professional-grade kitchen appliances for an unparalleled luxury experience."
         },
         {
           "title": "Panoramic Views",
-          "description": "Strategic location offers breathtaking views of the surrounding landscape from multiple vantage points throughout the villa."
+          "description": "Strategic location offers breathtaking views of the surrounding landscape from multiple vantage points throughout the villa, providing visual delight from every room."
         },
         {
           "title": "Personalized Service",
-          "description": "Dedicated concierge and housekeeping services ensure every detail of your stay is perfectly managed."
+          "description": "Dedicated concierge and housekeeping services ensure every detail of your stay is perfectly managed, offering a truly bespoke vacation experience."
+        },
+        {
+          "title": "Entertainment Facilities",
+          "description": "Complete entertainment setup including outdoor cinema, barbecue area, and multiple living spaces designed for hosting and social gatherings."
+        },
+        {
+          "title": "Architectural Excellence",
+          "description": "Contemporary Mediterranean design combined with luxury finishes and attention to detail creates an atmosphere of sophisticated elegance throughout the villa."
         }
       ],
       "features": {
@@ -178,10 +198,10 @@
         "security": "24/7 security monitoring. Please use provided safes for valuables and keep gates secured."
       },
       "galleryImages": [
-        "/images/villa-interior.jpg",
-        "/images/villa-pool.jpg",
-        "/images/villa-living.jpg",
-        "/images/villa-kitchen.jpg"
+        "/images/villainterior.jpg",
+        "/images/villapool.jpg",
+        "/images/villaliving.jpg",
+        "/images/villakitchen.jpg"
       ]
     },
     {
@@ -192,7 +212,7 @@
       "description": "Our cottage provides a serene retreat for those seeking solace in nature's embrace.",
       "price": "$500 / NIGHT",
       "image": "/images/family.avif",
-      "heroImage": "/images/family-hero.webp",
+      "heroImage": "/images/family1.jpg",
       "bathrooms": 2,
       "bedrooms": 3,
       "persons": "6-7",
@@ -208,15 +228,23 @@
         },
         {
           "title": "Safe Environment",
-          "description": "Secure, gated property with child-friendly outdoor areas and safety features throughout the cottage."
+          "description": "Secure, gated property with child-friendly outdoor areas and safety features throughout the cottage, providing peace of mind for parents."
         },
         {
           "title": "Convenient Location",
-          "description": "Close to family-friendly attractions, parks, and activities while maintaining a peaceful, natural setting."
+          "description": "Close to family-friendly attractions, parks, and activities while maintaining a peaceful, natural setting perfect for creating lasting memories."
         },
         {
           "title": "All-Inclusive Comfort",
-          "description": "Fully equipped with everything a family needs, from kitchen essentials to entertainment systems and comfortable bedding."
+          "description": "Fully equipped with everything a family needs, from kitchen essentials to entertainment systems and comfortable bedding, ensuring a hassle-free stay."
+        },
+        {
+          "title": "Outdoor Play Areas",
+          "description": "Dedicated children's play equipment and safe swimming areas allow kids to have fun while adults relax in the beautiful garden surroundings."
+        },
+        {
+          "title": "Multi-Generation Friendly",
+          "description": "Designed to accommodate grandparents, parents, and children comfortably with separate spaces for quiet time and family gatherings."
         }
       ],
       "features": {
@@ -238,10 +266,10 @@
         "security": "Please supervise children at all times, especially near water features. Keep gates and doors locked."
       },
       "galleryImages": [
-        "/images/family-interior.jpg",
-        "/images/family-kitchen.jpg",
-        "/images/family-garden.jpg",
-        "/images/family-play.jpg"
+        "/images/familyinterior.jpg",
+        "/images/familykitchen.jpg",
+        "/images/familygarden.jpg",
+        "/images/familyplay.jpg"
       ]
     },
     {
@@ -252,7 +280,7 @@
       "description": "Relax in rustic elegance, unwind on your private veranda, and immerse yourself in the beauty of the surroundings.",
       "price": "$60 / NIGHT",
       "image": "/images/standard.avif",
-      "heroImage": "/images/standard-hero.webp",
+      "heroImage": "/images/standard1.jpg",
       "bathrooms": 1,
       "bedrooms": 2,
       "persons": "3-5",
@@ -264,19 +292,27 @@
       "advantages": [
         {
           "title": "Authentic Experience",
-          "description": "Traditional cottage architecture and decor provide an authentic rustic experience with modern comforts."
+          "description": "Traditional cottage architecture and decor provide an authentic rustic experience with modern comforts, capturing the essence of country living."
         },
         {
           "title": "Cozy Atmosphere",
-          "description": "Warm, inviting interiors with fireplace, comfortable furnishings, and charming details create a perfect cozy retreat."
+          "description": "Warm, inviting interiors with fireplace, comfortable furnishings, and charming details create a perfect cozy retreat from everyday life."
         },
         {
           "title": "Value Excellence",
-          "description": "All the essential amenities at an excellent value, providing comfortable accommodations without unnecessary luxuries."
+          "description": "All the essential amenities at an excellent value, providing comfortable accommodations without unnecessary luxuries, perfect for budget-conscious travelers."
         },
         {
           "title": "Prime Location",
-          "description": "Located close to hiking trails, local attractions, and natural wonders while maintaining peaceful seclusion."
+          "description": "Located close to hiking trails, local attractions, and natural wonders while maintaining peaceful seclusion for a true escape."
+        },
+        {
+          "title": "Simple Comfort",
+          "description": "No-fuss, straightforward accommodations that prioritize comfort and functionality over unnecessary frills, making for a relaxing, stress-free stay."
+        },
+        {
+          "title": "Private Outdoor Space",
+          "description": "Enjoy your own veranda and garden area, perfect for morning coffee or evening relaxation while surrounded by natural beauty."
         }
       ],
       "features": {
@@ -298,10 +334,10 @@
         "security": "Basic security measures. Please lock doors when leaving and keep valuables secure."
       },
       "galleryImages": [
-        "/images/standard-interior.jpg",
-        "/images/standard-bedroom.jpg",
-        "/images/standard-veranda.jpg",
-        "/images/standard-garden.jpg"
+        "/images/standardinterior.webp",
+        "/images/standardbedroom.jpg",
+        "/images/standardveranda.jpg",
+        "/images/standardgarden.jpg"
       ]
     },
     {
@@ -312,7 +348,7 @@
       "description": "Designed for solo travelers or cozy couples, our apartments offer a cozy retreat amidst picturesque surroundings.",
       "price": "$46 / NIGHT",
       "image": "/images/single.avif",
-      "heroImage": "/images/single-hero.webp",
+      "heroImage": "/images/single.avif",
       "bathrooms": 1,
       "bedrooms": 1,
       "persons": "1-2",
@@ -324,19 +360,27 @@
       "advantages": [
         {
           "title": "Space Efficiency",
-          "description": "Clever design maximizes limited space, providing all essential amenities without feeling cramped or crowded."
+          "description": "Clever design maximizes limited space, providing all essential amenities without feeling cramped or crowded, perfect for solo travelers or couples."
         },
         {
           "title": "Budget Friendly",
-          "description": "Excellent value for money, offering comfortable accommodations at an affordable price point."
+          "description": "Excellent value for money, offering comfortable accommodations at an affordable price point without compromising on quality or comfort."
         },
         {
           "title": "Convenient Location",
-          "description": "Centrally located with easy access to public transportation, dining options, and local attractions."
+          "description": "Centrally located with easy access to public transportation, dining options, and local attractions, saving time and transportation costs."
         },
         {
           "title": "Low Maintenance",
-          "description": "Easy to keep clean and organized, perfect for travelers who want to spend more time exploring and less time maintaining."
+          "description": "Easy to keep clean and organized, perfect for travelers who want to spend more time exploring and less time maintaining their accommodations."
+        },
+        {
+          "title": "All-In-One Design",
+          "description": "Thoughtfully designed multi-functional spaces combine sleeping, living, and dining areas efficiently for maximum comfort in minimal space."
+        },
+        {
+          "title": "Perfect for Short Stays",
+          "description": "Ideal for business travelers, solo adventurers, or couples looking for a cozy, efficient base for exploring without excess space or amenities."
         }
       ],
       "features": {
@@ -358,10 +402,10 @@
         "security": "Individual door locks. Keep apartment secured when leaving and use provided safe for valuables."
       },
       "galleryImages": [
-        "/images/single-interior.jpg",
-        "/images/single-kitchen.jpg",
-        "/images/single-bathroom.jpg",
-        "/images/single-balcony.jpg"
+        "/images/singleinterior.webp",
+        "/images/singlekitchen.jpg",
+        "/images/singlebathroom.jpg",
+        "/images/singlebalcony.jpg"
       ]
     }
   ]

@@ -1,4 +1,3 @@
-// components/RoomTypes.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import roomsData from '../../data/rooms.json';
