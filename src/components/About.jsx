@@ -124,7 +124,7 @@ const About = () => {
                 <div className="relative overflow-hidden rounded-lg shadow-xl border-3 sm:border-4 border-white 
         w-[220px] sm:w-[250px] md:w-[280px] lg:w-[320px] xl:w-[350px]">
                   <img
-                    src="/images/resort2.jpg"
+                    src="/images/resort2.avif"
                     alt="Pool View"
                     className="w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[340px] xl:h-[360px] object-cover"
                   />

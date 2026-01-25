@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: "Wildlife Experience",
-    image: "/images/wildlife.jpg",
+    image: "/images/wildlife.webp",
     icon: <FaBinoculars />,
     details:
       "Experience the thrill of nature with curated wildlife sightings and serene jungle surroundings.",

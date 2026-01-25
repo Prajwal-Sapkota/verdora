@@ -6,8 +6,8 @@ const Footer = () => {
   const partners = [
     { name: "Tegora House", image: "/images/tagora.jpg" },
     { name: "Royal Lifestyle", image: "/images/royal.webp" },
-    { name: "Marino Magic", image: "/images/marino.jpg" },
-    { name: "Flextrivor", image: "/images/flex.png" },
+    { name: "Marino Magic", image: "/images/marino.avif" },
+    { name: "Flextrivor", image: "/images/flex.jpg" },
     { name: "Nepal Airlines", image: "/images/nepal.png" },
     { name: "Aquafina", image: "/images/aquafina.jpg" },
     { name: "Yeti Airlines", image: "/images/yeti.png" },
