@@ -1,17 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  FaLeaf,
-  FaMountain,
-  FaWater,
-  FaTree,
+  
   FaUsers,
-  FaChild,
+  
   FaHiking,
   FaWind,
-  FaGamepad,
-  FaMapMarkedAlt,
-  FaUmbrellaBeach,
-  FaSpa,
+ 
+  
 } from "react-icons/fa";
 
 const Advantages = () => {

@@ -9,7 +9,7 @@ import servicesData from "../../data/services.json";
 import usePageTitle from "../../hooks/usePageTitle";
 import { IoCallOutline, IoCheckmarkCircle, IoHeadsetOutline, IoLocationOutline, IoMailOutline, IoSearchOutline, IoTimeOutline } from "react-icons/io5";
 
-import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight, FaStar, FaSwimmingPool, FaUtensils, FaLeaf, FaCar, FaFire, FaChild, FaMountain, FaTree, FaCamera, FaHeart, FaHome, FaWifi, FaUsers, FaShieldAlt, FaBookOpen, FaCoffee, FaUserTie, FaWineGlassAlt, FaPhone, FaMapMarkerAlt, FaThermometerHalf, FaLock, FaAppleAlt, FaConciergeBell, FaBed, FaBath, FaTv, FaParking, FaSwimmer, FaUmbrellaBeach, FaFeather, FaSun, FaWater, FaWind, FaBinoculars, FaGlassCheers, FaHandsHelping, FaCalendarAlt, FaShareAlt } from "react-icons/fa";
+import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight, FaStar, FaSwimmingPool, FaUtensils, FaLeaf, FaCar, FaFire, FaChild, FaMountain, FaTree, FaCamera, FaHeart, FaHome, FaWifi, FaUsers, FaShieldAlt, FaBookOpen, FaCoffee, FaUserTie, FaWineGlassAlt, FaPhone, FaMapMarkerAlt, FaThermometerHalf, FaLock, FaAppleAlt, FaConciergeBell, FaBed, FaBath, FaTv, FaParking, FaSwimmer, FaUmbrellaBeach, FaFeather, FaSun, FaWater, FaWind, FaBinoculars, FaGlassCheers, FaHandsHelping,  FaShareAlt } from "react-icons/fa";
 
 const ServiceDetail = () => {
     const { slug } = useParams();

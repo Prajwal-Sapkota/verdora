@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const Testimonial = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

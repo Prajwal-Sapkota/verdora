@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const slides = [
   { image: "/images/hero3.avif" },

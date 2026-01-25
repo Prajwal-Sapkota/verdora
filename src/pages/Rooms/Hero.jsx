@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { FaArrowRight, FaBed, FaStar, FaWifi } from 'react-icons/fa';
+import { FaArrowRight,  } from 'react-icons/fa';
 
 const Hero = () => {
     const headingRef = useRef(null);

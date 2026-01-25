@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  FaAward,
+  
   FaUserTie,
   FaUtensils,
   FaSpa,

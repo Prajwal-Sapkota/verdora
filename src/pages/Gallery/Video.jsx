@@ -2,9 +2,7 @@ import React, { useRef, useState } from "react";
 import {
   FaPlay,
   FaPause,
-  FaVolumeUp,
-  FaVolumeMute,
-  FaExpand,
+  
 } from "react-icons/fa";
 
 const Video = () => {

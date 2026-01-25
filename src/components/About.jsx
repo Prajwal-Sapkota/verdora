@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  FaPhoneAlt,
+  
   FaLeaf,
   FaMountain,
   FaWater,

@@ -3,8 +3,7 @@ import React from 'react';
 import { 
   FaMountain, 
   FaUsers, 
-  FaHeadset, 
-  FaCrown 
+  FaHeadset 
 } from 'react-icons/fa';
 
 const Stats = () => {
