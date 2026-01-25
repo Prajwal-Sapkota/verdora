@@ -156,11 +156,11 @@ const Navbar = () => {
 
                     <div className="absolute inset-0 -rotate-45 flex items-center justify-center">
                       <div className="relative">
-                        <div className="absolute -inset-2.5 bg-gradient-to-r from-emerald-100/15 to-teal-100/10 blur-md rounded-full transition-all duration-300" />
+                        <div className="absolute -inset-2.5 bg-gradient-to-r from-emerald-100/15 to-teal-100/10  rounded-full transition-all duration-300" />
                         <img
                           src={logoImage}
                           alt="Verdora Logo"
-                          className="relative h-12 w-auto"
+                          className="relative h-14 w-auto"
                           loading="eager"
                           fetchPriority="high"
                         />
