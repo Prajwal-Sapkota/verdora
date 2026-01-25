@@ -14,27 +14,42 @@ const galleryItems = [
 
 const Gallery = () => {
   const trackRef = useRef(null);
+  const speed = 1.5; // pixels per frame
 
   useEffect(() => {
     const track = trackRef.current;
-    let animationFrame;
+    if (!track) return;
+
     let position = 0;
-    const speed = 1.5;
+
+    // Cache scrollWidth to prevent forced reflow
+    let trackWidth = track.scrollWidth / 2;
 
     const animate = () => {
       position -= speed;
 
-      if (Math.abs(position) >= track.scrollWidth / 2) {
+      // Reset position when scrolled half the track (seamless loop)
+      if (Math.abs(position) >= trackWidth) {
         position = 0;
       }
 
+      // Use transform for GPU acceleration
       track.style.transform = `translateX(${position}px)`;
-      animationFrame = requestAnimationFrame(animate);
+
+      requestAnimationFrame(animate);
     };
 
-    animationFrame = requestAnimationFrame(animate);
+    animate();
 
-    return () => cancelAnimationFrame(animationFrame);
+    // Update trackWidth on window resize
+    const handleResize = () => {
+      trackWidth = track.scrollWidth / 2;
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -50,12 +65,13 @@ const Gallery = () => {
           </h1>
         </div>
 
-        {/* Continuous Slider - Uniform image size */}
+        {/* Continuous Slider */}
         <div className="relative overflow-hidden mx-2 md:mx-4 lg:mx-6">
           <div
             ref={trackRef}
-            className="flex gap-6 md:gap-8 "
+            className="flex gap-6 md:gap-8 will-change-transform"
           >
+            {/* Duplicate gallery items for seamless scroll */}
             {[...galleryItems, ...galleryItems].map((src, index) => (
               <div
                 key={index}
@@ -68,14 +84,15 @@ const Gallery = () => {
                   shadow-lg hover:shadow-2xl
                   transition-transform duration-500 hover:scale-[1.03]
                   flex-shrink-0
+                  relative
                 "
               >
                 <img
                   src={src}
                   alt="Gallery"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 rounded-2xl pointer-events-none" />
               </div>
             ))}
           </div>

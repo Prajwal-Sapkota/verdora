@@ -217,10 +217,10 @@ const RoomDetail = () => {
       </div>
 
       {/* Main Content with alternating backgrounds */}
-      
+
       {/* Intro Section - White background */}
       <div className="bg-white">
-        <div 
+        <div
           ref={introRef}
           data-direction="left"
           className="opacity-0 -translate-x-8 transition-all duration-700 max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-8 py-12 sm:py-14 md:py-16 lg:py-20 grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center"
@@ -391,75 +391,49 @@ const RoomDetail = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-            {room.galleryImages?.map((img, i) => {
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4">
+            {(room.galleryImages && room.galleryImages.length > 0 ? room.galleryImages : [
+              room.image,
+              "/images/room-interior.jpg",
+              "/images/room-bathroom.jpg",
+              "/images/room-outdoor.jpg"
+            ]).map((img, i) => {
+              // Responsive column spans
               let colSpan = "md:col-span-6";
-              let rowSpan = "h-48 md:h-64 lg:h-80";
+              let aspectRatio = "aspect-w-16 aspect-h-9"; // default 16:9
 
               if (i === 0) {
                 colSpan = "md:col-span-8";
-                rowSpan = "h-48 md:h-72 lg:h-96";
-              }
-              else if (i === 1) {
+                aspectRatio = "aspect-w-16 aspect-h-12"; // bigger
+              } else if (i === 1) {
                 colSpan = "md:col-span-4";
-                rowSpan = "h-48 md:h-72 lg:h-96";
-              }
-              else if (i === 2 || i === 3) {
+                aspectRatio = "aspect-w-16 aspect-h-12";
+              } else if (i === 2 || i === 3) {
                 colSpan = "md:col-span-6";
-                rowSpan = "h-48 md:h-56 lg:h-64";
+                aspectRatio = "aspect-w-16 aspect-h-9";
               }
 
               return (
                 <div
                   key={i}
-                  className={`${colSpan} ${rowSpan} overflow-hidden rounded-xl md:rounded-2xl group relative`}
+                  className={`${colSpan} ${aspectRatio} overflow-hidden rounded-xl md:rounded-2xl group relative`}
                 >
                   <img
                     src={img}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     alt={`${room.name} view ${i + 1}`}
+                    className="w-full h-full object-cover block group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               );
             })}
-
-            {/* Fallback if no gallery images */}
-            {(!room.galleryImages || room.galleryImages.length === 0) && (
-              <>
-                <div className="md:col-span-8 h-48 md:h-72 lg:h-96 overflow-hidden rounded-xl md:rounded-2xl">
-                  <img
-                    src={room.image}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    alt={`${room.name} main view`}
-                  />
-                </div>
-                <div className="md:col-span-4 h-48 md:h-72 lg:h-96 overflow-hidden rounded-xl md:rounded-2xl">
-                  <img
-                    src="/images/room-interior.jpg"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    alt={`${room.name} interior`}
-                  />
-                </div>
-                <div className="md:col-span-6 h-48 md:h-56 lg:h-64 overflow-hidden rounded-xl md:rounded-2xl">
-                  <img
-                    src="/images/room-bathroom.jpg"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    alt={`${room.name} bathroom`}
-                  />
-                </div>
-                <div className="md:col-span-6 h-48 md:h-56 lg:h-64 overflow-hidden rounded-xl md:rounded-2xl">
-                  <img
-                    src="/images/room-outdoor.jpg"
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    alt={`${room.name} outdoor area`}
-                  />
-                </div>
-              </>
-            )}
           </div>
         </div>
       </div>
+
+
+
 
       {/* Policies Section - White background */}
       <div className="bg-white ">
