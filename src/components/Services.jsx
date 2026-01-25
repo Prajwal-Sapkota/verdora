@@ -33,8 +33,12 @@ const Services = () => {
             }
         }, { threshold: 0.25 });
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
+        const element = sectionRef.current;
+        if (element) observer.observe(element);
+
+        return () => {
+            if (element) observer.disconnect();
+        };
     }, []);
 
     useEffect(() => {
@@ -90,9 +94,9 @@ const Services = () => {
                         className={`flex justify-center transform transition-all duration-1000 ease-out delay-200 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'}`}
                     >
                         <div className="flex flex-col items-center w-full max-w-md">
-                            <ServiceCard 
-                                service={services[currentIndex]} 
-                                isMobile={isMobile} 
+                            <ServiceCard
+                                service={services[currentIndex]}
+                                isMobile={isMobile}
                                 getIcon={getIcon}
                             />
 

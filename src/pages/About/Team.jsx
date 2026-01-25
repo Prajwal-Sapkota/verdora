@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  
+
   FaUserTie,
   FaUtensils,
   FaSpa,
@@ -57,8 +57,12 @@ const Team = () => {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    const element = sectionRef.current;
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.disconnect();
+    };
   }, []);
 
   return (
@@ -85,9 +89,8 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`transition-all duration-700 ${
-                loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
               style={{ transitionDelay: `${index * 120}ms` }}
             >
               {/* IMAGE */}
@@ -98,7 +101,7 @@ const Team = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
 
-                
+
               </div>
 
               {/* CONTENT (SEPARATE FROM IMAGE) */}
@@ -119,7 +122,7 @@ const Team = () => {
           ))}
         </div>
 
-        
+
 
       </div>
     </div>

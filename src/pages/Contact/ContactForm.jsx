@@ -28,16 +28,21 @@ const ContactForm = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !visible) {
                     setVisible(true);
+                    observer.unobserve(entry.target);
                 }
             },
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
+        const element = sectionRef.current;
+        if (element) observer.observe(element);
+
+        return () => {
+            if (element) observer.disconnect();
+        };
+    }, [visible]);
 
     return (
         <section
@@ -56,7 +61,7 @@ const ContactForm = () => {
 
                 {/* Main Content */}
                 <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16">
-                    
+
                     {/* Left Side - Nepal Contact Details */}
                     <div className={`lg:w-1/2 space-y-6 sm:space-y-8 px-4 sm:px-6 md:px-8 lg:px-10 py-0 sm:py-6 md:py-8 lg:py-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         {/* Nepal Flag & Location */}

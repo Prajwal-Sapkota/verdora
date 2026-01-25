@@ -36,12 +36,13 @@ const Suites = () => {
             }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const element = sectionRef.current;
+        if (element) {
+            observer.observe(element);
         }
 
         return () => {
-            if (observer) observer.disconnect();
+            observer.disconnect();
         };
     }, [isInView]);
 
@@ -64,7 +65,7 @@ const Suites = () => {
 
     // Function to get better subtitle based on room name
     function getRoomSubtitle(roomName) {
-        switch(roomName) {
+        switch (roomName) {
             case "Bubble House": return "Stargazer Dome";
             case "Bungalow Apartments": return "Jungle Oasis";
             case "Villa Bodrum": return "Luxury Villa";
@@ -77,7 +78,7 @@ const Suites = () => {
 
     // Helper function to assign icons
     function getIconForRoom(id) {
-        switch(id) {
+        switch (id) {
             case 1: return <FaMoon />;
             case 2: return <FaUmbrellaBeach />;
             case 3: return <FaWater />;
@@ -143,14 +144,14 @@ const Suites = () => {
                                                     </div>
                                                     <div
                                                         className={`relative transition-all duration-500 transform ${isActive || isHovered
-                                                                ? 'opacity-100 translate-x-0 sm:translate-x-2 md:translate-x-8 scale-110'
-                                                                : 'opacity-0 translate-x-0 sm:translate-x-1'
+                                                            ? 'opacity-100 translate-x-0 sm:translate-x-2 md:translate-x-8 scale-110'
+                                                            : 'opacity-0 translate-x-0 sm:translate-x-1'
                                                             }`}
                                                     >
                                                         <div
                                                             className={`suite-arrow flex items-center justify-center w-14 h-14 rounded-full transition-all duration-500 ${isActive || isHovered
-                                                                    ? 'bg-[#ab8c55] '
-                                                                    : 'bg-transparent'
+                                                                ? 'bg-[#ab8c55] '
+                                                                : 'bg-transparent'
                                                                 }`}
                                                         >
                                                             <FaArrowRight className="text-white text-lg" />
@@ -188,7 +189,7 @@ const Suites = () => {
                                         </div>
 
                                         {/* Book Now Button */}
-                                        <button 
+                                        <button
                                             onClick={() => handleBookNow(activeSuiteData?.slug)}
                                             className="flex items-center justify-center text-white font-semibold py-8 px-2 transition-all duration-700 overflow-hidden relative shadow-2xl hover:shadow-3xl bg-[#242424] min-w-[200px]"
                                         >
@@ -212,7 +213,7 @@ const Suites = () => {
                                                 {activeSuiteData?.subtitle}
                                             </span>
                                         </div>
-                                        
+
                                         <h2 className={`text-3xl font-bold text-[#1f2937] pb-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                                             style={{ transitionDelay: '200ms' }}>{activeSuiteData?.title}</h2>
                                         <p className={`text-[#1f2937] py-4 text-justify transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}

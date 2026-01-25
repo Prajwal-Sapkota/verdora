@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   { image: "/images/hero3.avif" },
   { image: "/images/hero1.avif" },
-  { image: "/images/hero4.avif" }, 
+  { image: "/images/hero4.avif" },
 ];
 
 const Hero = () => {
@@ -45,32 +45,42 @@ const Hero = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          
+
+          // Store refs in variables
+          const subtitleEl = subtitleRef.current;
+          const headingEl = headingRef.current;
+          const textEl = textRef.current;
+          const buttonEl = buttonRef.current;
+
           // Animate elements with delays
           const animateElements = [
-            { ref: subtitleRef, delay: 300 },
-            { ref: headingRef, delay: 600 },
-            { ref: textRef, delay: 900 },
-            { ref: buttonRef, delay: 1200 },
+            { element: subtitleEl, delay: 300 },
+            { element: headingEl, delay: 600 },
+            { element: textEl, delay: 900 },
+            { element: buttonEl, delay: 1200 },
           ];
 
-          animateElements.forEach(({ ref, delay }) => {
+          animateElements.forEach(({ element, delay }) => {
             setTimeout(() => {
-              if (ref.current) {
-                ref.current.classList.remove('opacity-0', 'translate-y-8');
-                ref.current.classList.add('opacity-100', 'translate-y-0');
+              if (element) {
+                element.classList.remove('opacity-0', 'translate-y-8');
+                element.classList.add('opacity-100', 'translate-y-0');
               }
             }, delay);
           });
-          
+
           observer.disconnect();
         }
       },
       { threshold: 0.3 }
     );
 
-    if (leftRef.current) observer.observe(leftRef.current);
-    return () => observer.disconnect();
+    const element = leftRef.current;
+    if (element) observer.observe(element);
+
+    return () => {
+      if (element) observer.disconnect();
+    };
   }, []);
 
   return (
@@ -83,12 +93,12 @@ const Hero = () => {
             src="/images/banner.webp"
             alt="Verdora Resort"
             fetchPriority="high"
-            loading="eager" 
+            loading="eager"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#f8f5f0]/80 via-[#f3eee6]/65 to-[#eae3d7]/30" />
-          
+
           {/* Content */}
           <div
             ref={leftRef}
@@ -120,13 +130,14 @@ const Hero = () => {
               {/* Button with exact same effect */}
               <div ref={buttonRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
                 <div className="relative group inline-block">
-                  <button onClick={()=>{navigate("/rooms");
+                  <button onClick={() => {
+                    navigate("/rooms");
                     window.scrollTo(0, 0);
-                  }} 
-                  className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl bg-[#8a6a3f] text-white hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
+                  }}
+                    className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl bg-[#8a6a3f] text-white hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
                     {/* Gray overlay that appears on hover */}
                     <span className="absolute inset-0 bg-[#262626] rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-in-out"></span>
-                    
+
                     {/* Button Text */}
                     <span className="relative z-10 flex items-center justify-center gap-3">
                       Reserve Your Stay
@@ -149,7 +160,7 @@ const Hero = () => {
         >
           {/* Dark gradient placeholder */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 z-0" />
-          
+
           {/* Render all images */}
           {slides.map((slide, index) => (
             <img
@@ -167,7 +178,7 @@ const Hero = () => {
               onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
             />
           ))}
-          
+
           {/* Dark overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none z-10" />
 

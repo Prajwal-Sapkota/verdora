@@ -35,10 +35,14 @@ const Comfort = () => {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+    const element = sectionRef.current;
+    if (element) observer.observe(element);
 
+    return () => {
+      if (element) observer.disconnect();
+    };
+  }, []);
+  
   return (
     <div className="relative">
       {/* MAIN CONTENT SECTION */}
@@ -97,7 +101,7 @@ const Comfort = () => {
               </div>
             </div>
 
-            
+
           </div>
 
         </div>

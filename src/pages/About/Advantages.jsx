@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  
+
   FaUsers,
-  
+
   FaHiking,
   FaWind,
- 
-  
+
+
 } from "react-icons/fa";
 
 const Advantages = () => {
@@ -25,9 +25,12 @@ const Advantages = () => {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    const element = sectionRef.current;
+    if (element) observer.observe(element);
 
-    return () => observer.disconnect();
+    return () => {
+      if (element) observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -56,7 +59,7 @@ const Advantages = () => {
     }
   ];
 
-  
+
 
   return (
     <div
@@ -71,7 +74,7 @@ const Advantages = () => {
             <div>
               <div className="flex items-center gap-2 sm:gap-3 pb-3 sm:pb-4">
                 <span className="text-[#ab8c55] font-semibold tracking-wider uppercase text-xs sm:text-sm">
-                   ADVANTAGES 
+                  ADVANTAGES
                 </span>
               </div>
 
@@ -82,11 +85,10 @@ const Advantages = () => {
 
             <div className="space-y-8">
               {advantages.map((advantage, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`space-y-4 transition-all duration-700 delay-${index * 200} ${
-                    loaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-                  }`}
+                  className={`space-y-4 transition-all duration-700 delay-${index * 200} ${loaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-[#ab8c55]/10 text-[#ab8c55]">
@@ -103,7 +105,7 @@ const Advantages = () => {
               ))}
             </div>
 
-            
+
           </div>
 
           {/* Right Column - Big Image with Animation */}

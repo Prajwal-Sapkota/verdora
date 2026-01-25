@@ -14,16 +14,21 @@ const BookingForm = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) setIsVisible(true);
+                if (entry.isIntersecting && !isVisible) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target);
+                }
             },
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
+        const element = sectionRef.current;
+        if (element) observer.observe(element);
+
         return () => {
-            if (sectionRef.current) observer.unobserve(sectionRef.current);
+            if (element) observer.unobserve(element);
         };
-    }, []);
+    }, [isVisible]);
 
     return (
         <div className="relative min-h-[80vh] flex items-center justify-center p-6 " ref={sectionRef}>

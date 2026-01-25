@@ -48,7 +48,7 @@ const Features = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null); // For hover on desktop
 
   // Scroll reveal once
-  useEffect(() => {
+ useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -59,10 +59,14 @@ const Features = () => {
       { threshold: 0.25 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    const element = sectionRef.current;
+    if (element) observer.observe(element);
+    
+    return () => {
+      if (element) observer.disconnect();
+    };
   }, []);
-
+  
   // Determine transform based on hover or click
   const getTransform = (index) => {
     if (window.innerWidth >= 1024 && hoveredIndex === index) return "rotateY(180deg)"; // Desktop hover

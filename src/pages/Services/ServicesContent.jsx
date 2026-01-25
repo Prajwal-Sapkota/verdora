@@ -42,21 +42,23 @@ const ServicesContent = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = parseInt(entry.target.dataset.index);
-            setVisibleIndexes((prev) => [...prev, index]);
+            setVisibleIndexes((prev) => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
+            });
           }
         });
       },
       { threshold: 0.3 }
     );
 
-    serviceRefs.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
+    const elements = serviceRefs.current.filter(Boolean);
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      serviceRefs.current.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
+      elements.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
@@ -70,7 +72,7 @@ const ServicesContent = () => {
               VERDORA EXPERIENCE
             </span>
           </div>
-          
+
           <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal text-[#262626] leading-tight py-1 max-w-6xl mx-auto">
             Discover exceptional hospitality and curated experiences in the heart of Chitwan.
           </h1>
@@ -91,14 +93,12 @@ const ServicesContent = () => {
             className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 mb-8"
           >
             <div
-              className={`flex flex-col lg:flex-row ${
-                !isEven ? "lg:flex-row-reverse" : ""
-              } items-center min-h-[90vh] overflow-hidden rounded-2xl bg-[#f6f4ef]
+              className={`flex flex-col lg:flex-row ${!isEven ? "lg:flex-row-reverse" : ""
+                } items-center min-h-[90vh] overflow-hidden rounded-2xl bg-[#f6f4ef]
                 transition-all duration-1000 ease-out shadow-sm
-                ${
-                  isVisible
-                    ? "translate-x-0 opacity-100"
-                    : isEven
+                ${isVisible
+                  ? "translate-x-0 opacity-100"
+                  : isEven
                     ? "-translate-x-52 opacity-0"
                     : "translate-x-52 opacity-0"
                 }`}

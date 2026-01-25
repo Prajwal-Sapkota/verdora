@@ -82,11 +82,14 @@ const RoomDetail = () => {
             direction === "right" && "translate-x-0",
             direction === "scale" && "scale-100"
           );
+
+          // Unobserve after animation
+          observer.unobserve(element);
         }
       });
     }, observerOptions);
 
-    // Observe all animated sections
+    // Store all refs in variables
     const sections = [
       introRef.current,
       advantagesRef.current,
@@ -99,7 +102,11 @@ const RoomDetail = () => {
 
     sections.forEach(section => observer.observe(section));
 
-    return () => observer.disconnect();
+    return () => {
+      sections.forEach(section => {
+        if (section) observer.unobserve(section);
+      });
+    };
   }, [room]);
 
   const handleBookNow = () => {

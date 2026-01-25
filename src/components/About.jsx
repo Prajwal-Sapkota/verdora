@@ -23,19 +23,31 @@ const About = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setLoaded(true);
-          observer.disconnect(); // run once only
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !loaded) {
+            setLoaded(true);
+            observer.unobserve(entry.target);
+          }
+        });
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.3,
+        rootMargin: '50px' 
+      }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [loaded]); 
 
   // Floating text (UNCHANGED)
   useEffect(() => {

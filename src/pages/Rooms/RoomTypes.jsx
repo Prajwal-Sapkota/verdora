@@ -20,9 +20,12 @@ const RoomTypes = () => {
             }
         );
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
+        const element = sectionRef.current;
+        if (element) observer.observe(element);
 
-        return () => observer.disconnect();
+        return () => {
+            if (element) observer.disconnect();
+        };
     }, [hasAnimated]);
 
     return (

@@ -9,7 +9,7 @@ import servicesData from "../../data/services.json";
 import usePageTitle from "../../hooks/usePageTitle";
 import { IoCallOutline, IoCheckmarkCircle, IoHeadsetOutline, IoLocationOutline, IoMailOutline, IoSearchOutline, IoTimeOutline } from "react-icons/io5";
 
-import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight, FaStar, FaSwimmingPool, FaUtensils, FaLeaf, FaCar, FaFire, FaChild, FaMountain, FaTree, FaCamera, FaHeart, FaHome, FaWifi, FaUsers, FaShieldAlt, FaBookOpen, FaCoffee, FaUserTie, FaWineGlassAlt, FaPhone, FaMapMarkerAlt, FaThermometerHalf, FaLock, FaAppleAlt, FaConciergeBell, FaBed, FaBath, FaTv, FaParking, FaSwimmer, FaUmbrellaBeach, FaFeather, FaSun, FaWater, FaWind, FaBinoculars, FaGlassCheers, FaHandsHelping,  FaShareAlt } from "react-icons/fa";
+import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight, FaStar, FaSwimmingPool, FaUtensils, FaLeaf, FaCar, FaFire, FaChild, FaMountain, FaTree, FaCamera, FaHeart, FaHome, FaWifi, FaUsers, FaShieldAlt, FaBookOpen, FaCoffee, FaUserTie, FaWineGlassAlt, FaPhone, FaMapMarkerAlt, FaThermometerHalf, FaLock, FaAppleAlt, FaConciergeBell, FaBed, FaBath, FaTv, FaParking, FaSwimmer, FaUmbrellaBeach, FaFeather, FaSun, FaWater, FaWind, FaBinoculars, FaGlassCheers, FaHandsHelping, FaShareAlt } from "react-icons/fa";
 
 const ServiceDetail = () => {
     const { slug } = useParams();
@@ -90,6 +90,9 @@ const ServiceDetail = () => {
                         direction === "right" && "translate-x-0",
                         direction === "scale" && "scale-100"
                     );
+
+                    // Unobserve after animation
+                    observer.unobserve(element);
                 }
             });
         }, { threshold: 0.05, rootMargin: "20px" });
@@ -106,62 +109,66 @@ const ServiceDetail = () => {
 
         sections.forEach(section => observer.observe(section));
 
-        return () => observer.disconnect();
+        return () => {
+            sections.forEach(section => {
+                if (section) observer.unobserve(section);
+            });
+        };
     }, [service]);
 
     const getIcon = (iconName) => {
-    // Map ALL icons from your data
-    const iconMap = {
-        // From your data
-        "FaSpa": FaSpa,
-        "FaTag": FaTag,
-        "FaClock": FaClock,
-        "FaMoneyBillWave": FaMoneyBillWave,
-        "FaArrowLeft": FaArrowLeft,
-        "FaArrowRight": FaArrowRight,
-        "FaShareAlt": FaShareAlt,
-        "FaStar": FaStar,
-        "FaSwimmingPool": FaSwimmingPool,
-        "FaUtensils": FaUtensils,
-        "FaLeaf": FaLeaf,
-        "FaCar": FaCar,
-        "FaFire": FaFire,
-        "FaChild": FaChild,
-        "FaMountain": FaMountain,
-        "FaTree": FaTree,
-        "FaCamera": FaCamera,
-        "FaHeart": FaHeart,
-        "FaGlassCheers": FaGlassCheers,
-        "FaHome": FaHome,
-        "FaWifi": FaWifi,
-        "FaUsers": FaUsers,
-        "FaShieldAlt": FaShieldAlt,
-        "FaBookOpen": FaBookOpen,
-        "FaCoffee": FaCoffee,
-        "FaUserTie": FaUserTie,
-        "FaWineGlassAlt": FaWineGlassAlt,
-        "FaPhone": FaPhone,
-        "FaMapMarkerAlt": FaMapMarkerAlt,
-        "FaThermometerHalf": FaThermometerHalf,
-        "FaLock": FaLock,
-        "FaAppleAlt": FaAppleAlt,
-        "FaConciergeBell": FaConciergeBell,
-        "FaBed": FaBed,
-        "FaBath": FaBath,
-        "FaTv": FaTv,
-        "FaParking": FaParking,
-        "FaSwimmer": FaSwimmer,
-        "FaUmbrellaBeach": FaUmbrellaBeach,
-        "FaFeather": FaFeather,
-        "FaSun": FaSun,
-        "FaWater": FaWater,
-        "FaWind": FaWind,
-        "FaBinoculars": FaBinoculars,
-        "FaHandsHelping": FaHandsHelping
+        // Map ALL icons from your data
+        const iconMap = {
+            // From your data
+            "FaSpa": FaSpa,
+            "FaTag": FaTag,
+            "FaClock": FaClock,
+            "FaMoneyBillWave": FaMoneyBillWave,
+            "FaArrowLeft": FaArrowLeft,
+            "FaArrowRight": FaArrowRight,
+            "FaShareAlt": FaShareAlt,
+            "FaStar": FaStar,
+            "FaSwimmingPool": FaSwimmingPool,
+            "FaUtensils": FaUtensils,
+            "FaLeaf": FaLeaf,
+            "FaCar": FaCar,
+            "FaFire": FaFire,
+            "FaChild": FaChild,
+            "FaMountain": FaMountain,
+            "FaTree": FaTree,
+            "FaCamera": FaCamera,
+            "FaHeart": FaHeart,
+            "FaGlassCheers": FaGlassCheers,
+            "FaHome": FaHome,
+            "FaWifi": FaWifi,
+            "FaUsers": FaUsers,
+            "FaShieldAlt": FaShieldAlt,
+            "FaBookOpen": FaBookOpen,
+            "FaCoffee": FaCoffee,
+            "FaUserTie": FaUserTie,
+            "FaWineGlassAlt": FaWineGlassAlt,
+            "FaPhone": FaPhone,
+            "FaMapMarkerAlt": FaMapMarkerAlt,
+            "FaThermometerHalf": FaThermometerHalf,
+            "FaLock": FaLock,
+            "FaAppleAlt": FaAppleAlt,
+            "FaConciergeBell": FaConciergeBell,
+            "FaBed": FaBed,
+            "FaBath": FaBath,
+            "FaTv": FaTv,
+            "FaParking": FaParking,
+            "FaSwimmer": FaSwimmer,
+            "FaUmbrellaBeach": FaUmbrellaBeach,
+            "FaFeather": FaFeather,
+            "FaSun": FaSun,
+            "FaWater": FaWater,
+            "FaWind": FaWind,
+            "FaBinoculars": FaBinoculars,
+            "FaHandsHelping": FaHandsHelping
+        };
+
+        return iconMap[iconName] || FaStar;
     };
-    
-    return iconMap[iconName] || FaStar;
-};
     // Helper function to render icon as JSX
     const renderIcon = (iconName, className = "") => {
         const IconComponent = getIcon(iconName);

@@ -18,17 +18,24 @@ const GalleryItems = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
+ useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
+        if (entry.isIntersecting && !visible) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
       },
       { threshold: 0.15 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+    const element = sectionRef.current;
+    if (element) observer.observe(element);
+    
+    return () => {
+      if (element) observer.disconnect();
+    };
+}, [visible]); 
 
   const galleryItems = [
     // Row 1
