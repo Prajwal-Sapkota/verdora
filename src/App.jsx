@@ -1,36 +1,35 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// Eager load simple/light pages
+// Eager load Home only
 import Home from './pages/Home';
+
+// Lazy load heavy pages
+const Rooms = lazy(() => import('./pages/Rooms'));
+const Gallery = lazy(() => import('./pages/Gallery'));
+const RoomDetail = lazy(() => import('./pages/Rooms/RoomDetail'));
+const ServiceDetail = lazy(() => import('./pages/Services/ServiceDetail'));
+const Services = lazy(() => import('./pages/Services'));
+
+// Keep these eager if they're small
 import About from './pages/About';
 import Cafe from './pages/Cafe';
 import Contact from './pages/Contact';
 
-// Lazy load ONLY heavy components
-const Rooms = lazy(() => import('./pages/Rooms'));
-const Gallery = lazy(() => import('./pages/Gallery'));
-const Services = lazy(() => import('./pages/Services'));
-const RoomDetail = lazy(() => import('./pages/Rooms/RoomDetail'));
-const ServiceDetail = lazy(() => import('./pages/Services/ServiceDetail'));
-
-// Simple loading component for heavy pages
 const LoadingSpinner = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#ab8c55]"></div>
+  <div className="loading-spinner">
+    <div className="spinner"></div>
   </div>
 );
 
 function App() {
   return (
     <Routes>
-      {/* Light pages - load instantly */}
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/cafe" element={<Cafe />} />
       <Route path="/contact" element={<Contact />} />
       
-      {/* Heavy pages - lazy load with suspense */}
       <Route 
         path="/rooms" 
         element={
