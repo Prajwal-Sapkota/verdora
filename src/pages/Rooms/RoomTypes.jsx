@@ -14,7 +14,7 @@ const RoomTypes = () => {
                     observer.disconnect();
                 }
             },
-            { 
+            {
                 threshold: 0.1,
                 rootMargin: '50px'
             }
@@ -31,13 +31,13 @@ const RoomTypes = () => {
                 {/* Room Types Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
                     {roomsData.rooms.map((room, index) => (
-                        <Link 
+                        <Link
                             to={`/rooms/${room.slug}`}
-                            key={room.id} 
+                            key={room.id}
                             className="group cursor-pointer block"
                             style={{
-                                transform: hasAnimated 
-                                    ? 'translateY(0)' 
+                                transform: hasAnimated
+                                    ? 'translateY(0)'
                                     : 'translateY(80px)',
                                 opacity: hasAnimated ? 1 : 0,
                                 transition: `all 800ms ease-out ${index * 100}ms`,
@@ -45,7 +45,7 @@ const RoomTypes = () => {
                             }}
                         >
                             {/* Image */}
-                            <div className="relative h-80 mb-6 overflow-hidden rounded-lg">
+                            <div className="relative h-64 sm:h-72 md:h-80  mb-6 overflow-hidden rounded-lg">
                                 <img
                                     src={room.image}
                                     alt={room.name}
@@ -90,7 +90,7 @@ const RoomTypes = () => {
                 </div>
 
                 {/* View All Button */}
-                <div 
+                <div
                     className="text-center mt-16"
                     style={{
                         transform: hasAnimated ? 'translateY(0)' : 'translateY(50px)',

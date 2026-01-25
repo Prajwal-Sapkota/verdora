@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const slides = [
   { image: "/images/hero3.avif" },
@@ -11,6 +12,7 @@ const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(false);
   const [loadedImages, setLoadedImages] = useState({});
+  const navigate = useNavigate();
 
   const leftRef = useRef(null);
   const rightRef = useRef(null);
@@ -78,7 +80,7 @@ const Hero = () => {
         <div className="relative h-[50vh] lg:h-[100vh]">
           {/* Background image */}
           <img
-            src="/images/banner.avif"
+            src="/images/banner.webp"
             alt="Verdora Resort"
             fetchPriority="high"
             loading="eager" 
@@ -118,7 +120,10 @@ const Hero = () => {
               {/* Button with exact same effect */}
               <div ref={buttonRef} className="opacity-0 translate-y-8 transition-all duration-700 ease-out">
                 <div className="relative group inline-block">
-                  <button className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl bg-[#8a6a3f] text-white hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
+                  <button onClick={()=>{navigate("/rooms");
+                    window.scrollTo(0, 0);
+                  }} 
+                  className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl bg-[#8a6a3f] text-white hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
                     {/* Gray overlay that appears on hover */}
                     <span className="absolute inset-0 bg-[#262626] rounded-full scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-in-out"></span>
                     

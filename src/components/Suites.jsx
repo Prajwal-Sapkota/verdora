@@ -1,32 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-    FaTree,
-    FaMountain,
-    FaWater,
-    FaUmbrellaBeach,
-    FaShower,
-    FaBed,
-    FaUserFriends,
-    FaLeaf,
-    FaSeedling,
-    FaPaw,
-    FaSun,
-    FaMoon,
-    FaStar,
-    FaCalendarAlt,
-    FaCheckCircle,
-    FaArrowRight,
-    FaInfoCircle,
-    FaWifi,
-    FaCar,
     FaCoffee,
-    FaSwimmingPool,
-    FaUtensils,
-    FaSpa,
-    FaTshirt
+    FaTshirt,
+    FaCar,
+    FaArrowRight,
+    FaMoon,
+    FaUmbrellaBeach,
+    FaWater,
+    FaLeaf,
+    FaSeedling
 } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
+// Import rooms data
+import roomsData from '../data/rooms.json';
 
 const Suites = () => {
+    const navigate = useNavigate();
     const [activeSuite, setActiveSuite] = useState(1);
     const [hoveredSuite, setHoveredSuite] = useState(null);
     const [isInView, setIsInView] = useState(false);
@@ -55,85 +45,54 @@ const Suites = () => {
         };
     }, [isInView]);
 
-    const suites = [
-        {
-            id: 1,
-            title: "Bubble House",
-            subtitle: "Stargazer Dome",
-            description: "Perfect for romantic getaways, intimate gatherings, or solo adventurers seeking a whimsical escape under the jungle stars. Sleep under a canopy of stars in our transparent bubble domes.",
-            price: "$54",
-            priceLabel: "Night",
-            image: "/images/bubble.avif",
-            facilities: [
-                { icon: <FaCoffee />, label: "Breakfast included" },
-                { icon: <FaTshirt />, label: "Laundry facilities" },
-                { icon: <FaCar />, label: "Pickup and drop" }
-            ],
-            icon: <FaMoon />
-        },
-        {
-            id: 2,
-            title: "Villa Bodrum",
-            subtitle: "Jungle Oasis",
-            description: "With spacious interiors, modern amenities, and private outdoor spaces, each Villa is a haven of relaxation and rejuvenation. Featuring infinity pools that blend with the horizon.",
-            price: "$108",
-            priceLabel: "Night",
-            image: "/images/villa.avif",
-            facilities: [
-                { icon: <FaCoffee />, label: "Breakfast included" },
-                { icon: <FaTshirt />, label: "Laundry facilities" },
-                { icon: <FaCar />, label: "Pickup and drop" }
-            ],
-            icon: <FaUmbrellaBeach />
-        },
-        {
-            id: 3,
-            title: "Family Cottage",
-            subtitle: "River Retreat",
-            description: "Our cottage provides a serene retreat for those seeking solace in nature's embrace, just steps from a gentle jungle stream. Perfect family getaway with safe exploration areas.",
-            price: "$58",
-            priceLabel: "Night",
-            image: "/images/family.avif",
-            facilities: [
-                { icon: <FaCoffee />, label: "Breakfast included" },
-                { icon: <FaTshirt />, label: "Laundry facilities" },
-                { icon: <FaCar />, label: "Pickup and drop" }
-            ],
-            icon: <FaWater />
-        },
-        {
-            id: 4,
-            title: "Standard Cottage",
-            subtitle: "Forest Haven",
-            description: "Relax in rustic elegance, unwind on your private veranda, and immerse yourself in the beauty of the surroundings. Built with sustainable local materials blending with forest environment.",
-            price: "$60",
-            priceLabel: "Night",
-            image: "/images/standard.avif",
-            facilities: [
-                { icon: <FaCoffee />, label: "Breakfast included" },
-                { icon: <FaTshirt />, label: "Laundry facilities" },
-                { icon: <FaCar />, label: "Pickup and drop" }
-            ],
-            icon: <FaLeaf />
-        },
-        {
-            id: 5,
-            title: "Single Apartments",
-            subtitle: "Canopy Studio",
-            description: "Designed for solo travelers or cozy couples, our apartments offer a cozy retreat amidst picturesque surroundings. Compact yet comfortable with large windows bringing outdoors in.",
-            price: "$46",
-            priceLabel: "Night",
-            image: "/images/single.avif",
-            facilities: [
-                { icon: <FaCoffee />, label: "Breakfast included" },
-                { icon: <FaTshirt />, label: "Laundry facilities" },
-                { icon: <FaCar />, label: "Pickup and drop" }
-            ],
-            icon: <FaSeedling />
+    const suites = roomsData.rooms.slice(0, 5).map(room => ({
+        id: room.id,
+        title: room.name,
+        subtitle: getRoomSubtitle(room.name), // Custom subtitle
+        description: room.description,
+        price: room.price.split(' /')[0],
+        priceLabel: room.price.split('/ ')[1] || "Night",
+        image: room.image,
+        facilities: [
+            { icon: <FaCoffee />, label: "Breakfast included" },
+            { icon: <FaTshirt />, label: "Laundry facilities" },
+            { icon: <FaCar />, label: "Pickup and drop" }
+        ],
+        icon: getIconForRoom(room.id),
+        slug: room.slug
+    }));
+
+    // Function to get better subtitle based on room name
+    function getRoomSubtitle(roomName) {
+        switch(roomName) {
+            case "Bubble House": return "Stargazer Dome";
+            case "Bungalow Apartments": return "Jungle Oasis";
+            case "Villa Bodrum": return "Luxury Villa";
+            case "Family Cottage": return "River Retreat";
+            case "Standard Cottage": return "Forest Haven";
+            case "Single Apartments": return "Canopy Studio";
+            default: return "Premium Suite";
         }
-    ];
+    }
+
+    // Helper function to assign icons
+    function getIconForRoom(id) {
+        switch(id) {
+            case 1: return <FaMoon />;
+            case 2: return <FaUmbrellaBeach />;
+            case 3: return <FaWater />;
+            case 4: return <FaLeaf />;
+            case 5: return <FaSeedling />;
+            default: return <FaMoon />;
+        }
+    }
 
     const activeSuiteData = suites.find(suite => suite.id === activeSuite);
+
+    // Function to handle booking navigation
+    const handleBookNow = (slug) => {
+        navigate(`/rooms/${slug}`);
+    };
 
     return (
         <div className="h-screen-[70vh] " ref={sectionRef}>
@@ -229,7 +188,10 @@ const Suites = () => {
                                         </div>
 
                                         {/* Book Now Button */}
-                                        <button className="flex items-center justify-center text-white font-semibold py-8 px-2 transition-all duration-700 overflow-hidden relative shadow-2xl hover:shadow-3xl bg-[#242424] min-w-[200px]">
+                                        <button 
+                                            onClick={() => handleBookNow(activeSuiteData?.slug)}
+                                            className="flex items-center justify-center text-white font-semibold py-8 px-2 transition-all duration-700 overflow-hidden relative shadow-2xl hover:shadow-3xl bg-[#242424] min-w-[200px]"
+                                        >
                                             <span className="relative z-10 flex items-center justify-center text-lg">
                                                 BOOK NOW
                                                 <span className="flex items-center justify-center w-7 h-7 ml-3 rounded-full bg-[#383838] text-white">
@@ -244,8 +206,14 @@ const Suites = () => {
                                 {/* Right Content Section - Comes from right */}
                                 <div className={`md:w-1/2 px-8 sm:px-18 py-24 flex flex-col h-full transition-all duration-1000 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
                                     <div className="flex-row">
-                                        <span className={`text-xl font-medium text-[#ab8c55] transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>{activeSuiteData?.subtitle}</span>
-                                        <h2 className={`text-3xl font-bold text-[#1f2937] py-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                                        {/* Fixed subtitle with better styling */}
+                                        <div className={`mb-2 transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
+                                            <span className="text-lg font-semibold text-[#ab8c55] uppercase tracking-wider">
+                                                {activeSuiteData?.subtitle}
+                                            </span>
+                                        </div>
+                                        
+                                        <h2 className={`text-3xl font-bold text-[#1f2937] pb-4 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                                             style={{ transitionDelay: '200ms' }}>{activeSuiteData?.title}</h2>
                                         <p className={`text-[#1f2937] py-4 text-justify transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}
                                             style={{ transitionDelay: '300ms' }}>

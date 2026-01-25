@@ -126,7 +126,9 @@ const Navbar = () => {
             <div className="w-1/5 flex items-center justify-center">
               <div
                 className="cursor-pointer group"
-                onClick={() => navigate("/")}
+                onClick={() =>{navigate("/")
+                  window.scrollTo(0, 0);
+                }} 
               >
                 <div className="relative">
                   <div className={`
@@ -189,10 +191,14 @@ const Navbar = () => {
                     <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-emerald-500 group-hover:w-8 transition-all duration-300" />
                   </a>
                 ))}
-                
+
                 {/* BOOK NOW Button - Made much smaller */}
                 <button
-                  onClick={() => navigate("/book")}
+
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate("/rooms");
+                  }}
                   className={`
                     relative px-3 py-2 rounded-full
                     text-sm tracking-[0.3em] font-medium whitespace-nowrap
@@ -242,7 +248,10 @@ const Navbar = () => {
           {/* Mobile Header Buttons */}
           <div className="flex items-center gap-3">
             <button
-              onClick={() => navigate("/book")}
+              onClick={() => {
+                window.scrollTo(0, 0);
+                navigate("/rooms");
+              }}
               className={`
                 relative px-3 py-1.5 rounded-full
                 text-xs tracking-[0.15em] font-medium whitespace-nowrap
@@ -351,7 +360,10 @@ const Navbar = () => {
                 <button
                   onClick={() => {
                     setIsMenuOpen(false);
-                    setTimeout(() => navigate("/book"), 50);
+                    setTimeout(() => {
+                      window.scrollTo(0, 0);
+                      navigate("/rooms");
+                    }, 50); 
                   }}
                   className="relative w-full py-4 px-4 rounded-xl bg-gradient-to-br from-[#8a6a3f] via-[#9a7a4f] to-[#8a6a3f] text-white text-lg font-medium tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-[#6a4a2f]/30"
                 >

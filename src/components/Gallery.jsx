@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const galleryItems = [
   "/images/gallery1.webp",
@@ -13,8 +14,9 @@ const galleryItems = [
 ];
 
 const Gallery = () => {
+  const navigate = useNavigate();
   const trackRef = useRef(null);
-  const speed = 1.5; // pixels per frame
+  const speed = 1.5; 
 
   useEffect(() => {
     const track = trackRef.current;
@@ -22,18 +24,15 @@ const Gallery = () => {
 
     let position = 0;
 
-    // Cache scrollWidth to prevent forced reflow
     let trackWidth = track.scrollWidth / 2;
 
     const animate = () => {
       position -= speed;
 
-      // Reset position when scrolled half the track (seamless loop)
       if (Math.abs(position) >= trackWidth) {
         position = 0;
       }
 
-      // Use transform for GPU acceleration
       track.style.transform = `translateX(${position}px)`;
 
       requestAnimationFrame(animate);
@@ -41,7 +40,6 @@ const Gallery = () => {
 
     animate();
 
-    // Update trackWidth on window resize
     const handleResize = () => {
       trackWidth = track.scrollWidth / 2;
     };
@@ -103,13 +101,15 @@ const Gallery = () => {
         </div>
 
         {/* Button */}
-        <div className="mt-16 flex justify-center">
-          <button
+        <div className="pt-16 flex justify-center">
+          <button onClick={ () => {navigate("/gallery")
+            window.scrollTo(0, 0);
+          }}
             className="
               px-10 py-3 md:px-12 md:py-4 rounded-full
               bg-gray-900 text-white font-semibold
               transition-all duration-300 shadow-lg
-              hover:bg-[#8a6a3f] hover:scale-105 hover:shadow-xl
+              hover:bg-[#8a6a3f] hover:scale-105 hover:shadow-xl cursor-pointer
             "
           >
             View More

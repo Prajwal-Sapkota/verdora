@@ -511,7 +511,7 @@ const RoomDetail = () => {
                   className="block group"
                 >
                   <div className="rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full">
-                    <div className="h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
+                    <div className="h-64 sm:h-72 md:h-80  overflow-hidden">
                       <img
                         src={r.image}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

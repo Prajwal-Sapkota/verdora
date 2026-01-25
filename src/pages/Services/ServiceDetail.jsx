@@ -8,8 +8,8 @@ import GallerySlider from "./GallerySlider";
 import servicesData from "../../data/services.json";
 import usePageTitle from "../../hooks/usePageTitle";
 import { IoCallOutline, IoCheckmarkCircle, IoHeadsetOutline, IoLocationOutline, IoMailOutline, IoSearchOutline, IoTimeOutline } from "react-icons/io5";
-import { FaShareAlt, FaStar } from "react-icons/fa";
-import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
+import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight, FaStar, FaSwimmingPool, FaUtensils, FaLeaf, FaCar, FaFire, FaChild, FaMountain, FaTree, FaCamera, FaHeart, FaHome, FaWifi, FaUsers, FaShieldAlt, FaBookOpen, FaCoffee, FaUserTie, FaWineGlassAlt, FaPhone, FaMapMarkerAlt, FaThermometerHalf, FaLock, FaAppleAlt, FaConciergeBell, FaBed, FaBath, FaTv, FaParking, FaSwimmer, FaUmbrellaBeach, FaFeather, FaSun, FaWater, FaWind, FaBinoculars, FaGlassCheers, FaHandsHelping, FaCalendarAlt, FaShareAlt } from "react-icons/fa";
 
 const ServiceDetail = () => {
     const { slug } = useParams();
@@ -109,21 +109,59 @@ const ServiceDetail = () => {
         return () => observer.disconnect();
     }, [service]);
 
-    // Helper function to get icon component
     const getIcon = (iconName) => {
-        const iconMap = {
-            FaSpa: FaSpa,
-            FaTag: FaTag,
-            FaClock: FaClock,
-            FaMoneyBillWave: FaMoneyBillWave,
-            FaArrowLeft: FaArrowLeft,
-            FaArrowRight: FaArrowRight,
-            FaShareAlt: FaShareAlt,
-            FaStar: FaStar
-        };
-        return iconMap[iconName] || FaStar;
+    // Map ALL icons from your data
+    const iconMap = {
+        // From your data
+        "FaSpa": FaSpa,
+        "FaTag": FaTag,
+        "FaClock": FaClock,
+        "FaMoneyBillWave": FaMoneyBillWave,
+        "FaArrowLeft": FaArrowLeft,
+        "FaArrowRight": FaArrowRight,
+        "FaShareAlt": FaShareAlt,
+        "FaStar": FaStar,
+        "FaSwimmingPool": FaSwimmingPool,
+        "FaUtensils": FaUtensils,
+        "FaLeaf": FaLeaf,
+        "FaCar": FaCar,
+        "FaFire": FaFire,
+        "FaChild": FaChild,
+        "FaMountain": FaMountain,
+        "FaTree": FaTree,
+        "FaCamera": FaCamera,
+        "FaHeart": FaHeart,
+        "FaGlassCheers": FaGlassCheers,
+        "FaHome": FaHome,
+        "FaWifi": FaWifi,
+        "FaUsers": FaUsers,
+        "FaShieldAlt": FaShieldAlt,
+        "FaBookOpen": FaBookOpen,
+        "FaCoffee": FaCoffee,
+        "FaUserTie": FaUserTie,
+        "FaWineGlassAlt": FaWineGlassAlt,
+        "FaPhone": FaPhone,
+        "FaMapMarkerAlt": FaMapMarkerAlt,
+        "FaThermometerHalf": FaThermometerHalf,
+        "FaLock": FaLock,
+        "FaAppleAlt": FaAppleAlt,
+        "FaConciergeBell": FaConciergeBell,
+        "FaBed": FaBed,
+        "FaBath": FaBath,
+        "FaTv": FaTv,
+        "FaParking": FaParking,
+        "FaSwimmer": FaSwimmer,
+        "FaUmbrellaBeach": FaUmbrellaBeach,
+        "FaFeather": FaFeather,
+        "FaSun": FaSun,
+        "FaWater": FaWater,
+        "FaWind": FaWind,
+        "FaBinoculars": FaBinoculars,
+        "FaHandsHelping": FaHandsHelping
     };
-
+    
+    return iconMap[iconName] || FaStar;
+};
     // Helper function to render icon as JSX
     const renderIcon = (iconName, className = "") => {
         const IconComponent = getIcon(iconName);
@@ -242,7 +280,7 @@ const ServiceDetail = () => {
                                         onClick={() => setBookingModal(true)}
                                         className="px-6 sm:px-8 md:px-12 py-2 sm:py-3 md:py-4 rounded-full bg-[#ab8c55] text-white font-semibold hover:bg-[#8a6d42] transition-all flex items-center gap-2 sm:gap-3 group text-sm sm:text-base md:text-lg"
                                     >
-                                        Book Now <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
+                                        Reserve Now <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
                                     </button>
 
                                     <button
@@ -377,7 +415,7 @@ const ServiceDetail = () => {
 
             {/* Packages & Services Section */}
             {(hasTreatments || hasPackages) && (
-                <div className="bg-[#f5f2ed]">
+                <div className="bg-white">
                     <div
                         ref={detailsRef}
                         data-direction="up"
@@ -426,7 +464,7 @@ const ServiceDetail = () => {
                                     {service.treatments.map((category, idx) => (
                                         <div
                                             key={idx}
-                                            className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all border border-gray-100"
+                                            className="bg-[#f5f2ed] rounded-lg sm:rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-all border border-gray-100"
                                         >
                                             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900">
                                                 {category.category}
@@ -468,7 +506,7 @@ const ServiceDetail = () => {
                                             key={idx}
                                             className={`relative rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 transition-all ${idx === 1 && service.packages.length === 3
                                                 ? "bg-[#ab8c55] text-white shadow-md sm:shadow-lg"
-                                                : "bg-white shadow-sm sm:shadow-md border border-gray-100"
+                                                : "bg-[#f5f2ed] shadow-sm sm:shadow-md border border-gray-100"
                                                 }`}
                                         >
                                             {idx === 1 && service.packages.length === 3 && (
@@ -506,7 +544,7 @@ const ServiceDetail = () => {
                                                     : "bg-[#ab8c55] text-white hover:bg-[#8a6a3f]"
                                                     }`}
                                             >
-                                                Book Now
+                                                Reserve Package
                                             </button>
                                         </div>
                                     ))}

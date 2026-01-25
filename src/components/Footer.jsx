@@ -4,14 +4,18 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   const partners = [
-    { name: "Tegora House", image: "/images/tagora.jpg" },
-    { name: "Royal Lifestyle", image: "/images/royal.webp" },
-    { name: "Marino Magic", image: "/images/marino.avif" },
-    { name: "Flextrivor", image: "/images/flex.jpg" },
-    { name: "Nepal Airlines", image: "/images/nepal.png" },
-    { name: "Aquafina", image: "/images/aquafina.jpg" },
-    { name: "Yeti Airlines", image: "/images/yeti.png" },
-  ];
+  { name: "National Trust for Nature Conservation", image: "/images/ntnc.png" },
+  { name: "WWF Nepal", image: "/images/wwf.jpg" },
+
+  { name: "Yak & Yeti Hotel", image: "/images/yaknyeti.png" },
+  { name: "Soaltee Hotel", image: "/images/soaltee.png" },
+
+  { name: "Tiger Tops Nepal", image: "/images/tigertops.jpg" },
+  { name: "Green Society Nepal", image: "/images/greensociety.png" },
+
+  { name: "Aquafina", image: "/images/aquafina.jpg" }
+];
+
 
   const usefulLinks = [
     { name: "Home", href: "/" },
@@ -131,7 +135,7 @@ const Footer = () => {
               </h4>
 
               {/* Partners Grid with Sliding Effect */}
-              <div className="relative h-54 ">
+              <div className="relative h-60 ">
                 {/* Sliding Container */}
                 <div 
                   className="absolute inset-0 transition-all duration-500 ease-in-out"
@@ -152,11 +156,11 @@ const Footer = () => {
                           transition-all duration-300 
                           hover:shadow-md 
                           flex items-center justify-center 
-                          h-24 sm:h-28
+                          h-28
                           overflow-hidden
                         "
                       >
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center p-1 sm:p-2">
+                        <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 flex items-center justify-center p-1 sm:p-2">
                           {partner.image ? (
                             <img
                               src={partner.image}
