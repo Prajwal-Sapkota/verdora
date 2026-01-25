@@ -61,7 +61,7 @@ const RoomTypes = () => {
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-[#262626]/80 text-lg leading-relaxed">
+                                <p className="text-[#262626]/80 text-lg leading-relaxed line-clamp-2">
                                     {room.shortDescription}
                                 </p>
 

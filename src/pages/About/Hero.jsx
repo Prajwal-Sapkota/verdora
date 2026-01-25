@@ -26,13 +26,11 @@ const Hero = () => {
 
     return (
         <div className="pt-18 sm:pt-0">
-            {/* Container for rounded corners and background */}
             <div className="relative rounded-b-2xl overflow-hidden  h-[500px] md:h-[550px] lg:h-[740px]">
                 
-                {/* Background Image - You can change this to an about-specific image */}
                 <div className="absolute inset-0">
                     <img 
-                        src="/images/abouthero.jpg" // Change to your about page image
+                        src="/images/abouthero.jpg" 
                         alt="About Our Resort" 
                         className="w-full h-full object-cover" 
                     />

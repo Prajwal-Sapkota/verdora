@@ -8,8 +8,8 @@ import GallerySlider from "./GallerySlider";
 import servicesData from "../../data/services.json";
 import usePageTitle from "../../hooks/usePageTitle";
 import { IoCallOutline, IoCheckmarkCircle, IoHeadsetOutline, IoLocationOutline, IoMailOutline, IoSearchOutline, IoTimeOutline } from "react-icons/io5";
-import { FaArrowLeft, FaArrowRight, FaClock, FaMoneyBillWave, FaSpa, FaTag } from "react-icons/fa6";
-import { FaShareAlt } from "react-icons/fa";
+import { FaShareAlt, FaStar } from "react-icons/fa";
+import { FaSpa, FaTag, FaClock, FaMoneyBillWave, FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const ServiceDetail = () => {
     const { slug } = useParams();
@@ -109,10 +109,25 @@ const ServiceDetail = () => {
         return () => observer.disconnect();
     }, [service]);
 
-    // Helper function
+    // Helper function to get icon component
     const getIcon = (iconName) => {
-        const IconComponent = FaIcons[iconName];
-        return IconComponent || FaIcons.FaStar;
+        const iconMap = {
+            FaSpa: FaSpa,
+            FaTag: FaTag,
+            FaClock: FaClock,
+            FaMoneyBillWave: FaMoneyBillWave,
+            FaArrowLeft: FaArrowLeft,
+            FaArrowRight: FaArrowRight,
+            FaShareAlt: FaShareAlt,
+            FaStar: FaStar
+        };
+        return iconMap[iconName] || FaStar;
+    };
+
+    // Helper function to render icon as JSX
+    const renderIcon = (iconName, className = "") => {
+        const IconComponent = getIcon(iconName);
+        return <IconComponent className={className} />;
     };
 
     const handleBookingSubmit = (bookingDetails) => {
@@ -215,8 +230,6 @@ const ServiceDetail = () => {
                                                 </div>
                                             </div>
                                         )}
-
-
                                     </div>
                                 </div>
 
@@ -245,7 +258,6 @@ const ServiceDetail = () => {
                 </div>
             </div>
 
-
             <div className="bg-[#f5f2ed]">
                 <div
                     ref={introRef}
@@ -261,16 +273,19 @@ const ServiceDetail = () => {
                             />
                             <div className="absolute -bottom-6 -right-6 sm:-bottom-8 sm:-right-8 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#ab8c55]/10 backdrop-blur-sm flex items-center justify-center border-4 border-white shadow-lg">
                                 <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center">
-                                    <div className="text-3xl sm:text-4xl text-[#ab8c55]">{getIcon(service.icon)}</div>
+                                    <div className="text-3xl sm:text-4xl text-[#ab8c55]">
+                                        {renderIcon(service.icon)}
+                                    </div>
                                 </div>
                             </div>
                             <div className="absolute -top-6 -left-6 sm:-bottom-8 sm:-right-8 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-[#ab8c55]/10 backdrop-blur-sm flex items-center justify-center border-4 border-white shadow-lg">
                                 <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center">
-                                    <div className="text-3xl sm:text-4xl text-[#ab8c55]">{getIcon(service.icon)}</div>
+                                    <div className="text-3xl sm:text-4xl text-[#ab8c55]">
+                                        {renderIcon(service.icon)}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div className="order-1 lg:order-2">
@@ -501,7 +516,6 @@ const ServiceDetail = () => {
                     </div>
                 </div>
             )}
-
 
             {/* Related Services Section - Light background (#f5f2ed) */}
             {relatedServices.length > 0 && (
