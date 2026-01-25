@@ -138,7 +138,7 @@ const Hero = () => {
         <div
           ref={rightRef}
           className={`relative h-[50vh] lg:h-[100vh] overflow-hidden
-            transition-all duration-1000 ease-out delay-200
+            will-change-auto transition-all duration-1000 ease-out delay-200
             ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-24"}
           `}
         >
