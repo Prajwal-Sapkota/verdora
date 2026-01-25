@@ -151,7 +151,7 @@ const Hero = () => {
               key={index}
               src={slide.image}
               alt={`Slide ${index + 1}`}
-              loading={index === 0 ? "eager" : "lazy"}
+              loading="lazy"
               decoding="async"
               fetchPriority={index === current ? "high" : "low"}
               className={`absolute inset-0 w-full h-full object-cover
