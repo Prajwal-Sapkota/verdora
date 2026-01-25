@@ -19,7 +19,6 @@ const Hero = () => {
   const buttonRef = useRef(null);
   const subtitleRef = useRef(null);
 
-  /* Preload ALL images on component mount */
   useEffect(() => {
     slides.forEach((slide, index) => {
       const img = new Image();
