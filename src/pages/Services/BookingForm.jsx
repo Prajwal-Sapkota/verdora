@@ -24,7 +24,7 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-2xl font-semibold text-gray-900">
-            Book {service.name}
+            Reserve {service.name}
           </h3>
           <button
             onClick={onClose}
@@ -180,7 +180,7 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
             className="w-full py-3 bg-[#ab8c55] text-white font-semibold rounded-lg hover:bg-[#8a6a3f] transition-colors flex items-center justify-center gap-2"
           >
             <FaIcons.FaCheckCircle className="text-lg" />
-            Confirm Booking
+            Reserve
           </button>
         </form>
       </div>

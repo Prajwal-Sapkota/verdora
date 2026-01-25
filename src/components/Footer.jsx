@@ -21,8 +21,8 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Rooms & Suites", href: "/rooms" },
-    { name: "Dining", href: "/dining" },
-    { name: "Spa & Wellness", href: "/spa" },
+    { name: "Dining", href: "/cafe" },
+    { name: "Spa & Wellness", href: "/services/spa-wellness" },
     { name: "Contact", href: "/contact" }
   ];
 
