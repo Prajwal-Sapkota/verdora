@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,33 +11,27 @@
 
   <link rel="icon" href="/vite.svg" type="image/svg+xml" />
 
-  <!-- Preconnect for Google Fonts -->
+  <!-- Preconnect Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Preload Fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" as="style"
+  <!-- Preload fonts -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet">
   </noscript>
 
-  <!-- Preload Tailwind CSS -->
-  <link rel="preload" href="/assets/index-BZ2sW20a.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="/assets/index-BZ2sW20a.css">
-  </noscript>
-
-  <!-- Preload LCP image (Hero Banner) -->
-  <link rel="preload" as="image" href="/images/banner.webp" fetchpriority="high" />
+  <!-- Preload main CSS -->
+  <link rel="preload" href="/src/index.css" as="style">
 </head>
 
 <body>
   <div id="root"></div>
-
-  <!-- Vite main JS bundle -->
-  <script type="module" src="/assets/index-CtkXQ2T3.js"></script>
+  <!-- Let Vite inject JS automatically -->
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
