@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { FaCocktail } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { FaTree } from "react-icons/fa6";
 import { FaBinoculars } from "react-icons/fa6";
-import { FaCocktail } from "react-icons/fa6";
 // Features Data
 const features = [
   {
