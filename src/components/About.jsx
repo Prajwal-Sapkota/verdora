@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  
-  FaLeaf,
-  FaMountain,
-  FaWater,
-  FaTree,
-} from "react-icons/fa";
+import { FaLeaf } from "react-icons/fa6";
+import { FaMountain } from "react-icons/fa6";
+import { FaWater } from "react-icons/fa6";
+import { FaTree } from "react-icons/fa6";
 import { FiCircle } from "react-icons/fi";
 
 const About = () => {
