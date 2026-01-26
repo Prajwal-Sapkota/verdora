@@ -1,76 +1,34 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// Eager load Home only
+// Eager load Home only (smallest page)
 import Home from './pages/Home';
 
-// Lazy load heavy pages
+// Lazy load everything else
+const About = lazy(() => import('./pages/About'));
 const Rooms = lazy(() => import('./pages/Rooms'));
+const Cafe = lazy(() => import('./pages/Cafe'));
 const Gallery = lazy(() => import('./pages/Gallery'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Services = lazy(() => import('./pages/Services'));
 const RoomDetail = lazy(() => import('./pages/Rooms/RoomDetail'));
 const ServiceDetail = lazy(() => import('./pages/Services/ServiceDetail'));
-const Services = lazy(() => import('./pages/Services'));
-
-// Keep these eager if they're small
-import About from './pages/About';
-import Cafe from './pages/Cafe';
-import Contact from './pages/Contact';
-
-const LoadingSpinner = () => (
-  <div className="loading-spinner">
-    <div className="spinner"></div>
-  </div>
-);
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/cafe" element={<Cafe />} />
-      <Route path="/contact" element={<Contact />} />
-      
-      <Route 
-        path="/rooms" 
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <Rooms />
-          </Suspense>
-        } 
-      />
-      <Route 
-        path="/rooms/:slug" 
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <RoomDetail />
-          </Suspense>
-        } 
-      />
-      <Route 
-        path="/gallery" 
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <Gallery />
-          </Suspense>
-        } 
-      />
-      <Route 
-        path="/services" 
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <Services />
-          </Suspense>
-        } 
-      />
-      <Route 
-        path="/services/:slug" 
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <ServiceDetail />
-          </Suspense>
-        } 
-      />
-    </Routes>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#ab8c55]"></div></div>}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/rooms/:slug" element={<RoomDetail />} />
+        <Route path="/cafe" element={<Cafe />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
+      </Routes>
+    </Suspense>
   );
 }
 
