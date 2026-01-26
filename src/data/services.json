@@ -263,8 +263,8 @@
       "tagline": "Swim in the Sky",
       "shortDescription": "An open, tranquil space where time slows down and the landscape becomes part of your experience.",
       "description": "An open, tranquil space where time slows down and the landscape becomes part of your experience. Our infinity pool offers breathtaking views and serene relaxation.",
-      "image": "/images/pool.jpg",
-      "heroImage": "/images/pool.jpg",
+      "image": "/images/pool.avif",
+      "heroImage": "/images/pool.avif",
       "icon": "FaSwimmingPool",
       "color": "#4a9fb8",
       "intro": {

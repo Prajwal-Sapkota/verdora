@@ -114,7 +114,7 @@ const Footer = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full border-4 border-[#ab8c55] bg-white flex items-center justify-center shadow-lg">
               <img
-                src="/images/logo.png"
+                src="/images/logo.avif"
                 alt="Verdora Resort Logo"
                 className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
               />

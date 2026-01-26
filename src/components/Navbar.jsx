@@ -61,7 +61,7 @@ const Navbar = () => {
     { label: "CONTACT", href: "/contact" },
   ];
 
-  const logoImage = "/images/logo.png";
+  const logoImage = "/images/logo.avif";
 
   return (
     <>
