@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaArrowRight, FaBed, FaBath, FaUsers } from "react-icons/fa";
 import Navbar from "../../components/Navbar";
@@ -33,7 +33,7 @@ const RoomDetail = () => {
   const ctaRef = useRef(null);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [slug]);
 
   // Hero animation

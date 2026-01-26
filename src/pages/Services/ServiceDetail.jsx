@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -589,7 +589,7 @@ const ServiceDetail = () => {
                                     <Link
                                         key={s.id}
                                         to={`/services/${s.slug}`}
-                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                        onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
                                         className="block group"
                                     >
                                         <div className="rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full">

@@ -1,5 +1,3 @@
-// components/StatsSection.jsx
-import React from 'react';
 import { 
   FaMountain, 
   FaUsers, 

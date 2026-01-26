@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { FaCoffee, FaLeaf, FaFire } from "react-icons/fa";
 
 const Experiences = () => {

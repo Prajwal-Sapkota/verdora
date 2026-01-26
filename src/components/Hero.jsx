@@ -132,7 +132,7 @@ const Hero = () => {
                 <div className="relative group inline-block">
                   <button onClick={() => {
                     navigate("/rooms");
-                    window.scrollTo(0, 0);
+                    window.scrollTo({ top: 0, behavior: "instant" });
                   }}
                     className="relative overflow-hidden px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl bg-[#8a6a3f] text-white hover:bg-[#262626] hover:text-[#ab8c55] transition-all duration-700 ease-in-out group">
                     {/* Gray overlay that appears on hover */}

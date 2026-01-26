@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
@@ -11,30 +11,35 @@ const Navbar = () => {
 
   useEffect(() => {
     let ticking = false;
-    let animationFrameId = null;
+    let rafId;
 
     const handleScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        animationFrameId = requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 20);
-          ticking = false;
+      if (ticking) return;
+
+      ticking = true;
+      rafId = requestAnimationFrame(() => {
+        setScrolled(prev => {
+          const next = window.scrollY > 20;
+          return prev === next ? prev : next;
         });
-      }
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
+    // Run animation only once
     const timer = setTimeout(() => {
       setHasAnimated(true);
     }, 100);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(rafId);
       clearTimeout(timer);
     };
   }, []);
+
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -126,9 +131,10 @@ const Navbar = () => {
             <div className="w-1/5 flex items-center justify-center">
               <div
                 className="cursor-pointer group"
-                onClick={() =>{navigate("/")
-                  window.scrollTo(0, 0);
-                }} 
+                onClick={() => {
+                  navigate("/")
+                  window.scrollTo({ top: 0, behavior: "instant" });
+                }}
               >
                 <div className="relative">
                   <div className={`
@@ -196,7 +202,7 @@ const Navbar = () => {
                 <button
 
                   onClick={() => {
-                    window.scrollTo(0, 0);
+                    window.scrollTo({ top: 0, behavior: "instant" });
                     navigate("/rooms");
                   }}
                   className={`
@@ -249,7 +255,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => {
-                window.scrollTo(0, 0);
+                window.scrollTo({ top: 0, behavior: "instant" });
                 navigate("/rooms");
               }}
               className={`
@@ -361,9 +367,9 @@ const Navbar = () => {
                   onClick={() => {
                     setIsMenuOpen(false);
                     setTimeout(() => {
-                      window.scrollTo(0, 0);
+                      window.scrollTo({ top: 0, behavior: "instant" });
                       navigate("/rooms");
-                    }, 50); 
+                    }, 50);
                   }}
                   className="relative w-full py-4 px-4 rounded-xl bg-gradient-to-br from-[#8a6a3f] via-[#9a7a4f] to-[#8a6a3f] text-white text-lg font-medium tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-[#6a4a2f]/30"
                 >

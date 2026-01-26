@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { FaArrowRight, FaCoffee, FaUtensils, FaStar } from 'react-icons/fa';
 
 const Hero = () => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const galleryItems = [
@@ -16,7 +16,7 @@ const galleryItems = [
 const Gallery = () => {
   const navigate = useNavigate();
   const trackRef = useRef(null);
-  const speed = 1.5; 
+  const speed = 1.5;
 
   useEffect(() => {
     const track = trackRef.current;
@@ -102,8 +102,9 @@ const Gallery = () => {
 
         {/* Button */}
         <div className="pt-16 flex justify-center">
-          <button onClick={ () => {navigate("/gallery")
-            window.scrollTo(0, 0);
+          <button onClick={() => {
+            navigate("/gallery")
+            window.scrollTo({ top: 0, behavior: "instant" });
           }}
             className="
               px-10 py-3 md:px-12 md:py-4 rounded-full

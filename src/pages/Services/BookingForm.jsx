@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as IoIcons from 'react-icons/io5';
+import { useState } from "react";
+import { FaCalendarDay, FaCheckCircle, FaClipboardList, FaClock, FaEnvelope, FaMinus, FaPhone, FaPlus, FaUser, FaUsers } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+
+
 
 const BookingForm = ({ service, onClose, onSubmit }) => {
   const [bookingDetails, setBookingDetails] = useState({
-    date: '',
-    time: '',
+    date: "",
+    time: "",
     guests: 1,
-    name: '',
-    email: '',
-    phone: '',
-    specialRequests: ''
+    name: "",
+    email: "",
+    phone: "",
+    specialRequests: "",
   });
 
   const handleSubmit = (e) => {
@@ -26,21 +28,22 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
           <h3 className="text-2xl font-semibold text-gray-900">
             Reserve {service.name}
           </h3>
+
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 transition-colors"
             aria-label="Close booking form"
           >
-            <IoIcons.IoClose className="text-2xl" />
+            <IoClose className="text-2xl" />
           </button>
         </div>
-        
+
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                <FaIcons.FaCalendarDay className="inline mr-2" />
+                <FaCalendarDay className="inline mr-2" />
                 Date
               </label>
               <input
@@ -53,9 +56,10 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
                 }
               />
             </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                <FaIcons.FaClock className="inline mr-2" />
+                <FaClock className="inline mr-2" />
                 Time
               </label>
               <input
@@ -69,12 +73,13 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
               />
             </div>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              <FaIcons.FaUsers className="inline mr-2" />
+              <FaUsers className="inline mr-2" />
               Number of Guests
             </label>
+
             <div className="flex items-center gap-4">
               <button
                 type="button"
@@ -87,11 +92,13 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Decrease guests"
               >
-                <FaIcons.FaMinus />
+                <FaMinus />
               </button>
+
               <span className="text-lg font-semibold">
                 {bookingDetails.guests}
               </span>
+
               <button
                 type="button"
                 onClick={() =>
@@ -103,14 +110,14 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
                 className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
                 aria-label="Increase guests"
               >
-                <FaIcons.FaPlus />
+                <FaPlus />
               </button>
             </div>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              <FaIcons.FaUser className="inline mr-2" />
+              <FaUser className="inline mr-2" />
               Your Name
             </label>
             <input
@@ -123,11 +130,11 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
               }
             />
           </div>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                <FaIcons.FaEnvelope className="inline mr-2" />
+                <FaEnvelope className="inline mr-2" />
                 Email
               </label>
               <input
@@ -136,13 +143,17 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ab8c55] focus:border-transparent"
                 value={bookingDetails.email}
                 onChange={(e) =>
-                  setBookingDetails({ ...bookingDetails, email: e.target.value })
+                  setBookingDetails({
+                    ...bookingDetails,
+                    email: e.target.value,
+                  })
                 }
               />
             </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                <FaIcons.FaPhone className="inline mr-2" />
+                <FaPhone className="inline mr-2" />
                 Phone
               </label>
               <input
@@ -151,15 +162,18 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ab8c55] focus:border-transparent"
                 value={bookingDetails.phone}
                 onChange={(e) =>
-                  setBookingDetails({ ...bookingDetails, phone: e.target.value })
+                  setBookingDetails({
+                    ...bookingDetails,
+                    phone: e.target.value,
+                  })
                 }
               />
             </div>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              <FaIcons.FaClipboardList className="inline mr-2" />
+              <FaClipboardList className="inline mr-2" />
               Special Requests
             </label>
             <textarea
@@ -174,12 +188,12 @@ const BookingForm = ({ service, onClose, onSubmit }) => {
               placeholder="Any special requirements or preferences..."
             />
           </div>
-          
+
           <button
             type="submit"
             className="w-full py-3 bg-[#ab8c55] text-white font-semibold rounded-lg hover:bg-[#8a6a3f] transition-colors flex items-center justify-center gap-2"
           >
-            <FaIcons.FaCheckCircle className="text-lg" />
+            <FaCheckCircle className="text-lg" />
             Reserve
           </button>
         </form>
