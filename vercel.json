@@ -5,18 +5,18 @@
       "destination": "/api/:path*"
     },
     {
-      "source": "/(.*\\.(js|css|map|json|ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot))$",
-      "destination": "/$1"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/(.*)\\.js",
       "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript; charset=utf-8"
+        },
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
@@ -24,15 +24,20 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|map))$",
+      "source": "/assets/(.*)\\.css",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        },
+          "value": "text/css; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)\\.map",
+      "headers": [
         {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "key": "Content-Type",
+          "value": "application/json"
         }
       ]
     },
@@ -58,10 +63,7 @@
       ]
     }
   ],
-  "regions": ["sin1"],
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
   "framework": "vite"
 }
