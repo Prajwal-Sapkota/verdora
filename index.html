@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   </noscript>
 
-  <!-- Preload Tailwind CSS (deferred loading) -->
+  <!-- Preload Tailwind CSS -->
   <link rel="preload" href="/assets/index-BZ2sW20a.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -31,23 +31,13 @@
 
   <!-- Preload LCP image (Hero Banner) -->
   <link rel="preload" as="image" href="/images/banner.webp" fetchpriority="high" />
-
 </head>
 
 <body>
   <div id="root"></div>
 
-  <!-- Defer main JS for faster initial render -->
-  <script type="module">
-    // Load main app only after DOM is ready
-    window.addEventListener('DOMContentLoaded', () => {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.src = '../src/main.jsx';
-      script.defer = true; 
-      document.body.appendChild(script);
-    });
-  </script>
+  <!-- Vite main JS bundle -->
+  <script type="module" src="/assets/index-CtkXQ2T3.js"></script>
 </body>
 
 </html>
