@@ -4,11 +4,11 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   const partners = [
-  { name: "National Trust for Nature Conservation", image: "/images/ntnc.png" },
-  { name: "WWF Nepal", image: "/images/wwf.jpg" },
+  { name: "National Trust for Nature Conservation", image: "/images/ntnc.avif" },
+  { name: "WWF Nepal", image: "/images/wwf.avif" },
 
   { name: "Yak & Yeti Hotel", image: "/images/yaknyeti.png" },
-  { name: "Soaltee Hotel", image: "/images/soaltee.png" },
+  { name: "Soaltee Hotel", image: "/images/soaltee.avif" },
 
   { name: "Tiger Tops Nepal", image: "/images/tigertops.jpg" },
   { name: "Green Society Nepal", image: "/images/greensociety.png" },
