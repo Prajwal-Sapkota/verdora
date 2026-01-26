@@ -11,30 +11,43 @@
 
   <link rel="icon" href="/vite.svg" type="image/svg+xml" />
 
-  <!-- Preconnect -->
+  <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" rel="stylesheet"
-    media="print" onload="this.media='all'">
+  <!-- Preload Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   </noscript>
+
+  <!-- Preload Tailwind CSS (deferred loading) -->
   <link rel="preload" href="/assets/index-BZ2sW20a.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet';document.body.classList.add('css-loaded')">
+    onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="/assets/index-BZ2sW20a.css">
   </noscript>
 
-  <!-- Preload LCP image -->
+  <!-- Preload LCP image (Hero Banner) -->
   <link rel="preload" as="image" href="/images/banner.webp" fetchpriority="high" />
+
 </head>
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Defer main JS for faster initial render -->
+  <script type="module">
+    // Load main app only after DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = '/src/main.jsx';
+      script.defer = true; 
+      document.body.appendChild(script);
+    });
+  </script>
 </body>
 
 </html>
