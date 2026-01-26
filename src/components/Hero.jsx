@@ -92,10 +92,12 @@ const Hero = () => {
           <img
             src="/images/banner.webp"
             alt="Verdora Resort"
+            width={1920}
+            height={1080} 
+            className="absolute inset-0 w-full h-full object-cover"
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#f8f5f0]/80 via-[#f3eee6]/65 to-[#eae3d7]/30" />
 
