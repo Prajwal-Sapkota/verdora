@@ -67,10 +67,7 @@ const Home = () => {
             <BookingForm />
           </Suspense>
           
-          {/* Stats Section - If you're using it */}
-          <Suspense fallback={<SectionLoader />}>
-            <Stats />
-          </Suspense>
+          
         </main>
         <Footer />
         <BackToTop />
