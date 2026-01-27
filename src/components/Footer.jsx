@@ -1,20 +1,21 @@
 import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube, FaPhone, FaEnvelope, FaChevronRight, FaChevronUp, FaChevronDown } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const partners = [
-  { name: "National Trust for Nature Conservation", image: "/images/ntnc.avif" },
-  { name: "WWF Nepal", image: "/images/wwf.avif" },
+    { name: "National Trust for Nature Conservation", image: "/images/ntnc.avif" },
+    { name: "WWF Nepal", image: "/images/wwf.avif" },
 
-  { name: "Yak & Yeti Hotel", image: "/images/yaknyeti.png" },
-  { name: "Soaltee Hotel", image: "/images/soaltee.avif" },
+    { name: "Yak & Yeti Hotel", image: "/images/yaknyeti.png" },
+    { name: "Soaltee Hotel", image: "/images/soaltee.avif" },
 
-  { name: "Tiger Tops Nepal", image: "/images/tigertops.jpg" },
-  { name: "Green Society Nepal", image: "/images/greensociety.png" },
+    { name: "Tiger Tops Nepal", image: "/images/tigertops.jpg" },
+    { name: "Green Society Nepal", image: "/images/greensociety.png" },
 
-  { name: "Aquafina", image: "/images/aquafina.jpg" }
-];
+    { name: "Aquafina", image: "/images/aquafina.jpg" }
+  ];
 
 
   const usefulLinks = [
@@ -42,16 +43,16 @@ const Footer = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Adjust partners per view based on screen size
   const getPartnersPerView = () => {
-    return 4; 
+    return 4;
   };
 
   const [partnersPerView, setPartnersPerView] = useState(getPartnersPerView());
@@ -60,7 +61,7 @@ const Footer = () => {
     const handleResize = () => {
       setPartnersPerView(getPartnersPerView());
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -82,12 +83,12 @@ const Footer = () => {
 
   const getVisiblePartners = () => {
     let visible = [];
-    
+
     for (let i = 0; i < partnersPerView; i++) {
       const index = (currentSlide + i) % partners.length;
       visible.push(partners[index]);
     }
-    
+
     return visible;
   };
 
@@ -122,9 +123,9 @@ const Footer = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-            
+
             {/* Column 1 – Trusted Partners with Vertical Sliding */}
-            <div 
+            <div
               className="sm:col-span-2 lg:col-span-1 order-1 sm:order-1"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
@@ -137,9 +138,9 @@ const Footer = () => {
               {/* Partners Grid with Sliding Effect */}
               <div className="relative h-60 ">
                 {/* Sliding Container */}
-                <div 
+                <div
                   className="absolute inset-0 transition-all duration-500 ease-in-out"
-                  style={{ 
+                  style={{
                     opacity: 1,
                     transform: `translateY(-${currentSlide * 0}px)`
                   }}
@@ -182,7 +183,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              
+
             </div>
 
             {/* Column 2 – Useful Links */}
@@ -194,13 +195,13 @@ const Footer = () => {
               <ul className="space-y-2 sm:space-y-3">
                 {usefulLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-700 hover:text-[#ab8c55] transition-all duration-300 flex items-center group text-sm sm:text-base"
                     >
                       <FaChevronRight className="w-2 h-2 sm:w-3 sm:h-3 mr-2 text-[#ab8c55] opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -239,14 +240,14 @@ const Footer = () => {
                   <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 md:mb-4">Follow Us</p>
                   <div className="flex gap-2 sm:gap-3">
                     {socialLinks.map((social, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href="#"
+                        to="#"
                         aria-label={social.label}
                         className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center text-gray-700 hover:bg-[#1b2565] hover:text-white hover:border-[#1b2565] transition-all duration-300 text-sm sm:text-base"
                       >
                         {social.icon}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -283,13 +284,13 @@ const Footer = () => {
                   <FaPhone className="text-[#1b2565] text-xs sm:text-sm" />
                   Need assistance?
                 </p>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="text-[#1b2565] font-medium hover:text-[#ab8c55] transition-colors text-xs sm:text-sm inline-flex items-center gap-2"
                 >
                   Contact us for reservations
                   <FaChevronRight className="w-2 h-2 sm:w-3 sm:h-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -303,7 +304,15 @@ const Footer = () => {
             </div>
 
             <div className="text-gray-600 text-xs sm:text-sm text-center sm:text-right">
-              Crafted by <span className="font-semibold text-[#1b2565]">S.A.I.T Solution Nepal</span>
+              Crafted by{" "}
+              <Link
+                to="https://sait.com.np/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#1b2565] hover:underline"
+              >
+                S.A.I.T Solution Nepal
+              </Link>
             </div>
           </div>
         </div>

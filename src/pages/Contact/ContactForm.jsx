@@ -1,5 +1,6 @@
 import  { useEffect, useRef, useState } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp, FaClock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
     const sectionRef = useRef(null);
@@ -94,12 +95,12 @@ const ContactForm = () => {
                                 <div className="flex-1">
                                     <h4 className="font-semibold text-gray-700 text-sm sm:text-base mb-1">Phone Numbers</h4>
                                     <div className="space-y-1">
-                                        <a href={`tel:${contactDetails.address.phone}`} className="text-gray-600 hover:text-[#ab8c55] transition-colors block text-sm sm:text-base">
+                                        <Link to={`tel:${contactDetails.address.phone}`} className="text-gray-600 hover:text-[#ab8c55] transition-colors block text-sm sm:text-base">
                                             {contactDetails.address.phone} (Landline)
-                                        </a>
-                                        <a href={`tel:${contactDetails.address.mobile}`} className="text-gray-600 hover:text-[#ab8c55] transition-colors block text-sm sm:text-base">
+                                        </Link>
+                                        <Link to={`tel:${contactDetails.address.mobile}`} className="text-gray-600 hover:text-[#ab8c55] transition-colors block text-sm sm:text-base">
                                             {contactDetails.address.mobile} (Mobile)
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

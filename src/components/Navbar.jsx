@@ -1,6 +1,6 @@
-import  { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,10 +108,12 @@ const Navbar = () => {
             <div className="flex items-center justify-end w-2/5">
               <div className="flex items-center space-x-10 ">
                 {leftNavItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.href}
                     className="group relative"
+                    onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+
                   >
                     <span className={`
                       text-sm tracking-[0.3em] font-medium
@@ -122,7 +124,7 @@ const Navbar = () => {
                       {item.label}
                     </span>
                     <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-emerald-500 group-hover:w-8 transition-all duration-300" />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -181,10 +183,13 @@ const Navbar = () => {
             <div className="flex items-center justify-start w-2/5">
               <div className="flex items-center space-x-10 ">
                 {rightNavItems.map((item) => (
-                  <a
+                  <Link
+
                     key={item.label}
-                    href={item.href}
+                    to={item.href}
                     className="group relative"
+                      onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+
                   >
                     <span className={`
                       text-sm tracking-[0.3em] font-medium
@@ -195,7 +200,7 @@ const Navbar = () => {
                       {item.label}
                     </span>
                     <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-emerald-500 group-hover:w-8 transition-all duration-300" />
-                  </a>
+                  </Link>
                 ))}
 
                 {/* BOOK NOW Button - Made much smaller */}
@@ -328,13 +333,14 @@ const Navbar = () => {
           <div className="flex-1 px-5 py-8 overflow-y-auto">
             <div className="space-y-4">
               {[...leftNavItems, ...rightNavItems].map((item, index) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   onClick={(e) => {
                     e.preventDefault();
                     setIsMenuOpen(false);
                     setTimeout(() => navigate(item.href), 50);
+                    window.scrollTo({ top: 0, behavior: "instant" });
                   }}
                   className="block group"
                 >
@@ -354,7 +360,7 @@ const Navbar = () => {
                       {item.label}
                     </span>
                   </div>
-                </a>
+                </Link>
               ))}
 
               {/* Mobile Menu BOOK NOW Button */}

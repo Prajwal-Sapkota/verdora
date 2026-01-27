@@ -654,15 +654,15 @@ const ServiceDetail = () => {
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
                                             <IoCallOutline className="text-xl" />
-                                            <a href={`tel:${service.contact.phone}`} className="hover:text-white/80">
+                                            <Link to={`tel:${service.contact.phone}`} className="hover:text-white/80">
                                                 {service.contact.phone}
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <IoMailOutline className="text-xl" />
-                                            <a href={`mailto:${service.contact.email}`} className="hover:text-white/80">
+                                            <Link to={`mailto:${service.contact.email}`} className="hover:text-white/80">
                                                 {service.contact.email}
-                                            </a>
+                                            </Link>
                                         </div>
                                         {service.contact.location && (
                                             <div className="flex items-center gap-3">
